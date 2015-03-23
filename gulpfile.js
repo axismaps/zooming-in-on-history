@@ -13,10 +13,10 @@ gulp.task( 'default', [ 'clean' ], function(){
 		}))
 		.pipe( gulp.dest( 'public/' ) )
 
-	gulp.src( 'img/*' )
-		.pipe( gulp.dest( 'public/img' ) );
+	gulp.src( 'data/*' )
+		.pipe( gulp.dest( 'public/data' ) );
 });
 
 gulp.task( 'clean', function( callback ){
-    del( [ 'public/css', 'public/img', 'public/js', 'public/index.html' ], callback );
+    del( [ 'public/css', 'public/data', 'public/js', 'public/index.html' ], callback );
 });
