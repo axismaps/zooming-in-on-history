@@ -1,3 +1,5 @@
+var selectedCategory;
+
 var colors = ["#841f21","#0a5e85","#66a61e","#a6761d"];	// temporary
 function createCategories(){
 	var $categoriesDiv = $( "<div id='categories'>" ).appendTo( "body" );
@@ -11,4 +13,8 @@ function createCategories(){
 			.css( "border-top-color", colors[i] )
 			.appendTo( $div );
 	});
+}
+
+function selectCategory( id ){
+	$( "body" ).attr( "class", "category " + id );
 }
