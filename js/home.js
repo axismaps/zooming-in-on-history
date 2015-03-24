@@ -1,6 +1,6 @@
 var colors = ["#841f21","#0a5e85","#66a61e","#a6761d"];	// temporary
 function createCategories(){
-	var $categoriesDiv = $( "<div id='categories'>" ).appendTo( "#home" );
+	var $categoriesDiv = $( "#categories" );
 	
 	categories.data.forEach( function( cat, i ){
 		if ( params.categories.indexOf( cat.id ) == -1 ) return;	// somehow this needs to know which categories to show

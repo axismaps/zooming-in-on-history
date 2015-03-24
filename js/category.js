@@ -7,7 +7,7 @@ function selectCategory( id ){
 }
 
 function showMapsInCategory( id ){
-	var $mapsDiv = $( "#map-cards" );
+	var $mapsDiv = $( "#map-cards" ).empty();
 	
 	maps.data.forEach( function( m, i ){
 		if ( m.category != id ) return;

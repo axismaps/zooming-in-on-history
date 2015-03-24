@@ -5,6 +5,13 @@ loadData();
 
 function initialize(){
 	createCategories();
+	createEvents();
+}
+
+function createEvents(){
+	$( "#home-button" ).click( function(){
+		$( "body" ).attr( "class", "home-screen" );
+	})
 }
 
 function getURLParameters(){

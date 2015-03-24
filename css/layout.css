@@ -37,3 +37,11 @@ html, body{
 	display: table-cell;
 	text-align: center;
 }
+
+.home-screen #breadcrumbs{
+	display: none;
+}
+
+#home-button{
+	background-color: #747d84;
+}

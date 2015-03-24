@@ -1,0 +1,26 @@
+#home{
+	display: none;
+	text-align: center;
+}
+.home-screen #home{
+	display: block;
+}
+
+#categories{
+	text-align: center;
+}
+
+.category{
+	width: 475px;
+	height: 515px;
+}
+
+.category div{
+	height: 110px;
+	font-size: 30px;
+}
+
+.category div p{
+	height: 110px;
+	width: 475px;
+}
