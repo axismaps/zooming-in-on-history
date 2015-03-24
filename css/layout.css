@@ -1,0 +1,15 @@
+html, body{
+	background-color: #454b51;
+	color: white;
+}
+
+#home{
+	text-align: center;
+}
+
+#title{
+	font-size: 60px;
+}
+#subtitle{
+	font-size: 30px;
+}
