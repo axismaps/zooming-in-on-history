@@ -3,13 +3,37 @@ html, body{
 	color: white;
 }
 
-#home{
-	text-align: center;
-}
-
-#title{
+.title{
 	font-size: 60px;
 }
-#subtitle{
+.subtitle{
 	font-size: 30px;
+}
+
+.card{
+	display: inline-block;
+	border-radius: 10px;
+	background: #ccc;
+	position: relative;
+	margin: 15px;
+	box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.25);
+}
+
+.card div{
+	position: absolute;
+	bottom: 0;
+	text-align: center;
+	background-color: rgba(0,0,0,.8);
+	border-bottom-right-radius: 10px;
+	border-bottom-left-radius: 10px;
+	width: 100%;
+	border-top: 9px solid transparent;
+	overflow: hidden;
+}
+
+.card div p{
+	vertical-align: middle;
+	margin: 0;
+	display: table-cell;
+	text-align: center;
 }

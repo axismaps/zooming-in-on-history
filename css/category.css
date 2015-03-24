@@ -1,0 +1,23 @@
+#category{
+	text-align: center;
+	display: none;
+}
+.category-screen #category{
+	display: block;
+}
+
+.map-card{
+	width: 215px;
+	height: 235px;
+}
+
+.map-card div{
+	height: 70px;
+	font-size: 18px;
+	border: none;
+}
+
+.map-card div p{
+	height: 70px;
+	width: 215px;
+}
