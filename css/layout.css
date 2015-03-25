@@ -5,9 +5,11 @@ html, body{
 
 .title{
 	font-size: 60px;
+	margin: 20px 0;
 }
 .subtitle{
 	font-size: 30px;
+	margin: 10px 0;
 }
 
 .card{

@@ -11,8 +11,8 @@
 }
 
 .category{
-	width: 475px;
-	height: 515px;
+	width: 425px;
+	height: 460px;
 }
 
 .category div{
@@ -22,5 +22,5 @@
 
 .category div p{
 	height: 110px;
-	width: 475px;
+	width: 425px;
 }
