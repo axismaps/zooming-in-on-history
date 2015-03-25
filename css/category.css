@@ -21,3 +21,9 @@
 	height: 70px;
 	width: 215px;
 }
+
+.page{
+	position: absolute;
+	left: 0;
+	width: 100%;
+}
