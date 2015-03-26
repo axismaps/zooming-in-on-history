@@ -21,4 +21,5 @@ function showMap(){
 	changeScreens( $( "#metadata" ), $( "#map" ) );
 	map.invalidateSize();
 	$( "body" ).attr( "class", "map-screen" );
+	$( "#page-buttons" ).hide();
 }

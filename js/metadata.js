@@ -18,4 +18,6 @@ function showDetailsForMap( id ){
 		.appendTo( "#metadata" );
 
 	$( "#metadata h1" ).html( maps[ id ].title );
+
+	$( "#page-buttons div" ).off( "click" );
 }

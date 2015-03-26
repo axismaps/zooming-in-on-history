@@ -2,7 +2,7 @@ var colors = ["#841f21","#0a5e85","#66a61e","#a6761d"];	// temporary
 function createCategories(){
 	var $categoriesDiv = $( "#categories" );
 	
-	categories.data.forEach( function( cat, i ){
+	_.each( categories, function( cat, i ){
 		if ( params.categories.indexOf( cat.id ) == -1 ) return;	// somehow this needs to know which categories to show
 		var $div = $( "<div>" ).appendTo( $categoriesDiv )
 			.attr( "class", "category card " + cat.id  )
@@ -37,4 +37,5 @@ function showHome(){
 	var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
 	changeScreens( $( "#" + current ), $( "#home" ) );
 	$( "body" ).attr( "class", "home-screen" );
+	$( "#page-buttons" ).hide();
 }

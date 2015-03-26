@@ -1,9 +1,11 @@
 var selectedCategory,
-	page;
+	page,
+	pageCount;
 
 function selectCategory( id ){
 	$( "body" ).attr( "class", "category-screen" );
 	selectedCategory = id;
+	$( "#category .title" ).html( categories[ id ].name );
 	showMapsInCategory( id );
 	changeScreens( $( "#home" ), $( "#category" ) );
 }
@@ -11,8 +13,8 @@ function selectCategory( id ){
 function showMapsInCategory( id ){
 	var $mapsDiv = $( "#map-cards" ).empty();
 
-	var index = 0,
-		pageCount = 0;
+	var index = 0;
+	pageCount = 0;
 	
 	_.each( maps, function( m, i ){
 		if ( m.category != id ) return;
@@ -38,9 +40,20 @@ function showMapsInCategory( id ){
 	});
 	page = 1;
 	$( "#page1" ).show();
+	if ( pageCount > 1 ){
+		$( "#page-buttons" ).show();
+		$( "#page-buttons div" ).off( "click" );
+		$( "#prev-page" ).on( "click", function(){
+			showPage( page - 1 );
+		});
+		$( "#next-page" ).on( "click", function(){
+			showPage( page + 1 );
+		});
+	}
 }
 
 function showPage( newPage ){
+	if ( newPage < 1 || newPage > pageCount ) return;
 	var inAnim, outAnim;
 	if ( newPage > page ){
 		inAnim = "fadeInRight";
