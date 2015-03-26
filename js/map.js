@@ -9,7 +9,7 @@ function createMap(){
 function selectMap( id ){
 	if ( historicTiles ) map.removeLayer( historicTiles );
 	historicTiles = L.tileLayer( "tiles/" + id + "/{z}/{x}/{y}.png", {tms:true} ).addTo(map);
-	var mapData = _.find( maps.data, function(m){ return m.number == id } );
+	var mapData = maps[ id ];
 	var bounds = [ 
 		[mapData.bottom, mapData.left],
 		[mapData.top, mapData.right]

@@ -15,7 +15,7 @@ function showMapsInCategory( id ){
 	var index = 0,
 		pageCount = 0;
 	
-	maps.data.forEach( function( m, i ){
+	_.each( maps, function( m, i ){
 		if ( m.category != id ) return;
 		if ( index % 8 == 0 ){
 			pageCount ++;
@@ -29,8 +29,7 @@ function showMapsInCategory( id ){
 			.attr( "class", "map-card card page" + pageCount )
 			.attr( "id", "map" + m.number )
 			.click( function(){
-				showMap();
-				selectMap( m.number );
+				showDetailsForMap( m.number );
 			})
 
 		$( "<div><p>" + m.title + "</p></div>" )

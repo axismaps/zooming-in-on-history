@@ -1,0 +1,13 @@
+#metadata > p{
+	display: inline-block;
+	vertical-align: top;
+	width: 50%;
+	text-align: left;
+}
+
+#metadata h1{
+	width: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}

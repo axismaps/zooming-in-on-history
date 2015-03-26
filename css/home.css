@@ -5,18 +5,3 @@
 #categories{
 	text-align: center;
 }
-
-.category{
-	width: 425px;
-	height: 460px;
-}
-
-.category div{
-	height: 110px;
-	font-size: 30px;
-}
-
-.category div p{
-	height: 110px;
-	width: 425px;
-}

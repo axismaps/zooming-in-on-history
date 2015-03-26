@@ -23,3 +23,8 @@ function getURLParameters(){
 	if ( !params.categories ) params.categories = "PR,BE";
 	params.categories = params.categories.split(",");
 }
+
+function changeScreens( $from, $to ){
+	$from.addClass( "animated fadeOut" );
+	$to.show().removeClass( "fadeOut" ).addClass( "animated fadeIn" );
+}
