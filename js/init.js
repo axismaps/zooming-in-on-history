@@ -27,4 +27,7 @@ function getURLParameters(){
 function changeScreens( $from, $to ){
 	$from.addClass( "animated fadeOut" );
 	$to.show().removeClass( "fadeOut" ).addClass( "animated fadeIn" );
+	setTimeout( function(){
+		$from.hide();
+	},1000);
 }

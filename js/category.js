@@ -2,11 +2,10 @@ var selectedCategory,
 	page;
 
 function selectCategory( id ){
-	$( "body" ).attr( "class", "category-screen " + id );
+	$( "body" ).attr( "class", "category-screen" );
 	selectedCategory = id;
 	showMapsInCategory( id );
-	$( "#home" ).addClass( "animated fadeOut" );
-	$( "#category" ).show().removeClass( "fadeOut" ).addClass( "animated fadeIn" );
+	changeScreens( $( "#home" ), $( "#category" ) );
 }
 
 function showMapsInCategory( id ){

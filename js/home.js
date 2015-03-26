@@ -34,7 +34,7 @@ function createCategories(){
 }
 
 function showHome(){
+	var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
+	changeScreens( $( "#" + current ), $( "#home" ) );
 	$( "body" ).attr( "class", "home-screen" );
-	$( ".screen" ).hide();
-	$( "#home" ).show().removeClass( "fadeOut" );
 }

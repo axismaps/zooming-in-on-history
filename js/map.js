@@ -18,7 +18,7 @@ function selectMap( id ){
 }
 
 function showMap(){
-	$( ".screen" ).hide();
-	$( "#map" ).show();
+	changeScreens( $( "#metadata" ), $( "#map" ) );
 	map.invalidateSize();
+	$( "body" ).attr( "class", "map-screen" );
 }

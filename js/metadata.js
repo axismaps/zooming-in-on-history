@@ -1,5 +1,6 @@
 function showDetailsForMap( id ){
 	$( "#metadata .card, #metadata > p" ).remove();
+	$( "body" ).attr( "class", "metadata-screen" );
 	changeScreens( $("#category"), $( "#metadata" ) );
 	var $card = $( "#map" + id ).clone()
 		.removeClass( "map-card" )
