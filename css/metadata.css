@@ -1,4 +1,4 @@
-#metadata > p{
+#metadata > div.container > p{
 	display: inline-block;
 	vertical-align: top;
 	width: 50%;
@@ -10,4 +10,10 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+#metadata > div.container {
+	position: absolute;
+	top: 150px;
+	width: 100%;
 }

@@ -18,6 +18,8 @@ function showMapsInCategory( id ){
 	
 	_.each( maps, function( m, i ){
 		if ( m.category != id ) return;
+		if ( !categories[ id ].maps ) categories[ id ].maps = [];
+		categories[ id ].maps.push( m.number );
 		if ( index % 8 == 0 ){
 			pageCount ++;
 			$( "<div>" )
