@@ -1,8 +1,4 @@
 #home{
-	display: none;
-	text-align: center;
-}
-.home-screen #home{
 	display: block;
 }
 

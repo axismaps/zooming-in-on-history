@@ -9,9 +9,10 @@ function initialize(){
 }
 
 function createEvents(){
-	$( "#home-button" ).click( function(){
-		$( "body" ).attr( "class", "home-screen" );
-	})
+	$( "#home-button" ).click( showHome );
+	$( ".screen" ).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+		$(this).removeClass( "fadeIn" );
+	});
 }
 
 function getURLParameters(){

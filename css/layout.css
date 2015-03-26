@@ -1,6 +1,16 @@
 html, body{
 	background-color: #454b51;
 	color: white;
+	margin: 0;
+}
+
+.screen{
+	position: absolute;
+	top: 0;
+	left: 0;
+	text-align: center;
+	width: 100%;
+	display: none;
 }
 
 .title{
@@ -38,6 +48,13 @@ html, body{
 	margin: 0;
 	display: table-cell;
 	text-align: center;
+}
+
+#breadcrumbs{
+	position: absolute;
+	z-index: 999;
+	height: 60px;
+	top: 15px;
 }
 
 .home-screen #breadcrumbs{

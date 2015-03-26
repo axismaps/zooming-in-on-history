@@ -1,11 +1,3 @@
-#category{
-	text-align: center;
-	display: none;
-}
-.category-screen #category{
-	display: block;
-}
-
 .map-card{
 	width: 215px;
 	height: 235px;

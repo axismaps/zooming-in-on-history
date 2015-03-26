@@ -30,7 +30,11 @@ function createCategories(){
 				}
 			},10000)
 		},i*1000)
-	});
+	});	
+}
 
-	
+function showHome(){
+	$( "body" ).attr( "class", "home-screen" );
+	$( ".screen" ).hide();
+	$( "#home" ).show().removeClass( "fadeOut" );
 }
