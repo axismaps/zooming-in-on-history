@@ -6,6 +6,7 @@ loadData();
 function initialize(){
 	createCategories();
 	createEvents();
+	createMap();
 }
 
 function createEvents(){

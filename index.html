@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="css/layout.css" />
 		<link rel="stylesheet" href="css/home.css" />
 		<link rel="stylesheet" href="css/category.css" />
+		<link rel="stylesheet" href="css/map.css" />
 		<!-- endbuild -->
 	</head>
 	<body class="home-screen">
@@ -30,17 +31,19 @@
 		</div>
 
 		<div id="map" class="screen">
-			
+			<div id="mapdiv"></div>
 		</div>
 		
 		<!-- build:js js/site.js -->
 		<script src="bower_components/jquery/dist/jquery.js"></script>
 		<script src="bower_components/leaflet/dist/leaflet-src.js"></script>
 		<script src="bower_components/papa-parse/papaparse.js"></script>
+		<script src="bower_components/underscore/underscore-min.js"></script>
 
 		<script src="js/data.js"></script>
 		<script src="js/home.js"></script>
 		<script src="js/category.js"></script>
+		<script src="js/map.js"></script>
 		<script src="js/init.js"></script>
 		<!-- endbuild -->
 	</body>

@@ -28,6 +28,10 @@ function showMapsInCategory( id ){
 		var $div = $( "<div>" ).appendTo( "#page" + pageCount )
 			.attr( "class", "map-card card page" + pageCount )
 			.attr( "id", "map" + m.number )
+			.click( function(){
+				showMap();
+				selectMap( m.number );
+			})
 
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", colors[i] )
