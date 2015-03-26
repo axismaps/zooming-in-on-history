@@ -13,7 +13,7 @@ function showDetailsForMap( id, pageNav ){
 
 	var $text = $( "<p>" )
 		.html( maps[ id ].title + "<br>" + maps[ id ].author )
-		.appendTo( $container )
+		.appendTo( $container );
 
 	if ( !pageNav ){
 		$( "#metadata > div" ).remove();
