@@ -43,8 +43,6 @@ function geocoder(){
 	$( '#geocode-submit' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var geocodeValue = $( '#geocode-input' ).val();
-		
-		
 				
 		MQ.geocode().search( geocodeValue )
 			.on( 'success', function( e ){
@@ -66,7 +64,7 @@ function geocoder(){
 						.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
 						.togglePopup();
 						
-					map.setView( latlng, 16 );
+					map.fitBounds( historicTiles.options.bounds );
 				} else {
 					console.log( 'Nothing found' );
 				}
