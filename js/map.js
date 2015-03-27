@@ -1,9 +1,11 @@
 var map,
 	modernTiles,
+	geocodeResultLayer,
 	historicTiles;
 function createMap(){
 	map = L.map( "mapdiv" ).setView( [40,-80], 5 );
 	modernTiles = L.tileLayer( "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png" , { maxNativeZoom : 18, maxZoom : 21 }).addTo(map);
+	geocodeResultLayer = L.layerGroup().addTo(map);
 }
 
 function selectMap( id ){
@@ -26,10 +28,6 @@ function selectMap( id ){
 	} ).addTo(map);
 	
 	map.fitBounds( bounds );
-	
-	map.on( 'zoomend', function() {
-		console.log( map.getZoom() );
-	});
 }
 
 function showMap(){
@@ -45,6 +43,8 @@ function geocoder(){
 	$( '#geocode-submit' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var geocodeValue = $( '#geocode-input' ).val();
+		
+		geocodeResultLayer.clearLayers();
 				
 		MQ.geocode().search( geocodeValue )
 			.on( 'success', function( e ){
@@ -61,7 +61,7 @@ function geocoder(){
 					var latlng = result.latlng;
 					
 					L.marker( [ latlng.lat, latlng.lng ] )
-						.addTo( map )
+						.addTo( geocodeResultLayer )
 						.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
 						.togglePopup();
 						
