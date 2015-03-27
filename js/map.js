@@ -14,7 +14,10 @@ function selectMap( id ){
 		[mapData.bottom, mapData.left],
 		[mapData.top, mapData.right]
 	];
+	map.setMaxBounds( bounds );
 	map.fitBounds( bounds );
+	map._layersMaxZoom = ( mapData.MaxZoom );
+	map._layersMinZoom = ( mapData.MinZoom );
 }
 
 function showMap(){
