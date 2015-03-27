@@ -49,6 +49,7 @@ function geocoder(){
 				$.map( e.result.matches, function( v, i ){
 					if( historicTiles.options.bounds.contains( v.latlng ) ) {
 						result = v;
+						return;
 					}
 				});
 				
