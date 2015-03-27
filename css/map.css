@@ -2,3 +2,12 @@
 	width: 100%;
 	height: 100%;
 }
+
+#geocode-input{
+	position: absolute;
+	z-index: 1000;
+	right: 20px;
+	top: 80px;
+	line-height: 2;
+	width: 300px;
+}
