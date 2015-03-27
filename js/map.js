@@ -42,7 +42,29 @@ function geocoder(){
 		e.preventDefault();
 		var geocodeValue = $( '#geocode-input' ).val();
 				
-		MQ.geocode({ map: map }).search( $( '#geocode-input' ).val() );
+		MQ.geocode({ map: map }).search( geocodeValue )
+			.on( 'success', function( e ){
+				var result;
+				
+				$.map( e.result.matches, function( v, i ){
+					if( historicTiles.options.bounds.contains( v.latlng ) ) {
+						result = v;
+					}
+				});
+				
+				if( result ) {
+					var latlng = result.latlng;
+					
+					map.setView( latlng, 16 );
+					
+					L.marker( [ latlng.lat, latlng.lng ] )
+						.addTo( map )
+						.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
+						.openPopup();
+				} else {
+					console.log( 'Nothing found' );
+				}
+			});
 	});
 	
 	$( '#geocode-input' ).keyup( function( e ) {
