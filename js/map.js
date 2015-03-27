@@ -26,6 +26,10 @@ function selectMap( id ){
 	} ).addTo(map);
 	
 	map.fitBounds( bounds );
+	
+	map.on( 'zoomend', function() {
+		console.log( map.getZoom() );
+	});
 }
 
 function showMap(){
@@ -42,7 +46,7 @@ function geocoder(){
 		e.preventDefault();
 		var geocodeValue = $( '#geocode-input' ).val();
 				
-		MQ.geocode({ map: map }).search( geocodeValue )
+		MQ.geocode().search( geocodeValue )
 			.on( 'success', function( e ){
 				var result;
 				
@@ -56,12 +60,12 @@ function geocoder(){
 				if( result ) {
 					var latlng = result.latlng;
 					
-					map.setView( latlng, 16 );
-					
 					L.marker( [ latlng.lat, latlng.lng ] )
 						.addTo( map )
 						.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
-						.openPopup();
+						.togglePopup();
+						
+					map.setView( latlng, 16 );
 				} else {
 					console.log( 'Nothing found' );
 				}
