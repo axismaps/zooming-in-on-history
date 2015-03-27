@@ -3,7 +3,7 @@ var map,
 	historicTiles;
 function createMap(){
 	map = L.map( "mapdiv" ).setView( [40,-80], 5 );
-	modernTiles = L.tileLayer( "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png" , { maxNativeZoom: 18, maxZoom: 21 }).addTo(map);
+	modernTiles = L.tileLayer( "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png" , { maxNativeZoom : 18, maxZoom : 21 }).addTo(map);
 }
 
 function selectMap( id ){
@@ -19,10 +19,10 @@ function selectMap( id ){
 	map.options.minZoom = ( mapData.MinZoom );
 	
 	historicTiles = L.tileLayer( "tiles/" + id + "/{z}/{x}/{y}.png", {
-		tms:true,
-		bounds: bounds,
-		maxZoom: mapData.MaxZoom,
-		maxNativeZoom: mapData.MaxZoom
+		tms : true,
+		bounds : bounds,
+		maxZoom : mapData.MaxZoom,
+		maxNativeZoom : mapData.MaxZoom
 	} ).addTo(map);
 	
 	map.fitBounds( bounds );
