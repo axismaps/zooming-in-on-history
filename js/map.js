@@ -16,8 +16,8 @@ function selectMap( id ){
 	];
 	map.setMaxBounds( bounds );
 	map.fitBounds( bounds );
-	map._layersMaxZoom = ( mapData.MaxZoom );
-	map._layersMinZoom = ( mapData.MinZoom );
+	map.maxZoom = ( mapData.MaxZoom );
+	map.minZoom = ( mapData.MinZoom );
 }
 
 function showMap(){
