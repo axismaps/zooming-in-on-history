@@ -15,7 +15,6 @@ function selectMap( id ){
 		[mapData.top, mapData.right]
 	];
 	map.setMaxBounds( bounds );
-	map.fitBounds( bounds );
 	map.options.maxZoom = ( mapData.MaxZoom );
 	map.options.minZoom = ( mapData.MinZoom );
 	
@@ -25,6 +24,8 @@ function selectMap( id ){
 		maxZoom: mapData.MaxZoom,
 		maxNativeZoom: mapData.MaxZoom
 	} ).addTo(map);
+	
+	map.fitBounds( bounds );
 }
 
 function showMap(){
