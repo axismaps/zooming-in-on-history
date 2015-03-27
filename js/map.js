@@ -44,4 +44,11 @@ function geocoder(){
 				
 		MQ.geocode({ map: map }).search( $( '#geocode-input' ).val() );
 	});
+	
+	$( '#geocode-input' ).keyup( function( e ) {
+		if( e.keyCode === 13) {
+			$( '#geocode-submit' ).click();
+			$( this ).blur();
+		}
+	});
 }
