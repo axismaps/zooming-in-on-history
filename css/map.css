@@ -3,11 +3,14 @@
 	height: 100%;
 }
 
-#geocode-input{
+#geocode{
 	position: absolute;
 	z-index: 1000;
 	right: 20px;
 	top: 80px;
-	line-height: 2;
 	width: 300px;
+}
+
+#geocode-input, #geocode-submit{
+	line-height: 2;
 }

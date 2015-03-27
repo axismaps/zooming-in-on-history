@@ -33,4 +33,15 @@ function showMap(){
 	map.invalidateSize();
 	$( "body" ).attr( "class", "map-screen" );
 	$( "#page-buttons" ).hide();
+	
+	geocoder();
+}
+
+function geocoder(){
+	$( '#geocode-submit' ).on( 'click', function( e ) {
+		e.preventDefault();
+		var geocodeValue = $( '#geocode-input' ).val();
+				
+		MQ.geocode({ map: map }).search( $( '#geocode-input' ).val() );
+	});
 }
