@@ -44,7 +44,7 @@ function geocoder(){
 		e.preventDefault();
 		var geocodeValue = $( '#geocode-input' ).val();
 		
-		geocodeResultLayer.clearLayers();
+		
 				
 		MQ.geocode().search( geocodeValue )
 			.on( 'success', function( e ){
@@ -58,6 +58,7 @@ function geocoder(){
 				});
 				
 				if( result ) {
+					geocodeResultLayer.clearLayers();
 					var latlng = result.latlng;
 					
 					L.marker( [ latlng.lat, latlng.lng ] )
