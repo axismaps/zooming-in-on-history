@@ -8,7 +8,7 @@ function createMap(){
 
 function selectMap( id ){
 	if ( historicTiles ) map.removeLayer( historicTiles );
-	historicTiles = L.tileLayer( "tiles/" + id + "/{z}/{x}/{y}.png", {tms:true} ).addTo(map);
+	
 	var mapData = maps[ id ];
 	var bounds = [ 
 		[mapData.bottom, mapData.left],
@@ -16,6 +16,12 @@ function selectMap( id ){
 	];
 	map.setMaxBounds( bounds );
 	map.fitBounds( bounds );
+	
+	historicTiles = L.tileLayer( "tiles/" + id + "/{z}/{x}/{y}.png", {
+		tms:true,
+		bounds: bounds
+	} ).addTo(map);
+	
 	map.options.maxZoom = ( mapData.MaxZoom );
 	map.options.minZoom = ( mapData.MinZoom );
 }
