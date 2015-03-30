@@ -71,6 +71,12 @@ html, body{
 	display: none;
 }
 
+#breadcrumbs div {
+	font-size: 20px;
+	display: inline-block;
+	margin: 15px;
+}
+
 #page-buttons{
 	position: absolute;
 	top:50%;
