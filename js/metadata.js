@@ -9,7 +9,7 @@ function showDetailsForMap( id, pageNav ){
 		.appendTo( $container );
 
 	$( "p", $card )
-		.html( "view map" );
+		.html( "<i class='fa fa-search-plus'></i> View the Map" );
 
 	var $text = $( "<p>" )
 		.html( maps[ id ].title + "<br>" + maps[ id ].author )
