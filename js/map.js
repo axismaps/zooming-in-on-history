@@ -81,6 +81,14 @@ function geocoder(){
 	});
 }
 
-function slider_init() {
-	$( '#transparency-slider' ).slider();
+function slider_init(){
+	$( '#transparency-slider' ).slider({
+		value: 100,
+		change: changeHistoricMapOpacity,
+		slide: changeHistoricMapOpacity
+	});
+}
+
+function changeHistoricMapOpacity(){
+	historicTiles.setOpacity( $( '#transparency-slider' ).slider( "value" ) / 100 );
 }
