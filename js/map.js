@@ -83,7 +83,7 @@ function geocoder(){
 
 function slider_init(){
 	$( '#transparency-slider' ).slider({
-		value: 100,
+		value: 0,
 		change: changeHistoricMapOpacity,
 		slide: changeHistoricMapOpacity
 	});
