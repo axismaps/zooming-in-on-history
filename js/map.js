@@ -38,6 +38,7 @@ function showMap(){
 	$( "#page-buttons" ).hide();
 	
 	geocoder();
+	slider_init();
 }
 
 function geocoder(){
@@ -78,4 +79,8 @@ function geocoder(){
 			$( this ).blur();
 		}
 	});
+}
+
+function slider_init() {
+	$( '#transparency-slider' ).slider();
 }

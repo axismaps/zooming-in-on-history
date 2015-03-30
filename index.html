@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
 		<link rel="stylesheet" href="bower_components/animate.css/animate.css" />
 		<link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
 		<link rel="stylesheet" href="css/layout.css" />
 		<link rel="stylesheet" href="css/home.css" />
 		<link rel="stylesheet" href="css/category.css" />
@@ -40,9 +41,12 @@
 		</div>
 
 		<div id="map" class="screen">
-			<div id="geocode">
-				<input id="geocode-input" type="text" placeholder="Geocoder input"></input>
-				<button id="geocode-submit" type="submit">Go</button>
+			<div id="interaction-elements">
+				<div id="geocode">
+					<input id="geocode-input" type="text" placeholder="Geocoder input"></input>
+					<button id="geocode-submit" type="submit">Go</button>
+				</div>
+				<div id="transparency-slider"></div>
 			</div>
 			<div id="mapdiv"></div>
 		</div>
@@ -54,6 +58,7 @@
 		
 		<!-- build:js js/site.js -->
 		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/jquery-ui/jquery-ui.js"></script>
 		<script src="bower_components/leaflet/dist/leaflet-src.js"></script>
 		<script src="bower_components/papa-parse/papaparse.js"></script>
 		<script src="bower_components/underscore/underscore-min.js"></script>

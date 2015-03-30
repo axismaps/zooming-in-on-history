@@ -4,14 +4,23 @@
 	color: #000;
 }
 
-#geocode{
+#interaction-elements{
 	position: absolute;
 	z-index: 1000;
 	right: 20px;
 	top: 80px;
+}
+
+#geocode{
 	width: 300px;
+	display: inline-block;
 }
 
 #geocode-input, #geocode-submit{
 	line-height: 2;
+}
+
+#transparency-slider {
+	width: 200px;
+	display: inline-block;
 }
