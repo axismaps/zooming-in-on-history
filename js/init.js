@@ -34,7 +34,7 @@ function changeScreens( $from, $to ){
 
 function addBreadcrumb( title, level ){
 	var bc = $( '#breadcrumbs' ),
-		titleId = title.replace(/\s+/g, '-').toLowerCase() + '-button';
+		titleId = sanitize( title ) + '-button';
 	bc.append( '<div id="' + titleId + '">' + title + '</div>' );
 	
 	$( '#' + titleId ).on( 'click', function() {
@@ -50,4 +50,8 @@ function addBreadcrumb( title, level ){
 			$( "#page-buttons" ).hide();
 		}
 	});
+}
+
+function sanitize( word ){
+	return word.replace(/\s+/g, '-').replace(/[^a-zA-Z-]/g, '').toLowerCase();
 }
