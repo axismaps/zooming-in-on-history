@@ -47,13 +47,15 @@ function addBreadcrumb( title, level ){
 	
 	$( '#' + titleId ).on( 'click', function() {
 		console.log( titleId +	' was clicked' );
+		if( $( this ).next().length > 0 ) {
 		
-		this.nextAll().remove();
-		
-		var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
-		changeScreens( $( "#" + current ), $( "#" + level ) );
-		$( "body" ).attr( "class", level + "-screen" );
-		
-		$( "#page-buttons" ).hide();
+			$( this ).nextAll().remove();
+			
+			var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
+			changeScreens( $( "#" + current ), $( "#" + level ) );
+			$( "body" ).attr( "class", level + "-screen" );
+			
+			$( "#page-buttons" ).hide();
+		}
 	});
 }
