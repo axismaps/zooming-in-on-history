@@ -6,6 +6,7 @@
     "jquery": "~2.1.3",
     "animate.css": "~3.2.5",
     "papa-parse": "~4.1.0",
-    "underscore": "~1.7.0"
+    "underscore": "~1.7.0",
+	"fontawesome": "~4.3.0"
   }
 }
