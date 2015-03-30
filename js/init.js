@@ -48,6 +48,8 @@ function addBreadcrumb( title, level ){
 	$( '#' + titleId ).on( 'click', function() {
 		console.log( titleId +	' was clicked' );
 		
+		this.nextAll().remove();
+		
 		var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
 		changeScreens( $( "#" + current ), $( "#" + level ) );
 		$( "body" ).attr( "class", level + "-screen" );
