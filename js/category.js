@@ -8,6 +8,7 @@ function selectCategory( id ){
 	$( "#category .title" ).html( categories[ id ].name );
 	showMapsInCategory( id );
 	changeScreens( $( "#home" ), $( "#category" ) );
+	addBreadcrumb( $( "#category .title" ).text() );
 }
 
 function showMapsInCategory( id ){

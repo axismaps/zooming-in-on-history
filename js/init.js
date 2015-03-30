@@ -31,3 +31,8 @@ function changeScreens( $from, $to ){
 		$from.hide();
 	},1000);
 }
+
+function addBreadcrumb( title ){
+	var bc = $( '#breadcrumbs' );
+	bc.append( '<div id="' + title + '-button">' + title + '</div>' );
+}
