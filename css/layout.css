@@ -79,8 +79,12 @@ html, body{
 
 #breadcrumbs #category-button, 
 #breadcrumbs #metadata-button, 
-#breadcrumbs #map-viwer-button {
+#breadcrumbs #map-button {
 	display: none;
+}
+
+#breadcrumbs i {
+	margin-right: 10px;
 }
 
 #page-buttons{
