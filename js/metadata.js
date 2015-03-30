@@ -6,7 +6,7 @@ function showDetailsForMap( id, pageNav ){
 			showMap();
 			selectMap( id );
 		})
-		.appendTo( $container )
+		.appendTo( $container );
 
 	$( "p", $card )
 		.html( "view map" );
@@ -40,7 +40,8 @@ function showDetailsForMap( id, pageNav ){
 	}
 	$( "body" ).attr( "class", "metadata-screen" );		
 
-	$( "#metadata h1" ).html( maps[ id ].title );
+	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 50 });
+	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
 
 	$( "#page-buttons" ).show();
 	$( "#page-buttons div" ).off( "click" );
