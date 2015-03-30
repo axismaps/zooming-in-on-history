@@ -39,6 +39,7 @@ function showMapsInCategory( id ){
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", colors[i] )
 			.appendTo( $div );
+		$( ".map-card p" ).succinct({ size: 70 });
 		index++;
 	});
 	page = 1;

@@ -8,6 +8,7 @@
     "animate.css": "~3.2.5",
     "papa-parse": "~4.1.0",
     "underscore": "~1.7.0",
-	"fontawesome": "~4.3.0"
+	"fontawesome": "~4.3.0",
+	"succinct": "~1.1.0"
   }
 }
