@@ -72,9 +72,15 @@ html, body{
 }
 
 #breadcrumbs div {
-	font-size: 20px;
 	display: inline-block;
+	font-size: 20px;
 	margin: 15px;
+}
+
+#breadcrumbs #category-button, 
+#breadcrumbs #metadata-button, 
+#breadcrumbs #map-viwer-button {
+	display: none;
 }
 
 #page-buttons{

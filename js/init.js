@@ -34,14 +34,14 @@ function changeScreens( $from, $to ){
 
 function addBreadcrumb( title, level ){
 	var bc = $( '#breadcrumbs' ),
-		titleId = sanitize( title ) + '-button';
-	bc.append( '<div id="' + titleId + '">' + title + '</div>' );
-	
-	$( '#' + titleId ).on( 'click', function() {
-		console.log( titleId +	' was clicked' );
-		if( $( this ).next().length > 0 ) {
+		id = '#' + level + '-button';
 		
-			$( this ).nextAll().remove();
+	bc.children( id ).css( 'display', 'inline-block' ).children( 'span' ).text( title );
+	
+	$( id ).on( 'click', function() {
+		if( id != '#map-button' && $( this ).next( ':hidden' ).length == 0 ) {
+			
+			$( this ).nextAll().hide();
 			
 			var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
 			changeScreens( $( "#" + current ), $( "#" + level ) );
