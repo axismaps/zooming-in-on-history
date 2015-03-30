@@ -11,7 +11,6 @@ function initialize(){
 }
 
 function createEvents(){
-	// $( "#home-button" ).click( showHome );
 	$( ".screen" ).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 		$(this).removeClass( "fadeIn" );
 	});
@@ -31,13 +30,6 @@ function changeScreens( $from, $to ){
 	setTimeout( function(){
 		$from.hide();
 	},1000);
-}
-
-function showHome(){
-	var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
-	changeScreens( $( "#" + current ), $( "#home" ) );
-	$( "body" ).attr( "class", "home-screen" );
-	$( "#page-buttons" ).hide();
 }
 
 function addBreadcrumb( title, level ){
