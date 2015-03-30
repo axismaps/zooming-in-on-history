@@ -35,11 +35,12 @@ function showMapsInCategory( id ){
 			.click( function(){
 				showDetailsForMap( m.number );
 			})
-
+		
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", colors[i] )
 			.appendTo( $div )
-			.succinct({ size: 70 });
+			.succinct({ size: 65 });
+		$( ".map-card:last p" ).append( " <span>(" + m.date + ")</span>" );
 		index++;
 	});
 	page = 1;
