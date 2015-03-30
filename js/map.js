@@ -90,5 +90,5 @@ function slider_init(){
 }
 
 function changeHistoricMapOpacity(){
-	historicTiles.setOpacity( $( '#transparency-slider' ).slider( "value" ) / 100 );
+	historicTiles.setOpacity( ( 100 - $( '#transparency-slider' ).slider( "value" ) ) / 100 );
 }
