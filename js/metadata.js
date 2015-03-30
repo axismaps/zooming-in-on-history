@@ -20,6 +20,7 @@ function showDetailsForMap( id, pageNav ){
 		$( "#metadata" ).append( $container );
 		changeScreens( $("#category"), $( "#metadata" ) );
 		$card.addClass( "animated bounceInDown" )
+		addBreadcrumb( maps[ id ].title, "metadata" );
 	} else {
 		var $old = $( "#metadata > div" );
 		$container
