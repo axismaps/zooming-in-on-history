@@ -9,6 +9,7 @@ function selectCategory( id ){
 	showMapsInCategory( id );
 	changeScreens( $( "#home" ), $( "#category" ) );
 	addBreadcrumb( $( "#category .title" ).text(), "category" );
+	$( '#screen-top-border' ).show().css( "background-color", colors[0] );
 }
 
 function showMapsInCategory( id ){

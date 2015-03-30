@@ -4,6 +4,12 @@ html, body{
 	margin: 0;
 }
 
+#screen-top-border{
+	background-color: #fff;
+	height: 10px;
+	width: 100%;
+}
+
 .screen{
 	position: absolute;
 	top: 0;
