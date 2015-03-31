@@ -9,8 +9,13 @@ function createCategories(){
 			.attr( "id", cat.id )
 			.click( function(){
   			  $( this ).siblings().css( "opacity", 0 );
-  			  $( this ).addClass( "animated bounceOut" );
-				selectCategory( cat.id );
+  			  $( this )
+  			    .addClass( "animated bounceOut" )
+          .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $( this ).siblings().css( "opacity", 1 );
+            $( "#home" ).hide();
+            selectCategory( cat.id );
+          })
 			});
 
 		$( "<div><p>" + cat.name + "</p></div>" )

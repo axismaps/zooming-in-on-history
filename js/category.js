@@ -4,10 +4,10 @@ var selectedCategory,
 
 function selectCategory( id ){
 	$( "body" ).attr( "class", "category-screen" );
+	$( "#category" ).show();
 	selectedCategory = id;
 	$( "#category .title" ).html( categories[ id ].name );
 	showMapsInCategory( id );
-	changeScreens( $( "#home" ), $( "#category" ), "bounceOut", "bounceIn" );
 	addBreadcrumb( $( "#category .title" ).text(), "category" );
 	$( '#screen-top-border' ).show().css( "background-color", colors[0] );
 }
@@ -33,9 +33,16 @@ function showMapsInCategory( id ){
 		var $div = $( "<div>" ).appendTo( "#page" + pageCount )
 			.attr( "class", "map-card card page" + pageCount )
 			.attr( "id", "map" + m.number )
+			.css( "opacity", 0 )
 			.click( function(){
 				showDetailsForMap( m.number );
 			})
+			
+		setTimeout( function() {
+  		  $div
+  		    .css( "opacity", 1 )
+  		    .addClass( "animated bounceIn" );
+  		}, index * 100 )
 		
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", colors[i] )
