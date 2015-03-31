@@ -42,6 +42,13 @@ function showMap(){
 }
 
 function geocoder(){
+	$( '#find-your-city-button' ).on( 'click', function( e ) {
+		e.preventDefault();
+		$( this ).hide();
+		
+		$( '#geocode' ).show();
+	});
+	
 	$( '#geocode-submit' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var geocodeValue = $( '#geocode-input' ).val();

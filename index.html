@@ -44,9 +44,12 @@
 
 		<div id="map" class="screen">
 			<div id="interaction-elements">
-				<div id="geocode">
-					<input id="geocode-input" type="text" placeholder="Geocoder input"></input>
-					<button id="geocode-submit" type="submit">Go</button>
+				<div id="geocoder-section">
+					<button id="find-your-city-button" type="submit"><i class="fa fa-search"></i>Find your city</button>
+					<div id="geocode" style="display: none">
+						<input id="geocode-input" type="text" placeholder="Geocoder input"></input>
+						<button id="geocode-submit" type="submit">Go</button>
+					</div>
 				</div>
 				<span id="past">PAST</span>
 				<div id="transparency-slider"></div>

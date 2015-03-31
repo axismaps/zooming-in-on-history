@@ -13,9 +13,12 @@
 	padding: 20px;
 }
 
+#geocoder-section{
+	display: inline-block;
+}
+
 #geocode{
 	width: 300px;
-	display: inline-block;
 }
 
 #geocode-input, #geocode-submit{
