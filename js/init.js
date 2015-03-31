@@ -24,11 +24,15 @@ function getURLParameters(){
 	params.categories = params.categories.split(",");
 }
 
-function changeScreens( $from, $to ){
-	$from.addClass( "animated fadeOut" );
-	$to.show().removeClass( "fadeOut" ).addClass( "animated fadeIn" );
+function changeScreens( $from, $to, transitionOut, transitionIn ){
+	$from
+	  .addClass( "animated " + transitionOut )
+	  .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+      $to.show().addClass( "animated " + transitionIn );
+    })
 	setTimeout( function(){
-		$from.hide();
+		$to.removeClass( "animated " + transitionIn );
+		$from.removeClass( "animated " + transitionOut ).hide();
 	},1000);
 }
 

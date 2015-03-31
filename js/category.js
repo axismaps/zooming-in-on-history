@@ -7,7 +7,7 @@ function selectCategory( id ){
 	selectedCategory = id;
 	$( "#category .title" ).html( categories[ id ].name );
 	showMapsInCategory( id );
-	changeScreens( $( "#home" ), $( "#category" ) );
+	changeScreens( $( "#home" ), $( "#category" ), "bounceOut", "bounceIn" );
 	addBreadcrumb( $( "#category .title" ).text(), "category" );
 	$( '#screen-top-border' ).show().css( "background-color", colors[0] );
 }
