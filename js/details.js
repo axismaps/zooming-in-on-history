@@ -8,6 +8,7 @@ function showDetailsList( map_id ){
 		_.each( detailList, function(d){
 			var container = $( "<div>" )
 				.attr( "class", "detail" )
+				.css( "background-image", "url(data/img/details/thumbnails/" + d.detail_num + ".jpg)" )
 				.click( function(){
 					showDetail( d );
 				});
