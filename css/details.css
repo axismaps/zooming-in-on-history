@@ -29,3 +29,27 @@
 	background-color: #ccc;
 	margin: auto;
 }
+
+#detail-single{
+	text-align: left;
+}
+#detail-single h3{
+	margin: 0 15px 15px 15px;
+}
+#detail-single p{
+	margin: 15px;
+	text-align: left;
+}
+#detail-single img{
+	max-width: 285px;
+	margin-left: 15px;
+}
+
+#detail-back{
+	display: inline-block;
+	border-radius: 5px;
+	padding: 10px 15px;
+	margin: 15px;
+	background-color: #ccc;
+	cursor: pointer;
+}

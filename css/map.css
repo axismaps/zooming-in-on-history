@@ -27,3 +27,7 @@
 	display: inline-block;
 	margin: 0 10px;
 }
+
+#details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{
+	left: 315px;
+}

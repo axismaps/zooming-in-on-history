@@ -1,18 +1,17 @@
 function showDetailsList( map_id ){
-	var $panel = $( "#details-panel" );
-	$panel.empty();
+	var $panel = $( "#details-list" ).empty().show();
+	$( "#detail-single" ).hide();
 	var detailList = _.filter( details, function(d){ return d.map == map_id } );
 	if ( detailList.length ){
-		$panel.attr( "class", "show" );
+		$( "#details-panel" ).attr( "class", "show" );
 		_.each( detailList, function(d){
 			var container = $( "<div>" )
 				.attr( "class", "detail" )
 				.click( function(){
-					map.setView( [d.lat,d.lon], map.getMaxZoom() )
+					showDetail( d );
 				});
 			$( "<div>" )
 				.attr( "class", "detail-thumb" )
-				.css( "background-image", "url(data/img/" + d.image_num + ")")
 				.appendTo( container );
 			$( "<p>" )
 				.html( d.title )
@@ -21,6 +20,17 @@ function showDetailsList( map_id ){
 			$panel.append( container );
 		});
 	} else {
-		$panel.attr( "class", "hide" );
+		$( "#details-panel" ).attr( "class", "hide" );
 	}
+}
+
+function showDetail( d ){
+	map.setView( [d.lat,d.lon], map.getMaxZoom() );
+	$( "#details-list" ).hide();
+	$( "#detail-single" ).show();
+
+	$( "#detail-single img" ).remove();
+	$( "#detail-single h3" ).html( d.title );
+	$( "#detail-single p" ).html( d.caption );
+	if ( d.image_num ) $( "#detail-single" ).append( "<img src='data/img/" + d.image_num + "'/>" );
 }
