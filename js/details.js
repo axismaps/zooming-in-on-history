@@ -4,6 +4,7 @@ function showDetailsList( map_id ){
 	var detailList = _.filter( details, function(d){ return d.map == map_id } );
 	if ( detailList.length ){
 		$( "#details-panel" ).attr( "class", "show" );
+		$panel.append( "<h3>SELECT A MAP DETAIL:</h3>" );
 		_.each( detailList, function(d){
 			var container = $( "<div>" )
 				.attr( "class", "detail" )
