@@ -1,4 +1,7 @@
+var currentMap;
+
 function showDetailsForMap( id, pageNav ){
+	currentMap = id;
 	var $container = $( "<div>" ).attr( "class", "container" );
 	var $card = $( "#map" + id ).clone()
 		.removeClass( "map-card" )
@@ -37,22 +40,10 @@ function showDetailsForMap( id, pageNav ){
 			$container.addClass( "animated fadeInLeft" );
 		}
 	}
+	addBreadcrumb( maps[ id ].title, "metadata" );
 	$( "body" ).attr( "class", "metadata-screen" );		
 
 	$( "#metadata h1" ).html( maps[ id ].title );
 
-	$( "#page-buttons" ).show();
-	$( "#page-buttons div" ).off( "click" );
-	$( "#prev-page" ).on( "click", function(){
-		var cat = categories[ maps[ id ].category ],
-			index = cat.maps.indexOf( id );
-		if ( index == 0 ) return;
-		showDetailsForMap( cat.maps[ index - 1 ], "prev" );
-	});
-	$( "#next-page" ).on( "click", function(){
-		var cat = categories[ maps[ id ].category ],
-			index = cat.maps.indexOf( id );
-		if ( index == cat.maps.length - 1 ) return;
-		showDetailsForMap( cat.maps[ index + 1 ], "next" );
-	});
+	pageButtonsForScreen( "metadata" );
 }
