@@ -43,16 +43,7 @@ function showMapsInCategory( id ){
 	});
 	page = 1;
 	$( "#page1" ).show();
-	if ( pageCount > 1 ){
-		$( "#page-buttons" ).show();
-		$( "#page-buttons div" ).off( "click" );
-		$( "#prev-page" ).on( "click", function(){
-			showPage( page - 1 );
-		});
-		$( "#next-page" ).on( "click", function(){
-			showPage( page + 1 );
-		});
-	}
+	pageButtonsForScreen( "category" );
 }
 
 function showPage( newPage ){
