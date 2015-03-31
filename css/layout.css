@@ -10,6 +10,10 @@ html, body{
 	width: 100%;
 }
 
+.home-screen #screen-top-border{
+	display: none !important;
+}
+
 .screen{
 	position: absolute;
 	top: 0;
