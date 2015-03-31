@@ -40,17 +40,19 @@ function showMapsInCategory( id ){
 			.click( function(){
 				showDetailsForMap( m.number );
 			})
-			
+		
+		//Sets bounce in transition
 		setTimeout( function() {
   		  $div
   		    .css( "opacity", 1 )
   		    .addClass( "animated bounceIn" );
-  		  
-  		  setTimeout( function() {
+  		}, index * 100 );
+  		
+  		//Sets staggered start time for map panning animation
+  		setTimeout( function() {
     		  $div.removeClass( "animated bounceIn" );
     		  $div.attr( "class", $div.attr( "class" ).replace( "pre-", "map-" ) );
-    		}, 750 );
-  		}, index * 100 )
+    		}, 2000 + index * 1000 );
 		
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", colors[i] )
