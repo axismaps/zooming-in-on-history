@@ -36,6 +36,10 @@
 		</div>
 
 		<div id="map" class="screen">
+			<div id="geocode">
+				<input id="geocode-input" type="text" placeholder="Geocoder input"></input>
+				<button id="geocode-submit" type="submit">Go</button>
+			</div>
 			<div id="mapdiv"></div>
 		</div>
 
@@ -49,6 +53,9 @@
 		<script src="bower_components/leaflet/dist/leaflet-src.js"></script>
 		<script src="bower_components/papa-parse/papaparse.js"></script>
 		<script src="bower_components/underscore/underscore-min.js"></script>
+		
+		<script src="http://open.mapquestapi.com/sdk/leaflet/v1.s/mq-map.js?key=Fmjtd%7Cluu82l0r2h%2Cbw%3Do5-94zxuf"></script>
+		<script src="http://open.mapquestapi.com/sdk/leaflet/v1.s/mq-geocoding.js?key=Fmjtd%7Cluu82l0r2h%2Cbw%3Do5-94zxuf"></script>
 
 		<script src="js/data.js"></script>
 		<script src="js/home.js"></script>

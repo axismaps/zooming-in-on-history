@@ -1,4 +1,17 @@
 #mapdiv{
 	width: 100%;
 	height: 100%;
+	color: #000;
+}
+
+#geocode{
+	position: absolute;
+	z-index: 1000;
+	right: 20px;
+	top: 80px;
+	width: 300px;
+}
+
+#geocode-input, #geocode-submit{
+	line-height: 2;
 }
