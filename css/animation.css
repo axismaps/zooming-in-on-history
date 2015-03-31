@@ -75,25 +75,25 @@
 }
 
 .map-animated1{
-  -webkit-animation: animatedBackground1 50s linear infinite;
-  -moz-animation: animatedBackground1 50s linear infinite;
-  -o-animation: animatedBackground1 50s linear infinite;
+  -webkit-animation: animatedBackground1 100s linear infinite;
+  -moz-animation: animatedBackground1 100s linear infinite;
+  -o-animation: animatedBackground1 100s linear infinite;
 }
 
 .map-animated2{
-  -webkit-animation: animatedBackground2 50s linear infinite;
-  -moz-animation: animatedBackground2 50s linear infinite;
-  -o-animation: animatedBackground2 50s linear infinite;
+  -webkit-animation: animatedBackground2 100s linear infinite;
+  -moz-animation: animatedBackground2 100s linear infinite;
+  -o-animation: animatedBackground2 100s linear infinite;
 }
 
 .map-animated3{
-  -webkit-animation: animatedBackground3 50s linear infinite;
-  -moz-animation: animatedBackground3 50s linear infinite;
-  -o-animation: animatedBackground3 50s linear infinite;
+  -webkit-animation: animatedBackground3 100s linear infinite;
+  -moz-animation: animatedBackground3 100s linear infinite;
+  -o-animation: animatedBackground3 100s linear infinite;
 }
 
 .map-animated4{
-  -webkit-animation: animatedBackground4 50s linear infinite;
-  -moz-animation: animatedBackground4 50s linear infinite;
-  -o-animation: animatedBackground4 50s linear infinite;
+  -webkit-animation: animatedBackground4 100s linear infinite;
+  -moz-animation: animatedBackground4 100s linear infinite;
+  -o-animation: animatedBackground4 100s linear infinite;
 }
