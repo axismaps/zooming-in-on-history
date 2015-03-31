@@ -1,4 +1,3 @@
-var colors = ["#841f21","#0a5e85","#66a61e","#a6761d"];	// temporary
 function createCategories(){
 	var $categoriesDiv = $( "#categories" );
 	
@@ -14,7 +13,7 @@ function createCategories(){
 				$(this).removeClass( "animated" ).removeClass( "bounce" ).removeClass( "bounceInDown" );
 			});
 		$( "<div><p>" + cat.name + "</p></div>" )
-			.css( "border-top-color", colors[i] )
+			.css( "border-top-color", cat.color )
 			.appendTo( $div );
 
 		var animCount = 1;
