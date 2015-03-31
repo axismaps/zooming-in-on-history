@@ -8,11 +8,9 @@ function createCategories(){
 			.attr( "class", "category card " + cat.id  )
 			.attr( "id", cat.id )
 			.click( function(){
-  			  $( this ).siblings().css( "opacity", 0 );
   			  $( this )
   			    .addClass( "animated bounceOut" )
           .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-            $( this ).siblings().css( "opacity", 1 );
             $( "#home" ).hide();
             selectCategory( cat.id );
           })
