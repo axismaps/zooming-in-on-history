@@ -12,6 +12,10 @@ function showDetailsList( map_id ){
 				});
 			$( "<div>" )
 				.attr( "class", "detail-thumb" )
+				.append( 
+					$("<div><i class='fa fa-search-plus'></i></div>")
+						.css( "background-color", categories[ selectedCategory ].color )
+				)
 				.appendTo( container );
 			$( "<p>" )
 				.html( d.title )
@@ -32,5 +36,5 @@ function showDetail( d ){
 	$( "#detail-single img" ).remove();
 	$( "#detail-single h3" ).html( d.title );
 	$( "#detail-single p" ).html( d.caption );
-	if ( d.image_num ) $( "#detail-single" ).append( "<img src='data/img/" + d.image_num + "'/>" );
+	if ( d.image_num ) $( "#detail-single" ).append( "<img src='data/img/details/" + d.image_num + "'/>" );
 }

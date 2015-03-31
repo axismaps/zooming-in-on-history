@@ -1,5 +1,5 @@
 #details-panel{
-	background-color: rgba(0, 0, 0, 0.5);
+	background-color: rgba(0, 0, 0, 0.75);
 	height: 100%;
 	width: 315px;
 	position: absolute;
@@ -16,6 +16,7 @@
 
 .detail{
 	margin: 20px 0;
+	cursor: pointer;
 }
 
 .detail p{
@@ -28,6 +29,18 @@
 	border-radius: 50%;
 	background-color: #ccc;
 	margin: auto;
+	position: relative;
+	overflow: hidden;
+}
+.detail-thumb div{
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	height: 60px;
+	line-height: 60px;
+	opacity: .5;
+	width: 100%;
+	font-size: 24px;
 }
 
 #detail-single{
@@ -35,6 +48,7 @@
 }
 #detail-single h3{
 	margin: 0 15px 15px 15px;
+	font-size: 24px;
 }
 #detail-single p{
 	margin: 15px;
@@ -47,9 +61,10 @@
 
 #detail-back{
 	display: inline-block;
-	border-radius: 5px;
-	padding: 10px 15px;
+	border-radius: 10px;
+	padding: 10px 25px;
 	margin: 15px;
 	background-color: #ccc;
 	cursor: pointer;
+	font-size: 18px;
 }
