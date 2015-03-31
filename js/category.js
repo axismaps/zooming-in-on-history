@@ -33,7 +33,10 @@ function showMapsInCategory( id ){
 		var $div = $( "<div>" ).appendTo( "#page" + pageCount )
 			.attr( "class", "map-card card page" + pageCount )
 			.attr( "id", "map" + m.number )
-			.css( "opacity", 0 )
+			.css({
+  			  "background-image" : "url( data/img/thumbnails/" + m.number + ".jpg )",
+  			  "opacity" : 0 
+  		  })
 			.click( function(){
 				showDetailsForMap( m.number );
 			})
