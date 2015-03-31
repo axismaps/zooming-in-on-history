@@ -9,6 +9,7 @@ function selectCategory( id ){
 	showMapsInCategory( id );
 	changeScreens( $( "#home" ), $( "#category" ) );
 	addBreadcrumb( $( "#category .title" ).text(), "category" );
+	$( '#screen-top-border' ).show().css( "background-color", colors[0] );
 }
 
 function showMapsInCategory( id ){
@@ -35,10 +36,12 @@ function showMapsInCategory( id ){
 			.click( function(){
 				showDetailsForMap( m.number );
 			})
-
+		
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", colors[i] )
-			.appendTo( $div );
+			.appendTo( $div )
+			.succinct({ size: 65 });
+		$( ".map-card:last p" ).append( " <span>(" + m.date + ")</span>" );
 		index++;
 	});
 	page = 1;

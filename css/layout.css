@@ -4,6 +4,16 @@ html, body{
 	margin: 0;
 }
 
+#screen-top-border{
+	background-color: #fff;
+	height: 10px;
+	width: 100%;
+}
+
+.home-screen #screen-top-border{
+	display: none !important;
+}
+
 .screen{
 	position: absolute;
 	top: 0;
@@ -75,13 +85,6 @@ html, body{
 	display: inline-block;
 	font-size: 20px;
 	margin: 15px;
-	text-overflow: ellipsis;
-	overflow: hidden;
-	white-space: nowrap;
-}
-
-#breadcrumbs #metadata-button {
-	width: 50%;
 }
 
 #breadcrumbs #category-button, 
