@@ -56,6 +56,7 @@ function geocoder(){
 		$( '#transparency-div' ).show();
 		$( '#geocode' ).hide();
 		$( '#find-your-city-button' ).show();
+		$( '#no-location-found' ).html('');
 		
 		geocodeResultLayer.clearLayers();
 	});
@@ -67,6 +68,7 @@ function geocoder(){
 		MQ.geocode().search( geocodeValue )
 			.on( 'success', function( e ){
 				var result;
+				$( '#no-location-found' ).html('');
 				
 				$.map( e.result.matches.reverse(), function( v, i ){
 					if( historicTiles.options.bounds.contains( v.latlng ) ) {
@@ -86,7 +88,7 @@ function geocoder(){
 						
 					map.fitBounds( historicTiles.options.bounds );
 				} else {
-					console.log( 'Nothing found' );
+					$( '#no-location-found' ).html( '<i class="fa fa-exclamation-triangle"></i> No location found in the map bounds.' );
 				}
 			});
 	});
