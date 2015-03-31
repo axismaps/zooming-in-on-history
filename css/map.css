@@ -19,14 +19,23 @@
 
 #geocode{
 	width: 300px;
+	display: inline-block;
 }
 
 #geocode-input, #geocode-submit{
 	line-height: 2;
 }
 
-#transparency-slider {
-	width: 200px;
+#geocoder-close-button{
 	display: inline-block;
+}
+
+#transparency-div{
+	display: inline-block;
+}
+
+#transparency-slider{
+	display: inline-block;
+	width: 200px;
 	margin: 0 10px;
 }

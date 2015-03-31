@@ -45,8 +45,17 @@ function geocoder(){
 	$( '#find-your-city-button' ).on( 'click', function( e ) {
 		e.preventDefault();
 		$( this ).hide();
-		
+		$( '#transparency-div' ).hide();
 		$( '#geocode' ).show();
+		$( '#geocoder-close-button' ).show();
+	});
+	
+	$( '#geocoder-close-button' ).on( 'click', function( e ) {
+		e.preventDefault();
+		$( this ).hide();
+		$( '#transparency-div' ).show();
+		$( '#geocode' ).hide();
+		$( '#find-your-city-button' ).show();
 	});
 	
 	$( '#geocode-submit' ).on( 'click', function( e ) {
