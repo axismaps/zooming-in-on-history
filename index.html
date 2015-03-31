@@ -8,6 +8,7 @@
 		<link rel="stylesheet" href="bower_components/leaflet/dist/leaflet.css" />
 		<link rel="stylesheet" href="bower_components/animate.css/animate.css" />
 		<link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" />
+		<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
 		<link rel="stylesheet" href="css/layout.css" />
 		<link rel="stylesheet" href="css/home.css" />
 		<link rel="stylesheet" href="css/category.css" />
@@ -16,6 +17,8 @@
 		<!-- endbuild -->
 	</head>
 	<body class="home-screen">
+	
+		<div id="screen-top-border" style="display:none"></div>
 
 		<div id="breadcrumbs">
 			<div id="home-button"><i class="fa fa-home fa-2x"></i><span></span></div>
@@ -40,9 +43,14 @@
 		</div>
 
 		<div id="map" class="screen">
-			<div id="geocode">
-				<input id="geocode-input" type="text" placeholder="Geocoder input"></input>
-				<button id="geocode-submit" type="submit">Go</button>
+			<div id="interaction-elements">
+				<div id="geocode">
+					<input id="geocode-input" type="text" placeholder="Geocoder input"></input>
+					<button id="geocode-submit" type="submit">Go</button>
+				</div>
+				<span id="past">PAST</span>
+				<div id="transparency-slider"></div>
+				<span id="past">PRESENT</span>
 			</div>
 			<div id="mapdiv"></div>
 		</div>
@@ -54,9 +62,11 @@
 		
 		<!-- build:js js/site.js -->
 		<script src="bower_components/jquery/dist/jquery.js"></script>
+		<script src="bower_components/jquery-ui/jquery-ui.js"></script>
 		<script src="bower_components/leaflet/dist/leaflet-src.js"></script>
 		<script src="bower_components/papa-parse/papaparse.js"></script>
 		<script src="bower_components/underscore/underscore-min.js"></script>
+		<script src="bower_components/succinct/jQuery.succinct.js"></script>
 		
 		<script src="http://open.mapquestapi.com/sdk/leaflet/v1.s/mq-map.js?key=Fmjtd%7Cluu82l0r2h%2Cbw%3Do5-94zxuf"></script>
 		<script src="http://open.mapquestapi.com/sdk/leaflet/v1.s/mq-geocoding.js?key=Fmjtd%7Cluu82l0r2h%2Cbw%3Do5-94zxuf"></script>

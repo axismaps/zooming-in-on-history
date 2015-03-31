@@ -70,7 +70,7 @@ function addBreadcrumb( title, level ){
 	var bc = $( '#breadcrumbs' ),
 		id = '#' + level + '-button';
 		
-	bc.children( id ).css( 'display', 'inline-block' ).children( 'span' ).text( title );
+	bc.children( id ).css( 'display', 'inline-block' ).children( 'span' ).text( title ).succinct({ size: 70 });
 	
 	$( id ).on( 'click', function() {
 		if( id != '#map-button' && $( this ).next( ':hidden' ).length == 0 ) {

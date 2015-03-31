@@ -9,10 +9,10 @@ function showDetailsForMap( id, pageNav ){
 			showMap();
 			selectMap( id );
 		})
-		.appendTo( $container )
+		.appendTo( $container );
 
 	$( "p", $card )
-		.html( "view map" );
+		.html( "<i class='fa fa-search-plus'></i> View the Map" );
 
 	var $text = $( "<p>" )
 		.html( maps[ id ].title + "<br>" + maps[ id ].author )
@@ -43,7 +43,8 @@ function showDetailsForMap( id, pageNav ){
 	addBreadcrumb( maps[ id ].title, "metadata" );
 	$( "body" ).attr( "class", "metadata-screen" );		
 
-	$( "#metadata h1" ).html( maps[ id ].title );
+	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 50 });
+	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
 
 	pageButtonsForScreen( "metadata" );
 }

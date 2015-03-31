@@ -38,6 +38,7 @@ function showMap(){
 	$( "#page-buttons" ).hide();
 	
 	geocoder();
+	slider_init();
 }
 
 function geocoder(){
@@ -78,4 +79,16 @@ function geocoder(){
 			$( this ).blur();
 		}
 	});
+}
+
+function slider_init(){
+	$( '#transparency-slider' ).slider({
+		value: 0,
+		change: changeHistoricMapOpacity,
+		slide: changeHistoricMapOpacity
+	});
+}
+
+function changeHistoricMapOpacity(){
+	historicTiles.setOpacity( ( 100 - $( '#transparency-slider' ).slider( "value" ) ) / 100 );
 }
