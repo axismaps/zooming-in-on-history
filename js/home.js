@@ -32,10 +32,3 @@ function createCategories(){
 		},i*1000)
 	});	
 }
-
-function showHome(){
-	var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
-	changeScreens( $( "#" + current ), $( "#home" ) );
-	$( "body" ).attr( "class", "home-screen" );
-	$( "#page-buttons" ).hide();
-}

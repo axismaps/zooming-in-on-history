@@ -32,6 +32,7 @@ function selectMap( id ){
 
 function showMap(){
 	changeScreens( $( "#metadata" ), $( "#map" ) );
+	addBreadcrumb( 'Map Viewer', 'map' );
 	map.invalidateSize();
 	$( "body" ).attr( "class", "map-screen" );
 	$( "#page-buttons" ).hide();
