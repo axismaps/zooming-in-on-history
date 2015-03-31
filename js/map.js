@@ -56,6 +56,8 @@ function geocoder(){
 		$( '#transparency-div' ).show();
 		$( '#geocode' ).hide();
 		$( '#find-your-city-button' ).show();
+		
+		geocodeResultLayer.clearLayers();
 	});
 	
 	$( '#geocode-submit' ).on( 'click', function( e ) {
