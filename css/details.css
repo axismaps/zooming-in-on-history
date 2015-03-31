@@ -7,7 +7,25 @@
 	left: 0;
 	z-index: 1000;
 	display: none;
+	overflow: auto;
+	text-align: center;
 }
 #details-panel.show{
 	display: block;
+}
+
+.detail{
+	margin: 20px 0;
+}
+
+.detail p{
+	margin: 10px 0 0 0;
+}
+
+.detail-thumb{
+	width: 210px;
+	height: 210px;
+	border-radius: 50%;
+	background-color: #ccc;
+	margin: auto;
 }
