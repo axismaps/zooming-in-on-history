@@ -1,7 +1,106 @@
+@font-face {
+  font-family: 'Prensa-Regular';
+  src: url('fonts/Prensa-Regular.eot?#iefix') format('embedded-opentype'),  url('fonts/Prensa-Regular.otf')  format('opentype'),
+	     url('fonts/Prensa-Regular.woff') format('woff'), url('fonts/Prensa-Regular.ttf')  format('truetype'), url('fonts/Prensa-Regular.svg#Prensa-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+    font-family: 'proxima_nova_rgbold_italic';
+    src: url('fonts/Proxima Nova Bold Italic-webfont.eot');
+    src: url('fonts/Proxima Nova Bold Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Bold Italic-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Bold Italic-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Bold Italic-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Bold Italic-webfont.svg#proxima_nova_rgbold_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_rgbold';
+    src: url('fonts/Proxima Nova Bold-webfont.eot');
+    src: url('fonts/Proxima Nova Bold-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Bold-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Bold-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Bold-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Bold-webfont.svg#proxima_nova_rgbold') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_novaregular_italic';
+    src: url('fonts/Proxima Nova Regular Italic-webfont.eot');
+    src: url('fonts/Proxima Nova Regular Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Regular Italic-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Regular Italic-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Regular Italic-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Regular Italic-webfont.svg#proxima_novaregular_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_nova_rgregular';
+    src: url('fonts/Proxima Nova Regular-webfont.eot');
+    src: url('fonts/Proxima Nova Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Regular-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Regular-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Regular-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Regular-webfont.svg#proxima_nova_rgregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'proxima_novalight_italic';
+    src: url('fonts/Proxima Nova Light Italic-webfont.eot');
+    src: url('fonts/Proxima Nova Light Italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Light Italic-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Light Italic-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Light Italic-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Light Italic-webfont.svg#proxima_novalight_italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+
+
+
+@font-face {
+    font-family: 'proxima_novalight';
+    src: url('fonts/Proxima Nova Light-webfont.eot');
+    src: url('fonts/Proxima Nova Light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/Proxima Nova Light-webfont.woff2') format('woff2'),
+         url('fonts/Proxima Nova Light-webfont.woff') format('woff'),
+         url('fonts/Proxima Nova Light-webfont.ttf') format('truetype'),
+         url('fonts/Proxima Nova Light-webfont.svg#proxima_novalight') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
 html, body{
 	background-color: #454b51;
 	color: white;
 	margin: 0;
+	font-family: 'proxima_novalight';
 }
 
 #screen-top-border{
@@ -29,6 +128,7 @@ html, body{
 .title{
 	font-size: 60px;
 	margin: 20px 0;
+	font-family: 'Prensa-Regular';
 }
 .subtitle{
 	font-size: 30px;
