@@ -32,7 +32,7 @@ function showMapsInCategory( id ){
 		} 
 		var $div = $( "<div>" ).appendTo( "#page" + pageCount )
 			.attr( "id", "map" + m.number )
-			.addClass( "map-card card page" + pageCount + " map-animated" + ( index % 4 + 1 ) )
+			.addClass( "map-card card page" + pageCount + " pre-animated" + ( index % 4 + 1 ) )
 			.css({
   			  "background-image" : "url( data/img/thumbnails/" + m.number + ".jpg )",
   			  "opacity" : 0 
@@ -45,6 +45,11 @@ function showMapsInCategory( id ){
   		  $div
   		    .css( "opacity", 1 )
   		    .addClass( "animated bounceIn" );
+  		  
+  		  setTimeout( function() {
+    		  $div.removeClass( "animated bounceIn" );
+    		  $div.attr( "class", $div.attr( "class" ).replace( "pre-", "map-" ) );
+    		}, 750 );
   		}, index * 100 )
 		
 		$( "<div><p>" + m.title + "</p></div>" )
