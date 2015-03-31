@@ -28,6 +28,10 @@ function selectMap( id ){
 	} ).addTo(map);
 	
 	map.fitBounds( bounds );
+
+	showDetailsList( id );
+
+	pageButtonsForScreen( "map" );
 }
 
 function showMap(){

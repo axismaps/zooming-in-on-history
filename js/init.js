@@ -14,6 +14,14 @@ function createEvents(){
 	$( ".screen" ).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 		$(this).removeClass( "fadeIn" );
 	});
+	$(window).resize( resize );
+	resize();
+}
+
+function resize(){
+	$( "#details-panel" )
+		.height( $(window).height() - $("#screen-top-border").height() - $("#breadcrumbs").height() )
+		.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
 }
 
 function getURLParameters(){
@@ -33,9 +41,7 @@ function changeScreens( $from, $to ){
 }
 
 function pageButtonsForScreen( s ){
-	if ( s == "home" )
-		$( "#page-buttons" ).hide();
-	else if ( s == "category" ){
+	if ( s == "category" ){
 		if ( pageCount > 1 ){
 			$( ".page-button" ).show();
 			$( ".page-button" ).off( "click" );
@@ -63,6 +69,8 @@ function pageButtonsForScreen( s ){
 			if ( index == cat.maps.length - 1 ) return;
 			showDetailsForMap( cat.maps[ index + 1 ], "next" );
 		});
+	} else {
+		$( ".page-button" ).hide();
 	}
 }
 

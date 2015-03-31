@@ -1,0 +1,13 @@
+#details-panel{
+	background-color: rgba(0, 0, 0, 0.5);
+	height: 100%;
+	width: 315px;
+	position: absolute;
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	display: none;
+}
+#details-panel.show{
+	display: block;
+}
