@@ -37,20 +37,20 @@ function pageButtonsForScreen( s ){
 		$( "#page-buttons" ).hide();
 	else if ( s == "category" ){
 		if ( pageCount > 1 ){
-			$( "#page-buttons" ).show();
-			$( "#page-buttons div" ).off( "click" );
-			$( "#prev-page" ).on( "click", function(){
+			$( ".page-button" ).show();
+			$( ".page-button" ).off( "click" );
+			$( ".page-button" ).on( "click", function(){
 				showPage( page - 1 );
 			});
 			$( "#next-page" ).on( "click", function(){
 				showPage( page + 1 );
 			});
 		} else {
-			$( "#page-buttons" ).hide();
+			$( ".page-button" ).hide();
 		}
 	} else if ( s == "metadata" ){
-		$( "#page-buttons" ).show();
-		$( "#page-buttons div" ).off( "click" );
+		$( ".page-button" ).show();
+		$( ".page-button" ).off( "click" );
 		$( "#prev-page" ).on( "click", function(){
 			var cat = categories[ selectedCategory ],
 				index = cat.maps.indexOf( currentMap );

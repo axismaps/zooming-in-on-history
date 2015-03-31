@@ -19,9 +19,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'proxima_nova_rgbold';
     src: url('fonts/Proxima Nova Bold-webfont.eot');
@@ -35,9 +32,6 @@
 
 }
 
-
-
-
 @font-face {
     font-family: 'proxima_novaregular_italic';
     src: url('fonts/Proxima Nova Regular Italic-webfont.eot');
@@ -50,9 +44,6 @@
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'proxima_nova_rgregular';
@@ -79,9 +70,6 @@
     font-style: normal;
 
 }
-
-
-
 
 @font-face {
     font-family: 'proxima_novalight';
@@ -197,14 +185,10 @@ html, body{
 	margin-right: 10px;
 }
 
-#page-buttons{
+.page-button{
 	position: absolute;
 	top:50%;
-	left: 0;
-	width: 100%;
 	display: none;
-}
-#page-buttons div{
 	height: 200px;
 	width: 50px;
 	background-color: #373b40;
@@ -213,8 +197,8 @@ html, body{
 	text-align: center;
 }
 #prev-page{
-	float: left;
+	left: 0;
 }
 #next-page{
-	float: right;
+	right: 0;
 }
