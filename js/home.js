@@ -9,26 +9,10 @@ function createCategories(){
 			.attr( "id", cat.id )
 			.click( function(){
 				selectCategory( cat.id );
-			})
-			.on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				$(this).removeClass( "animated" ).removeClass( "bounce" ).removeClass( "bounceInDown" );
 			});
+
 		$( "<div><p>" + cat.name + "</p></div>" )
 			.css( "border-top-color", colors[i] )
 			.appendTo( $div );
-
-		var animCount = 1;
-
-		setTimeout( function(){
-			setInterval( function(){
-				if ( animCount < 3 ){
-					$div.addClass( "animated bounce" );
-					animCount ++;
-				} else {
-					$div.addClass( "animated bounceInDown" );
-					animCount = 1;
-				}
-			},10000)
-		},i*1000)
 	});	
 }
