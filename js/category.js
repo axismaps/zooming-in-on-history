@@ -9,7 +9,10 @@ function selectCategory( id ){
 	$( "#category .title" ).html( categories[ id ].name );
 	showMapsInCategory( id );
 	addBreadcrumb( $( "#category .title" ).text(), "category" );
-	$( '#screen-top-border' ).show().css( "background-color", colors[0] );
+	$( '#screen-top-border' ).show().css( "background-color", categories[id].color );
+
+	// this should be done more generically for lots of UI elements
+	$( "#detail-back" ).css( "background-color", categories[id].color );
 }
 
 function showMapsInCategory( id ){
@@ -55,7 +58,7 @@ function showMapsInCategory( id ){
     		}, 2000 + index * 1000 );
 		
 		$( "<div><p>" + m.title + "</p></div>" )
-			.css( "border-top-color", colors[i] )
+			.css( "border-top-color", categories[ id ].color )
 			.appendTo( $div )
 			.succinct({ size: 65 });
 		$( ".map-card:last p" ).append( " <span>(" + m.date + ")</span>" );

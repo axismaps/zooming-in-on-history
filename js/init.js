@@ -14,6 +14,29 @@ function createEvents(){
 	$( ".screen" ).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 		$(this).removeClass( "fadeIn" );
 	});
+	$( "#detail-back" ).click( function(){
+		showDetailsList( currentMap );
+	})
+	$(window).resize( resize );
+	resize();
+}
+
+	var category_hammer = new Hammer( $("#category")[0] );
+	category_hammer.on( "swipeleft", function(){
+		showPage( page + 1 );
+	}).on( "swiperight", function(){
+		showPage( page - 1 );
+	});
+
+	var metadata_hammer = new Hammer( $("#metadata")[0] );
+	metadata_hammer
+	  .on( "swipeleft", nextMap )
+		.on( "swiperight", prevMap );
+
+function resize(){
+	$( "#details-panel" )
+		.height( $(window).height() - $("#screen-top-border").height() - $("#breadcrumbs").height() )
+		.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
 }
 
 function getURLParameters(){
@@ -25,13 +48,11 @@ function getURLParameters(){
 }
 
 function pageButtonsForScreen( s ){
-	if ( s == "home" )
-		$( "#page-buttons" ).hide();
-	else if ( s == "category" ){
+	if ( s == "category" ){
 		if ( pageCount > 1 ){
 			$( ".page-button" ).show();
 			$( ".page-button" ).off( "click" );
-			$( ".page-button" ).on( "click", function(){
+			$( "#prev-page" ).on( "click", function(){
 				showPage( page - 1 );
 			});
 			$( "#next-page" ).on( "click", function(){
@@ -43,18 +64,15 @@ function pageButtonsForScreen( s ){
 	} else if ( s == "metadata" ){
 		$( ".page-button" ).show();
 		$( ".page-button" ).off( "click" );
-		$( "#prev-page" ).on( "click", function(){
-			var cat = categories[ selectedCategory ],
-				index = cat.maps.indexOf( currentMap );
-			if ( index == 0 ) return;
-			showDetailsForMap( cat.maps[ index - 1 ], "prev" );
-		});
+		$( "#prev-page" ).on( "click", prevMap );
 		$( "#next-page" ).on( "click", function(){
 			var cat = categories[ selectedCategory ],
 				index = cat.maps.indexOf( currentMap );
 			if ( index == cat.maps.length - 1 ) return;
 			showDetailsForMap( cat.maps[ index + 1 ], "next" );
 		});
+	} else {
+		$( ".page-button" ).hide();
 	}
 }
 
