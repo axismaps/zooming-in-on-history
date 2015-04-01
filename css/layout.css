@@ -162,7 +162,7 @@ html, body{
 	z-index: 9999;
 	height: 60px;
 	width: 100%;
-	background-color: #747d84;
+	background-color: #454b51;
 }
 
 .home-screen #breadcrumbs{
@@ -171,18 +171,41 @@ html, body{
 
 #breadcrumbs div {
 	display: inline-block;
-	font-size: 20px;
-	margin: 15px;
+	font-size: 16px;
+	background-color: #373b40;
+	height: 60px;
+	line-height: 60px;
+	padding: 0 20px;
+	cursor: pointer;
 }
 
+#breadcrumbs div i{
+	color: #747d84;
+}
+
+#breadcrumbs #home-button{
+	background-color: #747d84;
+}
+
+#breadcrumbs div#home-button i{
+	color: white;
+}
 #breadcrumbs #category-button, 
 #breadcrumbs #metadata-button, 
 #breadcrumbs #map-button {
 	display: none;
 }
 
+.category-screen #breadcrumbs div#category-button,
+.metadata-screen #breadcrumbs div#metadata-button,
+.map-screen #breadcrumbs div#map-button
+{
+	background-color: #454b51;
+}
+
 #breadcrumbs i {
 	margin-right: 10px;
+	vertical-align: middle;
 }
 
 .page-button{
