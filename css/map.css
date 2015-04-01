@@ -37,7 +37,23 @@
 }
 
 #geocode-input, #geocode-submit{
-	line-height: 2;
+	line-height: 3;
+	border-radius: 5px;
+	margin: 0;
+	border: none;
+	padding: 0 20px;
+	font-size: 20px;
+}
+
+#geocode-input{
+	border-top-right-radius: 0;
+	border-bottom-right-radius: 0;
+}
+
+#geocode-submit{
+	border-top-left-radius: 0;
+	border-bottom-left-radius: 0;
+	margin-left: -2px;
 }
 
 #geocoder-close-button{
