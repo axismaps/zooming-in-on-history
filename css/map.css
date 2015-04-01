@@ -39,3 +39,25 @@
 	width: 200px;
 	margin: 0 10px;
 }
+
+#details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{
+	left: 315px;
+}
+
+#reset-map{
+	width: 60px;
+	height: 60px;
+	position: absolute;
+	left: 15px;
+	top: 145px;
+	background-color: rgba(0,0,0,.75);
+	line-height: 60px;
+	border-radius: 10px;
+	font-size: 30px;
+	cursor: pointer;
+	display: none;
+}
+
+#details-panel.show ~ #reset-map{
+	left: 330px;
+}

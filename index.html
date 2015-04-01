@@ -14,6 +14,7 @@
 		<link rel="stylesheet" href="css/category.css" />
 		<link rel="stylesheet" href="css/metadata.css" />
 		<link rel="stylesheet" href="css/map.css" />
+		<link rel="stylesheet" href="css/details.css" />
 		<!-- endbuild -->
 	</head>
 	<body class="home-screen">
@@ -43,6 +44,12 @@
 		</div>
 
 		<div id="map" class="screen">
+			<div id="details-panel">
+				<div id="details-list"></div>
+				<div id="detail-single">
+					<div id="detail-back"><i class="fa fa-chevron-left"></i> Back</div>
+				</div>
+			</div>
 			<div id="interaction-elements">
 				<div id="geocoder-section">
 					<button id="find-your-city-button" type="submit"><i class="fa fa-search"></i>Find your city</button>
@@ -60,6 +67,7 @@
 				</div>
 			</div>
 			<div id="mapdiv"></div>
+			<div id="reset-map"><i class="fa fa-undo"></i></div>
 		</div>
 
 		<div class="page-button" id="prev-page">&lt;</div>
@@ -72,6 +80,8 @@
 		<script src="bower_components/papa-parse/papaparse.js"></script>
 		<script src="bower_components/underscore/underscore-min.js"></script>
 		<script src="bower_components/succinct/jQuery.succinct.js"></script>
+		<script src="bower_components/jqueryui-touch-punch/jquery.ui.touch-punch.min.js"></script>
+		<script src="bower_components/hammerjs/hammer.min.js"></script>
 		
 		<script src="http://open.mapquestapi.com/sdk/leaflet/v1.s/mq-map.js?key=Fmjtd%7Cluu82l0r2h%2Cbw%3Do5-94zxuf"></script>
 		<script src="http://open.mapquestapi.com/sdk/leaflet/v1.s/mq-geocoding.js?key=Fmjtd%7Cluu82l0r2h%2Cbw%3Do5-94zxuf"></script>
@@ -81,6 +91,7 @@
 		<script src="js/category.js"></script>
 		<script src="js/metadata.js"></script>
 		<script src="js/map.js"></script>
+		<script src="js/details.js"></script>
 		<script src="js/init.js"></script>
 		<!-- endbuild -->
 	</body>
