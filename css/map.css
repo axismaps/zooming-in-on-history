@@ -32,25 +32,24 @@
 }
 
 #geocode{
-	width: 300px;
+	float: left;
 	display: inline-block;
-	margin-right: 30px;
 	vertical-align: middle;
 }
 
 #geocode-input, #geocode-submit{
-	line-height: 2;
+	line-height: 2.5;
 	border-radius: 5px;
 	margin: 0;
 	border: none;
 	padding: 0 20px;
-	font-size: 16px;
-	vertical-align: bottom;
+	font-size: 18px;
 }
 
 #geocode-input{
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
+	width: 60%;
 }
 
 #geocode-submit{
@@ -61,6 +60,7 @@
 }
 
 #geocoder-close-button{
+	float: right;
 	display: inline-block;
 	border-radius: 100px;
 	border: none;
