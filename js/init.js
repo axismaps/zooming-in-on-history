@@ -48,7 +48,7 @@ function pageButtonsForScreen( s ){
 		if ( pageCount > 1 ){
 			$( ".page-button" ).show();
 			$( ".page-button" ).off( "click" );
-			$( ".page-button" ).on( "click", function(){
+			$( "#prev-page" ).on( "click", function(){
 				showPage( page - 1 );
 			});
 			$( "#next-page" ).on( "click", function(){
