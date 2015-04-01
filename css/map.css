@@ -34,6 +34,8 @@
 #geocode{
 	width: 300px;
 	display: inline-block;
+	margin-right: 30px;
+	vertical-align: middle;
 }
 
 #geocode-input, #geocode-submit{
@@ -55,10 +57,20 @@
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
 	margin-left: -4px;
+	cursor: pointer;
 }
 
 #geocoder-close-button{
 	display: inline-block;
+	border-radius: 100px;
+	border: none;
+	cursor: pointer;
+	padding: 10px;
+	height: 40px;
+	width: 40px;
+	box-sizing: border-box;
+	font-size: 18px;
+	vertical-align: middle;
 }
 
 #transparency-div{
