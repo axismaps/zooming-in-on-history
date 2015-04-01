@@ -32,6 +32,8 @@
 	margin: auto;
 	position: relative;
 	overflow: hidden;
+	background-position: center;
+	background-size: 210px 210px;
 }
 .detail-thumb div{
 	position: absolute;
