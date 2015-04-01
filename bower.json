@@ -10,6 +10,7 @@
     "underscore": "~1.7.0",
     "fontawesome": "~4.3.0",
     "succinct": "~1.1.0",
-    "jqueryui-touch-punch": "*"
+    "jqueryui-touch-punch": "*",
+    "hammerjs": "~2.0.4"
   }
 }

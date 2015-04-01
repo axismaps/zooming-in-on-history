@@ -14,6 +14,17 @@ function createEvents(){
 	$( ".screen" ).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 		$(this).removeClass( "fadeIn" );
 	});
+
+	var category_hammer = new Hammer( $("#category")[0] );
+	category_hammer.on( "swipeleft", function(){
+		showPage( page + 1 );
+	}).on( "swiperight", function(){
+		showPage( page - 1 );
+	});
+
+	var metadata_hammer = new Hammer( $("#metadata")[0] );
+	metadata_hammer.on( "swipeleft", nextMap )
+		.on( "swiperight", prevMap );
 }
 
 function getURLParameters(){
@@ -51,18 +62,8 @@ function pageButtonsForScreen( s ){
 	} else if ( s == "metadata" ){
 		$( ".page-button" ).show();
 		$( ".page-button" ).off( "click" );
-		$( "#prev-page" ).on( "click", function(){
-			var cat = categories[ selectedCategory ],
-				index = cat.maps.indexOf( currentMap );
-			if ( index == 0 ) return;
-			showDetailsForMap( cat.maps[ index - 1 ], "prev" );
-		});
-		$( "#next-page" ).on( "click", function(){
-			var cat = categories[ selectedCategory ],
-				index = cat.maps.indexOf( currentMap );
-			if ( index == cat.maps.length - 1 ) return;
-			showDetailsForMap( cat.maps[ index + 1 ], "next" );
-		});
+		$( "#prev-page" ).on( "click", prevMap );
+		$( "#next-page" ).on( "click", nextMap );
 	}
 }
 
