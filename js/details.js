@@ -8,12 +8,12 @@ function showDetailsList( map_id ){
 		_.each( detailList, function(d){
 			var container = $( "<div>" )
 				.attr( "class", "detail" )
-				.css( "background-image", "url(data/img/details/thumbnails/" + d.detail_num + ".jpg)" )
 				.click( function(){
 					showDetail( d );
 				});
 			$( "<div>" )
 				.attr( "class", "detail-thumb" )
+				.css( "background-image", "url(data/img/details/thumbnails/" + d.detail_num + ".jpg)" )
 				.append( 
 					$("<div><i class='fa fa-search-plus'></i></div>")
 						.css( "background-color", categories[ selectedCategory ].color )
