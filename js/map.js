@@ -63,6 +63,8 @@ function showMap(){
 }
 
 function geocoder(){
+	$( '#find-your-city-button' ).css( "background-color", categories[ selectedCategory ].color );
+	
 	$( '#find-your-city-button' ).on( 'click', function( e ) {
 		e.preventDefault();
 		$( this ).hide();
