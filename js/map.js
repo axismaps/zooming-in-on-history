@@ -27,7 +27,28 @@ function selectMap( id ){
 		maxNativeZoom : mapData.MaxZoom
 	} ).addTo(map);
 	
-	map.fitBounds( bounds );
+	map.fitBounds( bounds, {animate: false} );
+
+	$( "#reset-map" ).hide();
+
+	showDetailsList( id );
+
+	pageButtonsForScreen( "map" );
+
+	map.on( "movestart", onMapMove );
+
+	$( "#reset-map" ).click( function(){
+		map.off( "movestart", onMapMove )
+			.fitBounds( bounds );
+		setTimeout( function(){
+			$( "#reset-map" ).hide();
+			map.on( "movestart", onMapMove );
+		},750);
+	})
+}
+
+function onMapMove(){
+	$( "#reset-map" ).show();
 }
 
 function showMap(){
