@@ -29,9 +29,9 @@ function createEvents(){
 	});
 
 	var metadata_hammer = new Hammer( $("#metadata")[0] );
-	metadata_hammer.on( "swipeleft", nextMap )
+	metadata_hammer
+	  .on( "swipeleft", nextMap )
 		.on( "swiperight", prevMap );
-}
 
 function resize(){
 	$( "#details-panel" )
