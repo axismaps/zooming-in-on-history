@@ -48,3 +48,17 @@ function showDetailsForMap( id, pageNav ){
 
 	pageButtonsForScreen( "metadata" );
 }
+
+function nextMap(){
+	var cat = categories[ selectedCategory ],
+		index = cat.maps.indexOf( currentMap );
+	if ( index == cat.maps.length - 1 ) return;
+	showDetailsForMap( cat.maps[ index + 1 ], "next" );
+}
+
+function prevMap(){
+	var cat = categories[ selectedCategory ],
+		index = cat.maps.indexOf( currentMap );
+	if ( index == 0 ) return;
+	showDetailsForMap( cat.maps[ index - 1 ], "prev" );
+}
