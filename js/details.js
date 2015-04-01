@@ -34,9 +34,9 @@ function showDetail( d ){
 	map.setView( [ d.lat, d.lon ], map.getMaxZoom() );
 	$( "#details-list" ).hide();
 	$( "#detail-single" ).show();
-
-	$( "#detail-single img" ).remove();
-	$( "#detail-single h3" ).html( d.title );
-	$( "#detail-single p" ).html( d.caption );
+	$( "#detail-single h3" ).remove();
+	$( "#detail-single p" ).remove();
+	$( "<h3>" ).html( d.title ).appendTo( "#detail-single" );
+	$( "<p>" ).html( d.caption ).appendTo( "#detail-single" );
 	if ( d.image_num ) $( "#detail-single" ).append( "<p><img src='data/img/details/" + d.image_num + "'/></p>" );
 }
