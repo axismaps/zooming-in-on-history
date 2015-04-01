@@ -164,6 +164,7 @@ html, body{
 	width: 100%;
 	background-color: #454b51;
 	white-space: nowrap;
+	overflow: hidden;
 }
 
 .home-screen #breadcrumbs{
@@ -175,12 +176,13 @@ html, body{
 }
 
 #breadcrumbs div {
-	display: inline-block;
+	display: block;
+	float: left;
 	font-size: 16px;
 	background-color: #373b40;
 	height: 60px;
 	line-height: 60px;
-	padding-left: 20px;
+	padding-left: 40px;
 	cursor: pointer;
 	position: relative;
 }
@@ -188,12 +190,31 @@ html, body{
 #breadcrumbs div::after {
 	width: 0; 
 	height: 0; 
-	display: inline-block;
-	content: "";
-	border-top: 30px solid #373b40;
-	border-bottom: 30px solid #373b40;
+	display: block;
+	content: " ";
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
 	border-left: 30px solid #373b40;
-	vertical-align: middle;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	left: 100%;
+	z-index: 2;
+}
+
+#breadcrumbs div::before{
+	width: 0; 
+	height: 0; 
+	display: block;
+	content: " ";
+	border-top: 35px solid transparent;
+	border-bottom: 35px solid transparent;
+	border-left: 35px solid #454b51;
+	position: absolute;
+	top: 50%;
+	margin-top: -35px;
+	left: 100%;
+	z-index: 1;
 }
 
 #breadcrumbs div i{
