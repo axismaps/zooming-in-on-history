@@ -169,14 +169,30 @@ html, body{
 	display: none;
 }
 
+.fa{
+	vertical-align: middle;
+}
+
 #breadcrumbs div {
 	display: inline-block;
 	font-size: 16px;
 	background-color: #373b40;
 	height: 60px;
 	line-height: 60px;
-	padding: 0 20px;
+	padding-left: 20px;
 	cursor: pointer;
+	position: relative;
+}
+
+#breadcrumbs div::after {
+	width: 0; 
+	height: 0; 
+	display: inline-block;
+	content: "";
+	border-top: 30px solid #373b40;
+	border-bottom: 30px solid #373b40;
+	border-left: 30px solid #373b40;
+	vertical-align: middle;
 }
 
 #breadcrumbs div i{
@@ -189,6 +205,9 @@ html, body{
 
 #breadcrumbs div#home-button i{
 	color: white;
+}
+#breadcrumbs div#home-button::after{
+	border-left-color: #747d84;
 }
 #breadcrumbs #category-button, 
 #breadcrumbs #metadata-button, 
@@ -203,9 +222,29 @@ html, body{
 	background-color: #454b51;
 }
 
+.category-screen #breadcrumbs div#home-button::after
+{
+	border-top-color: #454b51;
+	border-bottom-color: #454b51;
+}
+
+.metadata-screen #breadcrumbs div#category-button::after,
+.map-screen #breadcrumbs div#metadata-button::after
+{
+	border-top-color: #454b51;
+	border-bottom-color: #454b51;
+	border-left-color: #373b40;
+}
+
+.category-screen #breadcrumbs div#category-button::after,
+.metadata-screen #breadcrumbs div#metadata-button::after,
+.map-screen #breadcrumbs div#map-button::after
+{
+	border-color: #454b51;
+}
+
 #breadcrumbs i {
 	margin-right: 10px;
-	vertical-align: middle;
 }
 
 .page-button{
