@@ -50,7 +50,7 @@
 }
 
 #transparency-div span{
-	font-size: 18px;
+	font-size: 20px;
 	vertical-align: baseline;
 }
 
@@ -58,6 +58,15 @@
 	display: inline-block;
 	width: 200px;
 	margin: 0 15px;
+}
+
+#transparency-slider .ui-slider-handle{
+	background: none;
+	border: none;
+	top: -13px;
+	height: 40px;
+	width: 25px;
+	cursor: pointer;
 }
 
 #details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{

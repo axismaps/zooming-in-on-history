@@ -130,6 +130,8 @@ function slider_init(){
 		change: changeHistoricMapOpacity,
 		slide: changeHistoricMapOpacity
 	});
+	
+	$( '#transparency-slider .ui-slider-handle' ).css( 'background-color', categories[ selectedCategory ].color );
 }
 
 function changeHistoricMapOpacity(){
