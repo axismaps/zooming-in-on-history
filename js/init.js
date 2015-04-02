@@ -47,6 +47,22 @@ function getURLParameters(){
 	params.categories = params.categories.split(",");
 }
 
+function changeScreens( $from, $to, transitionOut, transitionIn ){
+  transitionOut = transitionOut ? transitionOut : "fadeOut";
+  transitionIn = transitionIn ? transitionIn : "fadeIn";
+  
+	$from.addClass( "animated " + transitionOut )
+  setTimeout( function(){
+    $( "body > .card" ).remove();
+    $to.show().addClass( "animated " + transitionIn );
+  }, 750 );
+ 	
+  setTimeout( function(){
+		$to.removeClass( "animated " + transitionIn );
+		$from.removeClass( "animated " + transitionOut ).hide();
+  }, 1500 );
+}
+
 function pageButtonsForScreen( s ){
 	if ( s == "category" ){
 		if ( pageCount > 1 ){

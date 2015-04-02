@@ -11,6 +11,7 @@ function createCategories(){
   			    .addClass( "animated bounceOut" )
           .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
             $( "#home" ).hide();
+            $( this ).removeClass( "animated bounceOut" );
             selectCategory( cat.id );
           })
 			});
