@@ -48,6 +48,9 @@ function showMapsInCategory( id ){
     		  $div
     		    .css( "opacity", 1 )
     		    .addClass( "animated bounceIn" );
+    		  setTimeout( function(){
+      		  $div.removeClass( "animated bounceIn" );
+      		}, 1000 );
     		}, index * 100 );
     }
 		
@@ -89,7 +92,6 @@ function setMapTransitions(){
   $maps.each( function( i, div ){
   		//Sets staggered start time for map panning animation
   		setTimeout( function() {
-    		$( div ).removeClass( "animated bounceIn" );
     		$( div ).attr( "class", $( div ).attr( "class" ).replace( "pre-animated", "map-animated" ) );
     }, 2000 + i * 1000 );
   })
