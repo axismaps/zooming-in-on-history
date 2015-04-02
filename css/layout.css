@@ -155,6 +155,7 @@ html, body, button{
 	text-align: center;
 	height: 110px;
 	width: 425px;
+	cursor: pointer;
 }
 
 #breadcrumbs{
