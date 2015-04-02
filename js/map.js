@@ -31,6 +31,8 @@ function selectMap( id ){
 
 	$( "#reset-map" ).hide();
 
+  $( "#slider-thumbnail" ).attr( "xlink:href", "data/img/thumbnails/" + id + ".jpg" );
+
 	showDetailsList( id );
 
 	pageButtonsForScreen( "map" );
