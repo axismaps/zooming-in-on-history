@@ -13,7 +13,7 @@ function showDetailsList( map_id ){
 				});
 			$( "<div>" )
 				.attr( "class", "detail-thumb" )
-				.css( "background-image", "url(data/img/details/thumbnails/" + d.detail_num + ".jpg)" )
+				.css( "background-image", "url(data/img/details/thumbnails/" + d.map_thumbnail + ")" )
 				.append( 
 					$("<div><i class='fa fa-search-plus'></i></div>")
 						.css( "background-color", categories[ selectedCategory ].color )
