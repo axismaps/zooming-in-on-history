@@ -269,6 +269,17 @@ html, body, button{
 	margin-right: 10px;
 }
 
+.footer{
+	text-align: center;
+	width: 100%;
+	padding-top: 30px;
+}
+
+.footer span{
+	font-size: 20px;
+	font-family: 'Prensa-Regular';
+}
+
 .page-button{
 	position: absolute;
 	top:50%;

@@ -52,7 +52,7 @@ function showMapsInCategory( id ){
       		  $div.removeClass( "animated bounceIn" );
       		}, 1000 );
     		}, index * 100 );
-    }
+		}
 		
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", categories[ id ].color )
@@ -65,6 +65,8 @@ function showMapsInCategory( id ){
 	$( "#page1" ).show();
 	pageButtonsForScreen( "category" );
 	setMapTransitions();
+	
+	$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
 }
 
 function showPage( newPage ){
