@@ -292,10 +292,15 @@ html, body, button{
 	margin-top: -100px;
 	line-height: 200px;
 	text-align: center;
+	cursor: pointer;
 }
 #prev-page{
 	left: 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 #next-page{
 	right: 0;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 }
