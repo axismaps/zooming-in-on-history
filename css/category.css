@@ -1,6 +1,7 @@
 .map-card{
 	width: 215px;
 	height: 235px;
+  background-repeat: repeat;
 }
 
 .map-card div{

@@ -1,0 +1,99 @@
+@-webkit-keyframes animatedBackground1{
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+@-moz-keyframes animatedBackground1{
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+@-o-keyframes animatedBackground1{
+    from { background-position: 0 0; }
+    to { background-position: 100% 100%; }
+}
+
+@-webkit-keyframes animatedBackground2{
+    from { background-position: 100% 0; }
+    to { background-position: 0 100%; }
+}
+
+@-moz-keyframes animatedBackground2{
+    from { background-position: 100% 0; }
+    to { background-position: 0 100%; }
+}
+
+@-o-keyframes animatedBackground2{
+    from { background-position: 100% 0; }
+    to { background-position: 0 100%; }
+}
+
+@-webkit-keyframes animatedBackground3{
+    from { background-position: 0 100%; }
+    to { background-position: 100% 0; }
+}
+
+@-moz-keyframes animatedBackground3{
+    from { background-position: 0 100%; }
+    to { background-position: 100% 0; }
+}
+
+@-o-keyframes animatedBackground3{
+    from { background-position: 0 100%; }
+    to { background-position: 100% 0; }
+}
+
+@-webkit-keyframes animatedBackground4{
+    from { background-position: 100% 100%; }
+    to { background-position: 0 0; }
+}
+
+@-moz-keyframes animatedBackground4{
+    from { background-position: 100% 100%; }
+    to { background-position: 0 0; }
+}
+
+@-o-keyframes animatedBackground4{
+    from { background-position: 100% 100%; }
+    to { background-position: 0 0; }
+}
+
+.pre-animated1{
+  background-position: 0 0;
+}
+
+.pre-animated2{
+  background-position: 100% 0;
+}
+
+.pre-animated3{
+  background-position: 0 100%;
+}
+
+.pre-animated4{
+  background-position: 100% 100%; 
+}
+
+.map-animated1{
+  -webkit-animation: animatedBackground1 50s linear infinite;
+  -moz-animation: animatedBackground1 50s linear infinite;
+  -o-animation: animatedBackground1 50s linear infinite;
+}
+
+.map-animated2{
+  -webkit-animation: animatedBackground2 50s linear infinite;
+  -moz-animation: animatedBackground2 50s linear infinite;
+  -o-animation: animatedBackground2 50s linear infinite;
+}
+
+.map-animated3{
+  -webkit-animation: animatedBackground3 50s linear infinite;
+  -moz-animation: animatedBackground3 50s linear infinite;
+  -o-animation: animatedBackground3 50s linear infinite;
+}
+
+.map-animated4{
+  -webkit-animation: animatedBackground4 50s linear infinite;
+  -moz-animation: animatedBackground4 50s linear infinite;
+  -o-animation: animatedBackground4 50s linear infinite;
+}

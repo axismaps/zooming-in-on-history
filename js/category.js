@@ -4,10 +4,10 @@ var selectedCategory,
 
 function selectCategory( id ){
 	$( "body" ).attr( "class", "category-screen" );
+	$( "#category" ).show();
 	selectedCategory = id;
 	$( "#category .title" ).html( categories[ id ].name );
 	showMapsInCategory( id );
-	changeScreens( $( "#home" ), $( "#category" ) );
 	addBreadcrumb( $( "#category .title" ).text(), "category" );
 	$( '#screen-top-border' ).show().css( "background-color", categories[id].color );
 
@@ -34,11 +34,25 @@ function showMapsInCategory( id ){
 				.appendTo( $mapsDiv );
 		} 
 		var $div = $( "<div>" ).appendTo( "#page" + pageCount )
-			.attr( "class", "map-card card page" + pageCount )
 			.attr( "id", "map" + m.number )
+			.addClass( "map-card card page" + pageCount + " pre-animated" + ( index % 4 + 1 ) )
+			.css( "background-image", "url( data/img/thumbnails/" + m.number + ".jpg )" )
 			.click( function(){
 				showDetailsForMap( m.number );
-			})
+			});
+		
+		//Sets bounce in transition only for the first page
+		if( pageCount == 1 ) {
+  		  $div.css( "opacity", 0 );
+    		setTimeout( function() {
+    		  $div
+    		    .css( "opacity", 1 )
+    		    .addClass( "animated bounceIn" );
+    		  setTimeout( function(){
+      		  $div.removeClass( "animated bounceIn" );
+      		}, 1000 );
+    		}, index * 100 );
+		}
 		
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", categories[ id ].color )
@@ -50,6 +64,9 @@ function showMapsInCategory( id ){
 	page = 1;
 	$( "#page1" ).show();
 	pageButtonsForScreen( "category" );
+	setMapTransitions();
+	
+	$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
 }
 
 function showPage( newPage ){
@@ -65,4 +82,19 @@ function showPage( newPage ){
 	$( "#page" + page ).attr("class", "page animated " + outAnim );
 	$( "#page" + newPage ).show().attr("class", "page animated " + inAnim );
 	page = newPage;
+	setMapTransitions();
+}
+
+function setMapTransitions(){
+  $( ".map-card" ).each( function(){
+    $( this ).attr( "class", $( this ).attr( "class" ).replace( "map-animated", "pre-animated" ) );
+  });
+
+  var $maps = $( "#page" + page ).children();
+  $maps.each( function( i, div ){
+  		//Sets staggered start time for map panning animation
+  		setTimeout( function() {
+    		$( div ).attr( "class", $( div ).attr( "class" ).replace( "pre-animated", "map-animated" ) );
+    }, 2000 + i * 1000 );
+  })
 }

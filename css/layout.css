@@ -121,6 +121,7 @@ html, body, button{
 .subtitle{
 	font-size: 30px;
 	margin: 10px 0;
+	font-weight: normal;
 }
 
 .card{
@@ -155,6 +156,7 @@ html, body, button{
 	text-align: center;
 	height: 110px;
 	width: 425px;
+	cursor: pointer;
 }
 
 #breadcrumbs{
@@ -182,7 +184,7 @@ html, body, button{
 	background-color: #373b40;
 	height: 60px;
 	line-height: 60px;
-	padding-left: 40px;
+	padding: 0 30px 0 60px;
 	cursor: pointer;
 	position: relative;
 }
@@ -269,6 +271,17 @@ html, body, button{
 	margin-right: 10px;
 }
 
+.footer{
+	text-align: center;
+	width: 100%;
+	padding-top: 30px;
+}
+
+.footer span{
+	font-size: 20px;
+	font-family: 'Prensa-Regular';
+}
+
 .page-button{
 	position: absolute;
 	top:50%;
@@ -279,10 +292,15 @@ html, body, button{
 	margin-top: -100px;
 	line-height: 200px;
 	text-align: center;
+	cursor: pointer;
 }
 #prev-page{
 	left: 0;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
 }
 #next-page{
 	right: 0;
+	border-top-left-radius: 5px;
+	border-bottom-left-radius: 5px;
 }

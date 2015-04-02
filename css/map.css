@@ -12,6 +12,7 @@
 	top: 0;
 	background-color: rgba(0, 0, 0, 0.75);
 	padding: 20px;
+	border-left: 1px solid #666;
 }
 
 #geocoder-section{
@@ -100,14 +101,16 @@
 
 #transparency-slider{
 	display: inline-block;
-	width: 200px;
+	width: 380px;
+	height: 40px;
 	margin: 0 15px;
+	background: transparent;
 }
 
 #transparency-slider .ui-slider-handle{
 	background: none;
 	border: none;
-	top: -13px;
+	top: 0px;
 	height: 40px;
 	width: 25px;
 	cursor: pointer;
@@ -118,6 +121,13 @@
 	position: absolute;
 	top: 5px;
 	left: 7px;
+}
+
+svg{
+  width: 380px;
+  height: 40px;
+  position: absolute;
+  right: 175px;
 }
 
 #details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{

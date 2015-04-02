@@ -1,7 +1,7 @@
 #metadata > div.container > p{
 	display: inline-block;
 	vertical-align: top;
-	width: 50%;
+	margin: 15px 60px 15px 525px;
 	text-align: left;
 }
 
@@ -16,4 +16,21 @@
 	position: absolute;
 	top: 150px;
 	width: 100%;
+}
+
+#metadata .card{
+  margin-left: 60px;
+}
+
+body > .card{
+  -webkit-transition: all 500ms ease-in;
+  -moz-transition: all 500ms ease-in;
+  -ms-transition: all 500ms ease-in;
+  -o-transition: all 500ms ease-in;
+  transition: all 500ms ease-in;
+}
+
+body > .card.fixed{
+  top: 150px !important;
+  left: 60px !important;
 }

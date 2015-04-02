@@ -10,6 +10,7 @@
 		<link rel="stylesheet" href="bower_components/fontawesome/css/font-awesome.min.css" />
 		<link rel="stylesheet" href="bower_components/jquery-ui/themes/smoothness/jquery-ui.min.css">
 		<link rel="stylesheet" href="css/layout.css" />
+		<link rel="stylesheet" href="css/animation.css" />
 		<link rel="stylesheet" href="css/home.css" />
 		<link rel="stylesheet" href="css/category.css" />
 		<link rel="stylesheet" href="css/metadata.css" />
@@ -29,15 +30,24 @@
 			<h1 class="title">Zooming In On History</h1>
 			<h2 class="subtitle">Select a theme to begin...</h2>
 			<div id="categories"></div>
+			<div class="footer">
+				<span>The Norman B. Leventhal Map Center at the Boston Public Library</span>
+			</div>
 		</div>
 
 		<div id="category" class="screen">
 			<h1 class="title"></h1>
 			<div id="map-cards"></div>
+			<div class="footer" id="footer-category">
+				<span>The Norman B. Leventhal Map Center at the Boston Public Library</span>
+			</div>
 		</div>
 
 		<div id="metadata" class="screen">
 			<h1 class="title"></h1>
+			<div class="footer" id="footer-metadata">
+				<span>The Norman B. Leventhal Map Center at the Boston Public Library</span>
+			</div>
 		</div>
 
 		<div id="map" class="screen">
@@ -60,6 +70,44 @@
 				<div id="transparency-div">
 					<span>PAST</span>
 					<div id="transparency-slider"></div>
+					<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 380 40" enable-background="new 0 0 380 40" xml:space="preserve">
+            <defs>
+            	<filter id="Adobe_OpacityMaskFilter" filterUnits="userSpaceOnUse" x="0.1" y="-114.4" width="439.9" height="412.4">
+            		<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
+            	</filter>
+            </defs>
+            <mask maskUnits="userSpaceOnUse" x="0.1" y="-114.4" width="439.9" height="412.4" id="SVGID_3_">
+            	<g filter="url(#Adobe_OpacityMaskFilter)">
+            		<linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="-6.011" y1="19.8052" x2="373.989" y2="19.8052">
+            			<stop  offset="0" style="stop-color:#000000"/>
+            			<stop  offset="8.962709e-02" style="stop-color:#000000;stop-opacity:0.9104"/>
+            			<stop  offset="1" style="stop-color:#000000;stop-opacity:0"/>
+            		</linearGradient>
+            		<rect id="SVGID_1_" x="-6" y="-0.2" fill="url(#SVGID_4_)" width="380" height="40"/>
+            	</g>
+            </mask>
+            <g mask="url(#SVGID_3_)">
+              	<g><image id="slider-thumbnail" overflow="visible" width="850" height="850" xlink:href="thumbnail.jpg"  transform="matrix(0.5175 0 0 0.4851 5.992109e-02 -114.3753)"></image></g>
+            </g>
+            <defs>
+            	<filter id="Adobe_OpacityMaskFilter_1_" filterUnits="userSpaceOnUse" x="9.2" y="-111" width="450.5" height="450.5">
+            		<feColorMatrix  type="matrix" values="-1 0 0 0 1  0 -1 0 0 1  0 0 -1 0 1  0 0 0 1 0" color-interpolation-filters="sRGB" result="source"/>
+            	</filter>
+            </defs>
+            <mask maskUnits="userSpaceOnUse" x="9.2" y="-111" width="450.5" height="450.5" id="SVGID_5_">
+            	<g filter="url(#Adobe_OpacityMaskFilter_1_)">
+            		<linearGradient id="SVGID_6_" gradientUnits="userSpaceOnUse" x1="-0.5" y1="19.6283" x2="379.5" y2="19.6283">
+            			<stop  offset="0" style="stop-color:#000000;stop-opacity:0"/>
+            			<stop  offset="0.9104" style="stop-color:#000000;stop-opacity:0.9104"/>
+            			<stop  offset="1" style="stop-color:#000000"/>
+            		</linearGradient>
+            		<rect id="SVGID_2_" x="-0.5" y="-0.4" fill="url(#SVGID_6_)" width="380" height="40"/>
+            	</g>
+            </mask>
+            <g mask="url(#SVGID_5_)">
+              	<g><image overflow="visible" width="850" height="850" xlink:href="data/img/thumbnails/toner.jpg"  transform="matrix(0.53 0 0 0.53 9.25 -111)"></image></g>
+            </g>
+          </svg>
 					<span>PRESENT</span>
 				</div>
 			</div>

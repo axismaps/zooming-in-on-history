@@ -7,27 +7,17 @@ function createCategories(){
 			.attr( "class", "category card " + cat.id  )
 			.attr( "id", cat.id )
 			.click( function(){
-				selectCategory( cat.id );
-			})
-			.on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
-				$(this).removeClass( "animated" ).removeClass( "bounce" ).removeClass( "bounceInDown" );
+  			  $( this )
+  			    .addClass( "animated bounceOut" )
+          .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+            $( "#home" ).hide();
+            $( this ).removeClass( "animated bounceOut" );
+            selectCategory( cat.id );
+          })
 			});
+
 		$( "<div><p>" + cat.name + "</p></div>" )
 			.css( "border-top-color", cat.color )
 			.appendTo( $div );
-
-		var animCount = 1;
-
-		setTimeout( function(){
-			setInterval( function(){
-				if ( animCount < 3 ){
-					$div.addClass( "animated bounce" );
-					animCount ++;
-				} else {
-					$div.addClass( "animated bounceInDown" );
-					animCount = 1;
-				}
-			},10000)
-		},i*1000)
 	});	
 }
