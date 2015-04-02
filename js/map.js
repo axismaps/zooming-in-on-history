@@ -88,31 +88,38 @@ function geocoder(){
 	$( '#geocode-submit' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var geocodeValue = $( '#geocode-input' ).val();
-				
+		
 		MQ.geocode().search( geocodeValue )
 			.on( 'success', function( e ){
-				var result;
 				$( '#no-location-found' ).hide();
 				
-				$.map( e.result.matches.reverse(), function( v, i ){
-					if( historicTiles.options.bounds.contains( v.latlng ) ) {
-						result = v;
-						return;
-					}
-				});
-				
-				if( result ) {
-					geocodeResultLayer.clearLayers();
-					var latlng = result.latlng;
-					
-					L.marker( [ latlng.lat, latlng.lng ] )
-						.addTo( geocodeResultLayer )
-						.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
-						.togglePopup();
-						
-					map.fitBounds( historicTiles.options.bounds );
-				} else {
+				if( e.result.matches.length === 0 ){
+					$( '#no-location-found span' ).html( 'Sorry, no results found' );
 					$( '#no-location-found' ).show();
+				} else {
+					var result;
+					
+					$.map( e.result.matches.reverse(), function( v, i ){
+						if( historicTiles.options.bounds.contains( v.latlng ) ) {
+							result = v;
+							return;
+						}
+					});
+					
+					if( result ) {
+						geocodeResultLayer.clearLayers();
+						var latlng = result.latlng;
+						
+						L.marker( [ latlng.lat, latlng.lng ] )
+							.addTo( geocodeResultLayer )
+							.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
+							.togglePopup();
+							
+						map.fitBounds( historicTiles.options.bounds );
+					} else {
+						$( '#no-location-found span' ).html( 'Sorry, this location is off the map' );
+						$( '#no-location-found' ).show();
+					}
 				}
 			});
 	});
