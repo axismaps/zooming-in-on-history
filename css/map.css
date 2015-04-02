@@ -59,6 +59,19 @@
 	cursor: pointer;
 }
 
+#no-location-found {
+	display: inline-block;
+	line-height: 2.5em
+}
+
+#no-location-found i{
+	vertical-align: middle;
+}
+
+#no-location-found span{
+	margin: 0 10px;
+}
+
 #geocoder-close-button{
 	float: right;
 	display: inline-block;
