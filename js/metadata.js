@@ -3,6 +3,8 @@ var currentMap;
 function showDetailsForMap( id, pageNav ){
 	currentMap = id;
 	var $container = $( "<div>" ).attr( "class", "container" );
+	
+	$( "body > .card" ).remove();
 	var $card = $( "#map" + id ).clone();
 	$card.children().hide();
 	$card
@@ -38,12 +40,15 @@ function showDetailsForMap( id, pageNav ){
 		
 	} else {
 		var $old = $( "#metadata > div" );
+		$card.removeClass( "map-card" );
 		$container
 			.append( $card )
 			.append( $text )
 			.appendTo( "#metadata" );
 		setTimeout( function(){
 			$old.remove();
+			$( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
+      $card.children().fadeIn();
 		},1000);
 		if ( pageNav == "next" ){
 			$old.addClass( "animated fadeOutLeft" );
