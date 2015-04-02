@@ -115,6 +115,7 @@
 
 #details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{
 	left: 315px;
+	top: 100px;
 }
 
 #reset-map{
@@ -132,5 +133,6 @@
 }
 
 #details-panel.show ~ #reset-map{
-	left: 330px;
+	left: 360px;
+	top: 165px;
 }
