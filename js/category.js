@@ -36,26 +36,20 @@ function showMapsInCategory( id ){
 		var $div = $( "<div>" ).appendTo( "#page" + pageCount )
 			.attr( "id", "map" + m.number )
 			.addClass( "map-card card page" + pageCount + " pre-animated" + ( index % 4 + 1 ) )
-			.css({
-  			  "background-image" : "url( data/img/thumbnails/" + m.number + ".jpg )",
-  			  "opacity" : 0 
-  		  })
+			.css( "background-image", "url( data/img/thumbnails/" + m.number + ".jpg )" )
 			.click( function(){
 				showDetailsForMap( m.number );
-			})
+			});
 		
-		//Sets bounce in transition
-		setTimeout( function() {
-  		  $div
-  		    .css( "opacity", 1 )
-  		    .addClass( "animated bounceIn" );
-  		}, index * 100 );
-  		
-  		//Sets staggered start time for map panning animation
-  		setTimeout( function() {
-    		  $div.removeClass( "animated bounceIn" );
-    		  $div.attr( "class", $div.attr( "class" ).replace( "pre-", "map-" ) );
-    		}, 2000 + index * 1000 );
+		//Sets bounce in transition only for the first page
+		if( pageCount == 1 ) {
+  		  $div.css( "opacity", 0 );
+    		setTimeout( function() {
+    		  $div
+    		    .css( "opacity", 1 )
+    		    .addClass( "animated bounceIn" );
+    		}, index * 100 );
+    }
 		
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", categories[ id ].color )
@@ -67,6 +61,7 @@ function showMapsInCategory( id ){
 	page = 1;
 	$( "#page1" ).show();
 	pageButtonsForScreen( "category" );
+	setMapTransitions();
 }
 
 function showPage( newPage ){
@@ -82,4 +77,20 @@ function showPage( newPage ){
 	$( "#page" + page ).attr("class", "page animated " + outAnim );
 	$( "#page" + newPage ).show().attr("class", "page animated " + inAnim );
 	page = newPage;
+	setMapTransitions();
+}
+
+function setMapTransitions(){
+  $( ".map-card" ).each( function(){
+    $( this ).attr( "class", $( this ).attr( "class" ).replace( "map-animated", "pre-animated" ) );
+  });
+
+  var $maps = $( "#page" + page ).children();
+  $maps.each( function( i, div ){
+  		//Sets staggered start time for map panning animation
+  		setTimeout( function() {
+    		$( div ).removeClass( "animated bounceIn" );
+    		$( div ).attr( "class", $( div ).attr( "class" ).replace( "pre-animated", "map-animated" ) );
+    }, 2000 + i * 1000 );
+  })
 }
