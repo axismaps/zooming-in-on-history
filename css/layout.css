@@ -162,24 +162,107 @@ html, body, button{
 	z-index: 9999;
 	height: 60px;
 	width: 100%;
-	background-color: #747d84;
+	background-color: #454b51;
 	white-space: nowrap;
+	overflow: hidden;
 }
 
 .home-screen #breadcrumbs{
 	display: none;
 }
 
-#breadcrumbs div {
-	display: inline-block;
-	font-size: 20px;
-	margin: 15px;
+.fa{
+	vertical-align: middle;
 }
 
+#breadcrumbs div {
+	display: block;
+	float: left;
+	font-size: 16px;
+	background-color: #373b40;
+	height: 60px;
+	line-height: 60px;
+	padding-left: 40px;
+	cursor: pointer;
+	position: relative;
+}
+
+#breadcrumbs div::after {
+	width: 0; 
+	height: 0; 
+	display: block;
+	content: " ";
+	border-top: 30px solid transparent;
+	border-bottom: 30px solid transparent;
+	border-left: 30px solid #373b40;
+	position: absolute;
+	top: 50%;
+	margin-top: -30px;
+	left: 100%;
+	z-index: 2;
+}
+
+#breadcrumbs div::before{
+	width: 0; 
+	height: 0; 
+	display: block;
+	content: " ";
+	border-top: 35px solid transparent;
+	border-bottom: 35px solid transparent;
+	border-left: 35px solid #454b51;
+	position: absolute;
+	top: 50%;
+	margin-top: -35px;
+	left: 100%;
+	z-index: 1;
+}
+
+#breadcrumbs div i{
+	color: #747d84;
+}
+
+#breadcrumbs #home-button{
+	background-color: #747d84;
+}
+
+#breadcrumbs div#home-button i{
+	color: white;
+}
+#breadcrumbs div#home-button::after{
+	border-left-color: #747d84;
+}
 #breadcrumbs #category-button, 
 #breadcrumbs #metadata-button, 
 #breadcrumbs #map-button {
 	display: none;
+}
+
+.category-screen #breadcrumbs div#category-button,
+.metadata-screen #breadcrumbs div#metadata-button,
+.map-screen #breadcrumbs div#map-button
+{
+	background-color: #454b51;
+}
+
+.category-screen #breadcrumbs div#home-button::after
+{
+	border-top-color: #454b51;
+	border-bottom-color: #454b51;
+}
+
+.metadata-screen #breadcrumbs div#category-button::after,
+.map-screen #breadcrumbs div#metadata-button::after
+{
+	border-top-color: #454b51;
+	border-bottom-color: #454b51;
+	border-left-color: #373b40;
+}
+
+.category-screen #breadcrumbs div#category-button::after,
+.metadata-screen #breadcrumbs div#metadata-button::after,
+.map-screen #breadcrumbs div#map-button::after
+{
+	border-color: #454b51;
 }
 
 #breadcrumbs i {
