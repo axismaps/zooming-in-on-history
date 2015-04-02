@@ -37,6 +37,9 @@ function resize(){
 	$( "#details-panel" )
 		.height( $(window).height() - $("#screen-top-border").height() - $("#breadcrumbs").height() )
 		.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
+	$( "#interaction-elements" )
+		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" )
+		.css( "left", $( "#details-panel" ).width() );
 }
 
 function getURLParameters(){

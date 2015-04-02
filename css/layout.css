@@ -84,7 +84,7 @@
 
 }
 
-html, body{
+html, body, button{
 	background-color: #454b51;
 	color: white;
 	margin: 0;
