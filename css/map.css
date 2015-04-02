@@ -12,6 +12,7 @@
 	top: 0;
 	background-color: rgba(0, 0, 0, 0.75);
 	padding: 20px;
+	border-left: #666;
 }
 
 #geocoder-section{
