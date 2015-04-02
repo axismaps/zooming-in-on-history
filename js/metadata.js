@@ -29,7 +29,7 @@ function showDetailsForMap( id, pageNav ){
 		.appendTo( $container );
 
 	if ( !pageNav ){
-		$( "#metadata > div" ).remove();
+		$( "#metadata > div:not(.footer)" ).remove();
 		$( "#metadata" ).append( $container );
 		$("#category").fadeOut( function(){
   		  $( "#metadata" ).fadeIn( function(){
@@ -50,7 +50,7 @@ function showDetailsForMap( id, pageNav ){
   		});
 		
 	} else {
-		var $old = $( "#metadata > div" );
+		var $old = $( "#metadata > div:not(.footer)" );
 		$card.removeClass( "map-card" );
 		$container
 			.append( $card )
@@ -74,6 +74,8 @@ function showDetailsForMap( id, pageNav ){
 
 	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 50 });
 	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
+	
+	$( "#footer-metadata" ).css( 'margin-top', $( ".card" ).height() + 'px' );
 
 	pageButtonsForScreen( "metadata" );
 }

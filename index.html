@@ -30,15 +30,24 @@
 			<h1 class="title">Zooming In On History</h1>
 			<h2 class="subtitle">Select a theme to begin...</h2>
 			<div id="categories"></div>
+			<div class="footer">
+				<span>The Norman B. Leventhal Map Center at the Boston Public Library</span>
+			</div>
 		</div>
 
 		<div id="category" class="screen">
 			<h1 class="title"></h1>
 			<div id="map-cards"></div>
+			<div class="footer" id="footer-category">
+				<span>The Norman B. Leventhal Map Center at the Boston Public Library</span>
+			</div>
 		</div>
 
 		<div id="metadata" class="screen">
 			<h1 class="title"></h1>
+			<div class="footer" id="footer-metadata">
+				<span>The Norman B. Leventhal Map Center at the Boston Public Library</span>
+			</div>
 		</div>
 
 		<div id="map" class="screen">
@@ -49,13 +58,20 @@
 				</div>
 			</div>
 			<div id="interaction-elements">
-				<div id="geocode">
-					<input id="geocode-input" type="text" placeholder="Geocoder input"></input>
-					<button id="geocode-submit" type="submit">Go</button>
+				<div id="geocoder-section">
+					<button id="find-your-city-button" type="submit"><i class="fa fa-search"></i><span>Find your city...</span></button>
+					<div id="geocode" style="display: none">
+						<input id="geocode-input" type="text" placeholder="Enter city, state, and zip..."></input>
+						<button id="geocode-submit" type="submit">Go</button>
+					</div>
+					<div id="no-location-found" style="display:none"><i class="fa fa-exclamation-triangle fa-2x"></i><span>Sorry, this location is off the map</span></div>
+					<button id="geocoder-close-button" type="close" style="display: none">X</button>
 				</div>
-				<span id="past">PAST</span>
-				<div id="transparency-slider"></div>
-				<span id="past">PRESENT</span>
+				<div id="transparency-div">
+					<span>PAST</span>
+					<div id="transparency-slider"></div>
+					<span>PRESENT</span>
+				</div>
 			</div>
 			<div id="mapdiv"></div>
 			<div id="reset-map"><i class="fa fa-undo"></i></div>
