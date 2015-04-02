@@ -8,9 +8,14 @@ function showDetailsForMap( id, pageNav ){
 	var $card = $( "#map" + id ).clone();
 	$card.children().hide();
 	$card
+	  .removeClass( "animated bounceIn" )
 		.click( function(){
-			showMap();
-			selectMap( id );
+  		  $( "#metadata" ).fadeOut( function() {
+    		  $( "#map" ).fadeIn( function() {
+      		  showMap();
+          selectMap( id );
+        });
+  		  });
 		})
 		.css({
   		  position : "fixed",
@@ -31,9 +36,15 @@ function showDetailsForMap( id, pageNav ){
     		  $card
     		    .removeClass( "map-card" )
     		    .addClass( "fixed" );
+    		  
     		  setTimeout( function() {
       		  $( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
       		  $card.children().fadeIn();
+      		  $( "#metadata .container" ).prepend( $card );
+      		  $card.css({
+        		  top : "auto",
+        		  left : "auto"
+      		  });
       		}, 1000 );
     		});
   		});

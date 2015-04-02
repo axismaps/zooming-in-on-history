@@ -52,7 +52,6 @@ function onMapMove(){
 }
 
 function showMap(){
-	changeScreens( $( "#metadata" ), $( "#map" ) );
 	addBreadcrumb( 'Map Viewer', 'map' );
 	map.invalidateSize();
 	$( "body" ).attr( "class", "map-screen" );
