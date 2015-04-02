@@ -133,6 +133,8 @@ function slider_init(){
 	});
 	
 	$( '#transparency-slider .ui-slider-handle' ).css( 'background-color', categories[ selectedCategory ].color );
+	
+	$( '.ui-slider-handle' ).append( '<span class="bar">|</span>' );
 }
 
 function changeHistoricMapOpacity(){

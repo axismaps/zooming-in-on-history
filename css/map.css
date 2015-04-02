@@ -113,6 +113,13 @@
 	cursor: pointer;
 }
 
+#transparency-slider .bar{
+	color: #fff;
+	position: absolute;
+	top: 5px;
+	left: 7px;
+}
+
 #details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{
 	left: 315px;
 	top: 100px;
