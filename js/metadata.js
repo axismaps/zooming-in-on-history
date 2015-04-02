@@ -3,16 +3,21 @@ var currentMap;
 function showDetailsForMap( id, pageNav ){
 	currentMap = id;
 	var $container = $( "<div>" ).attr( "class", "container" );
-	var $card = $( "#map" + id ).clone()
-		.removeClass( "map-card" )
+	
+	$( "body > .card" ).remove();
+	var $card = $( "#map" + id ).clone();
+	$card.children().hide();
+	$card
 		.click( function(){
 			showMap();
 			selectMap( id );
 		})
-		.appendTo( $container );
-
-	$( "p", $card )
-		.html( "<i class='fa fa-search-plus'></i> View the Map" );
+		.css({
+  		  position : "fixed",
+  		  top : $( "#map" + id ).offset().top,
+  		  left : $( "#map" + id ).offset().left
+		})
+		.appendTo( $( "body" ) );
 
 	var $text = $( "<p>" )
 		.html( maps[ id ].title + "<br>" + maps[ id ].author )
@@ -21,16 +26,29 @@ function showDetailsForMap( id, pageNav ){
 	if ( !pageNav ){
 		$( "#metadata > div" ).remove();
 		$( "#metadata" ).append( $container );
-		changeScreens( $("#category"), $( "#metadata" ) );
-		$card.addClass( "animated bounceInDown" )
+		$("#category").fadeOut( function(){
+  		  $( "#metadata" ).fadeIn( function(){
+    		  $card
+    		    .removeClass( "map-card" )
+    		    .addClass( "fixed" );
+    		  setTimeout( function() {
+      		  $( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
+      		  $card.children().fadeIn();
+      		}, 1000 );
+    		});
+  		});
+		
 	} else {
 		var $old = $( "#metadata > div" );
+		$card.removeClass( "map-card" );
 		$container
 			.append( $card )
 			.append( $text )
 			.appendTo( "#metadata" );
 		setTimeout( function(){
 			$old.remove();
+			$( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
+      $card.children().fadeIn();
 		},1000);
 		if ( pageNav == "next" ){
 			$old.addClass( "animated fadeOutLeft" );
