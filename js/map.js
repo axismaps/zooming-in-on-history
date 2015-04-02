@@ -116,7 +116,7 @@ function geocoder(){
 							.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
 							.togglePopup();
 							
-						map.fitBounds( historicTiles.options.bounds );
+						map.panTo( [ latlng.lat, latlng.lng ] );
 					} else {
 						$( '#no-location-found span' ).html( 'Sorry, this location is off the map' );
 						$( '#no-location-found' ).show();
