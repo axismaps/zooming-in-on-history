@@ -31,7 +31,7 @@ function selectMap( id ){
 
 	$( "#reset-map" ).hide();
 
-  $( "#slider-thumbnail" ).attr( "xlink:href", "data/img/thumbnails/" + id + ".jpg" );
+	$( "#slider-thumbnail" ).attr( "xlink:href", "data/img/thumbnails/" + id + ".jpg" );
 
 	showDetailsList( id );
 
@@ -41,7 +41,7 @@ function selectMap( id ){
 
 	$( "#reset-map" ).click( function(){
 		map.off( "movestart", onMapMove )
-			.fitBounds( bounds );
+			.fitBounds( bounds, {animate: false});
 		setTimeout( function(){
 			$( "#reset-map" ).hide();
 			map.on( "movestart", onMapMove );
