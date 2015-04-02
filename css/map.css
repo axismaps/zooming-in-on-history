@@ -16,15 +16,16 @@
 
 #geocoder-section{
 	display: inline-block;
+	width: 100%;
 }
 
 #find-your-city-button{
 	border-radius: 5px;
-	padding: 5px;
-	padding-right: 15px;
+	padding: 10px 15px;
 	font-size: 18px;
 	border: none;
 	cursor: pointer;
+	float: left;
 }
 
 #find-your-city-button i{
@@ -34,34 +35,33 @@
 #geocode{
 	float: left;
 	display: inline-block;
-	vertical-align: middle;
+	width: 40%;
 }
 
 #geocode-input, #geocode-submit{
-	line-height: 2.5;
 	border-radius: 5px;
-	margin: 0;
 	border: none;
-	padding: 0 20px;
+	padding: 10px 15px;
 	font-size: 18px;
+	float: left;
 }
 
 #geocode-input{
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-	width: 60%;
+	width: 80%;
 }
 
 #geocode-submit{
 	border-top-left-radius: 0;
 	border-bottom-left-radius: 0;
-	margin-left: -4px;
 	cursor: pointer;
 }
 
 #no-location-found {
 	display: inline-block;
-	line-height: 2.5em
+	line-height: 2.5em;
+	float: left;
 }
 
 #no-location-found i{
@@ -89,6 +89,8 @@
 #transparency-div{
 	display: inline-block;
 	margin: 0 50px;
+	float: right;
+	margin-top: -35px;
 }
 
 #transparency-div span{
