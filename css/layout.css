@@ -121,6 +121,8 @@ body{
 	font-size: 60px;
 	margin: 20px;
 	font-family: 'Prensa-Regular';
+	white-space: nowrap;
+	overflow: hidden;
 }
 .subtitle{
 	font-size: 30px;
