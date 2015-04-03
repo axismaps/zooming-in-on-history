@@ -3,6 +3,14 @@
 	vertical-align: top;
 	margin: 15px 60px 15px 525px;
 	text-align: left;
+	font-family: "proxima_nova_rgbold";
+}
+
+span.author{
+	text-transform: uppercase;
+}
+span.dimensions{
+	font-style: italic;
 }
 
 #metadata h1{

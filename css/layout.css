@@ -284,13 +284,12 @@ html, body, button{
 
 .page-button{
 	position: absolute;
-	top:50%;
+	top:165px;
 	display: none;
-	height: 200px;
-	width: 50px;
+	height: 460px;
+	width: 60px;
 	background-color: #373b40;
-	margin-top: -100px;
-	line-height: 200px;
+	line-height: 460px;
 	text-align: center;
 	cursor: pointer;
 }
