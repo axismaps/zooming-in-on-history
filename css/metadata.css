@@ -1,7 +1,7 @@
 #metadata > div.container > p{
 	display: inline-block;
 	vertical-align: top;
-	margin: 15px 60px 15px 525px;
+	margin: 15px 60px 15px 565px;
 	text-align: left;
 }
 
@@ -16,10 +16,11 @@
 	position: absolute;
 	top: 150px;
 	width: 100%;
+	text-align: left;
 }
 
 #metadata .card{
-  margin-left: 60px;
+  margin-left: 100px;
 }
 
 body > .card{
