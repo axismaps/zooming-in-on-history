@@ -16,6 +16,16 @@
   margin-left: 100px;
 }
 
+#metadata .card div p{
+	line-height: 15px;
+}
+#metadata .card div p.courtesy{
+	font-size: 12px;
+	position: absolute;
+	height: 25px;
+	bottom: 0;
+}
+
 body > .card{
   -webkit-transition: all 500ms ease-in;
   -moz-transition: all 500ms ease-in;

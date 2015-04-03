@@ -39,6 +39,7 @@ function showDetailsForMap( id, pageNav ){
     		  
     		  setTimeout( function() {
       		  $( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
+      		  if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
       		  $card.children().fadeIn();
       		  $( "#metadata .container" ).prepend( $card );
       		  $card.css({
@@ -59,6 +60,7 @@ function showDetailsForMap( id, pageNav ){
 		setTimeout( function(){
 			$old.remove();
 			$( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
+			if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
       $card.children().fadeIn();
 		},1000);
 		if ( pageNav == "next" ){
