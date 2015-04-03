@@ -3,6 +3,14 @@
 	vertical-align: top;
 	margin: 15px 60px 15px 565px;
 	text-align: left;
+	font-family: "source_sans_prosemibold";
+}
+
+span.author{
+	text-transform: uppercase;
+}
+span.dimensions{
+	font-style: italic;
 }
 
 #metadata > div.container {

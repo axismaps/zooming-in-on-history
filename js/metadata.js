@@ -25,7 +25,7 @@ function showDetailsForMap( id, pageNav ){
 		.appendTo( $( "body" ) );
 
 	var $text = $( "<p>" )
-		.html( maps[ id ].title + "<br>" + maps[ id ].author )
+		.html( maps[ id ].title + "<br><br><span class='author'>" + maps[ id ].author + ", " + maps[ id ].date + "</span><br><span class='dimensions'>" + maps[ id ].dimension + "</span>" )
 		.appendTo( $container );
 
 	if ( !pageNav ){
