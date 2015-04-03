@@ -32,7 +32,8 @@ function showMapsInCategory( id ){
 				.attr( "id", "page" + pageCount )
 				.hide()
 				.appendTo( $mapsDiv );
-		} 
+		}
+		if ( index && index % 4 == 0 ) $( "#page" + pageCount ).append( "<br>" );
 		var $div = $( "<div>" ).appendTo( "#page" + pageCount )
 			.attr( "id", "map" + m.number )
 			.addClass( "map-card card page" + pageCount + " pre-animated" + ( index % 4 + 1 ) )
