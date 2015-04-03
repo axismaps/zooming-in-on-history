@@ -12,11 +12,11 @@ function selectMap( id ){
 	if ( historicTiles ) map.removeLayer( historicTiles );
 	
 	var mapData = maps[ id ];
-	var bounds = [ 
+	var bounds = L.latLngBounds([ 
 		[mapData.bottom, mapData.left],
 		[mapData.top, mapData.right]
-	];
-	map.setMaxBounds( bounds );
+	]);
+	map.setMaxBounds( bounds.pad(.25) );
 	map.options.maxZoom = ( mapData.MaxZoom );
 	map.options.minZoom = ( mapData.MinZoom );
 	
