@@ -222,6 +222,12 @@ html, body, button{
 #breadcrumbs div i{
 	color: #747d84;
 }
+#breadcrumbs div span{
+	display: inline-block;
+	vertical-align: middle;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
 
 #breadcrumbs #home-button{
 	background-color: #747d84;
