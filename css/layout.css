@@ -283,9 +283,18 @@ html, body, button{
 	padding-top: 30px;
 }
 
+.footer img{
+	display: inline-block;
+	vertical-align: middle;
+	width: 36px;
+	height: 36px;
+	margin-right: 10px;
+}
 .footer span{
 	font-size: 20px;
 	font-family: 'Prensa-Regular';
+	display: inline-block;
+	vertical-align: middle;
 }
 
 .page-button{
