@@ -72,7 +72,7 @@ function showDetailsForMap( id, pageNav ){
 	addBreadcrumb( maps[ id ].title, "metadata" );
 	$( "body" ).attr( "class", "metadata-screen" );		
 
-	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 50 });
+	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 40 });
 	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
 	
 	$( "#footer-metadata" ).css( 'margin-top', $( ".card" ).height() + 'px' );
