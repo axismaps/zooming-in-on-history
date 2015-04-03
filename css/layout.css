@@ -91,6 +91,10 @@ html, body, button{
 	font-family: 'proxima_novalight';
 }
 
+body{
+	overflow: hidden;
+}
+
 #screen-top-border{
 	background-color: #fff;
 	height: 10px;

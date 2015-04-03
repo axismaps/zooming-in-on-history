@@ -42,6 +42,8 @@ function resize(){
 		.css( "left", $( "#details-panel" ).width() );
 
 	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
+
+	$( "body" ).width( $(window).width() );
 }
 
 function getURLParameters(){
