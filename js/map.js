@@ -132,7 +132,7 @@ function geocoder(){
 							.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
 							.togglePopup();
 							
-						map.panTo( [ latlng.lat, latlng.lng ] );
+						map.panTo( [ latlng.lat, latlng.lng ], { animate: false } );
 					} else {
 						$( '#no-location-found span' ).html( 'Sorry, this location is off the map' );
 						$( '#no-location-found' ).show();
