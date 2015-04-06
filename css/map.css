@@ -129,21 +129,48 @@
 	top: 100px;
 }
 
-#reset-map{
-	width: 60px;
-	height: 60px;
+#map-ui-buttons{
 	position: absolute;
 	left: 15px;
 	top: 145px;
-	background-color: rgba(0,0,0,.75);
-	line-height: 60px;
-	border-radius: 10px;
-	font-size: 30px;
-	cursor: pointer;
-	display: none;
 }
 
-#details-panel.show ~ #reset-map{
+#zoom-buttons{
+}
+
+#map-ui-buttons .button{
+	width: 60px;
+	height: 60px;
+	display: inline-block;
+	background-color: rgba(0,0,0,.75);
+	cursor: pointer;
+	line-height: 60px;
+	font-size: 30px;
+	margin: 0;
+	padding: 0;
+}
+
+#map-ui-buttons .left-button{
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+}
+
+#map-ui-buttons .right-button{
+	border-top-right-radius: 10px;
+	border-bottom-right-radius: 10px;
+	margin-right: 10px;
+	margin-left: -3px;
+	border-left: 1px solid #999;
+}
+
+#zoom-buttons i{
+}
+
+#reset-map{
+	border-radius: 10px;
+}
+
+#details-panel.show ~ #map-ui-buttons{
 	left: 360px;
 	top: 165px;
 }
