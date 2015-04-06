@@ -8,6 +8,7 @@ function initialize(){
 	createEvents();
 	createMap();
 	addBreadcrumb( 'Home', "home" );
+	initTimer();
 }
 
 function createEvents(){
@@ -124,4 +125,20 @@ function addBreadcrumb( title, level ){
 
 function sanitize( word ){
 	return word.replace(/\s+/g, '-').replace(/[^a-zA-Z-]/g, '').toLowerCase();
+}
+
+function initTimer(){
+	var idleTimer = null,
+		idleWait = 15000;
+	
+	$( '*' ).bind( 'mousemove keydown scroll', function() {
+		clearTimeout( idleTimer );
+		
+		idleTimer = setTimeout( function() {
+			$( '#home-button' ).click();
+		}, idleWait );
+	});
+	
+	//starts the timer
+	$( 'body' ).trigger( 'mousemove' );
 }
