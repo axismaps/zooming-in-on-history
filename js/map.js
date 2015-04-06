@@ -47,6 +47,15 @@ function selectMap( id ){
 			map.on( "movestart", onMapMove );
 		},750);
 	})
+	
+	$( "#zoom-out-button" ).click( function(){
+		console.log('zooming out?');
+		map.zoomOut();
+	});
+	
+	$( "#zoom-in-button" ).click( function(){
+		map.zoomIn();
+	});
 }
 
 function onMapMove(){
