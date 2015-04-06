@@ -39,6 +39,7 @@ function showDetailsForMap( id, pageNav ){
     		  
     		  setTimeout( function() {
       		  $( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
+      		  if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
       		  $card.children().fadeIn();
       		  $( "#metadata .container" ).prepend( $card );
       		  $card.css({
@@ -59,6 +60,7 @@ function showDetailsForMap( id, pageNav ){
 		setTimeout( function(){
 			$old.remove();
 			$( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
+			if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
       $card.children().fadeIn();
 		},1000);
 		if ( pageNav == "next" ){
@@ -72,7 +74,7 @@ function showDetailsForMap( id, pageNav ){
 	addBreadcrumb( maps[ id ].title, "metadata" );
 	$( "body" ).attr( "class", "metadata-screen" );		
 
-	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 50 });
+	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 40 });
 	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
 	
 	$( "#footer-metadata" ).css( 'margin-top', $( ".card" ).height() + 'px' );

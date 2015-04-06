@@ -12,11 +12,11 @@ function selectMap( id ){
 	if ( historicTiles ) map.removeLayer( historicTiles );
 	
 	var mapData = maps[ id ];
-	var bounds = [ 
+	var bounds = L.latLngBounds([ 
 		[mapData.bottom, mapData.left],
 		[mapData.top, mapData.right]
-	];
-	map.setMaxBounds( bounds );
+	]);
+	map.setMaxBounds( bounds.pad(.25) );
 	map.options.maxZoom = ( mapData.MaxZoom );
 	map.options.minZoom = ( mapData.MinZoom );
 	
@@ -31,7 +31,7 @@ function selectMap( id ){
 
 	$( "#reset-map" ).hide();
 
-  $( "#slider-thumbnail" ).attr( "xlink:href", "data/img/thumbnails/" + id + ".jpg" );
+	$( "#slider-thumbnail" ).attr( "xlink:href", "data/img/thumbnails/" + id + ".jpg" );
 
 	showDetailsList( id );
 
@@ -41,7 +41,7 @@ function selectMap( id ){
 
 	$( "#reset-map" ).click( function(){
 		map.off( "movestart", onMapMove )
-			.fitBounds( bounds );
+			.fitBounds( bounds, {animate: false});
 		setTimeout( function(){
 			$( "#reset-map" ).hide();
 			map.on( "movestart", onMapMove );
@@ -116,7 +116,7 @@ function geocoder(){
 							.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
 							.togglePopup();
 							
-						map.fitBounds( historicTiles.options.bounds );
+						map.panTo( [ latlng.lat, latlng.lng ] );
 					} else {
 						$( '#no-location-found span' ).html( 'Sorry, this location is off the map' );
 						$( '#no-location-found' ).show();

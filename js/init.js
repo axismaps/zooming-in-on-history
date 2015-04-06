@@ -40,6 +40,10 @@ function resize(){
 	$( "#interaction-elements" )
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" )
 		.css( "left", $( "#details-panel" ).width() );
+
+	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
+
+	$( "body" ).width( $(window).width() );
 }
 
 function getURLParameters(){
@@ -99,7 +103,7 @@ function addBreadcrumb( title, level ){
 	var bc = $( '#breadcrumbs' ),
 		id = '#' + level + '-button';
 		
-	bc.children( id ).css( 'display', 'inline-block' ).children( 'span' ).text( title ).succinct({ size: 60 });
+	bc.children( id ).css( 'display', 'inline-block' ).children( 'span' ).text( title );
 	
 	$( id ).on( 'click', function() {
 		if( id != '#map-button' && $( this ).next( ':hidden' ).length == 0 ) {
@@ -113,6 +117,8 @@ function addBreadcrumb( title, level ){
 			pageButtonsForScreen( level );
 		}
 	});
+
+	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
 }
 
 function sanitize( word ){

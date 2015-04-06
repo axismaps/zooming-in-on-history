@@ -1,9 +1,9 @@
 #metadata > div.container > p{
 	display: inline-block;
 	vertical-align: top;
-	margin: 15px 60px 15px 525px;
+	margin: 15px 60px 15px 565px;
 	text-align: left;
-	font-family: "proxima_nova_rgbold";
+	font-family: "source_sans_prosemibold";
 }
 
 span.author{
@@ -24,10 +24,21 @@ span.dimensions{
 	position: absolute;
 	top: 150px;
 	width: 100%;
+	text-align: left;
 }
 
 #metadata .card{
-  margin-left: 60px;
+  margin-left: 100px;
+}
+
+#metadata .card div p{
+	line-height: 15px;
+}
+#metadata .card div p.courtesy{
+	font-size: 12px;
+	position: absolute;
+	height: 25px;
+	bottom: 0;
 }
 
 body > .card{
