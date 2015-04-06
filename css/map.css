@@ -51,6 +51,7 @@
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
 	width: 80%;
+	font-family: 'source_sans_prolight';
 }
 
 #geocode-submit{
