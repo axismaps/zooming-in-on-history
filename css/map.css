@@ -135,9 +135,6 @@
 	top: 145px;
 }
 
-#zoom-buttons{
-}
-
 #map-ui-buttons .button{
 	width: 60px;
 	height: 60px;
@@ -161,9 +158,6 @@
 	margin-right: 10px;
 	margin-left: -3px;
 	border-left: 1px solid #999;
-}
-
-#zoom-buttons i{
 }
 
 #reset-map{
