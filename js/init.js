@@ -109,6 +109,7 @@ function addBreadcrumb( title, level ){
 		if( id != '#map-button' && $( this ).next( ':hidden' ).length == 0 ) {
 			
 			$( this ).nextAll().hide();
+			$( '#geocoder-close-button' ).click();
 			
 			var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
 			changeScreens( $( "#" + current ), $( "#" + level ) );
