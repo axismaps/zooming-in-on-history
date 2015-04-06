@@ -47,6 +47,7 @@ function selectMap( id ){
 	});
 
 	$( "#reset-map" ).click( function(){
+		if( $( '#detail-single' ).is( ':visible' ) ) $( '#detail-back' ).click();
 		map.off( "movestart", onMapMove )
 			.fitBounds( bounds, {animate: false, paddingTopLeft: [ 300, 110 ] });
 		setTimeout( function(){
