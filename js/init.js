@@ -1,4 +1,6 @@
 var params = {};
+var idleTimer = null,
+	idleWait = 15000;
 
 getURLParameters();
 loadData();
@@ -128,9 +130,6 @@ function sanitize( word ){
 }
 
 function initTimer(){
-	var idleTimer = null,
-		idleWait = 15000;
-	
 	$( '*' ).bind( 'mousemove keydown scroll', function() {
 		clearTimeout( idleTimer );
 		

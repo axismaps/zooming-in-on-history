@@ -38,6 +38,13 @@ function selectMap( id ){
 	pageButtonsForScreen( "map" );
 
 	map.on( "movestart", onMapMove );
+	map.on( "zoomstart", function() {
+		clearTimeout( idleTimer );
+		
+		idleTimer = setTimeout( function() {
+			$( '#home-button' ).click();
+		}, idleWait );
+	});
 
 	$( "#reset-map" ).click( function(){
 		map.off( "movestart", onMapMove )
