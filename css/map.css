@@ -171,6 +171,6 @@
 }
 
 #details-panel.show ~ #map-ui-buttons{
-	left: 360px;
+	left: 320px;
 	top: 165px;
 }

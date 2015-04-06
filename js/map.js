@@ -3,7 +3,7 @@ var map,
 	geocodeResultLayer,
 	historicTiles;
 function createMap(){
-	map = L.map( "mapdiv" ).setView( [40,-80], 5 );
+	map = L.map( "mapdiv", { zoomControl: false } ).setView( [40,-80], 5 );
 	modernTiles = L.tileLayer( "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png" , { maxNativeZoom : 18, maxZoom : 21 }).addTo(map);
 	geocodeResultLayer = L.layerGroup().addTo(map);
 }
