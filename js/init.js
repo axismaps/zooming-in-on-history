@@ -80,10 +80,13 @@ function pageButtonsForScreen( s ){
 			$( ".page-button" ).off( "click" );
 			$( "#prev-page" ).on( "click", function(){
 				showPage( page - 1 );
+				hideShowPageButton( page, pageCount);
 			});
 			$( "#next-page" ).on( "click", function(){
 				showPage( page + 1 );
+				hideShowPageButton( page, pageCount);
 			});
+			hideShowPageButton( page, pageCount);
 		} else {
 			$( ".page-button" ).hide();
 		}
@@ -91,15 +94,19 @@ function pageButtonsForScreen( s ){
 		$( ".page-button" ).show();
 		$( ".page-button" ).off( "click" );
 		$( "#prev-page" ).on( "click", prevMap );
-		$( "#next-page" ).on( "click", function(){
-			var cat = categories[ selectedCategory ],
-				index = cat.maps.indexOf( currentMap );
-			if ( index == cat.maps.length - 1 ) return;
-			showDetailsForMap( cat.maps[ index + 1 ], "next" );
-		});
+		$( "#next-page" ).on( "click", nextMap );
+		
+		hideShowPageButton( categories[ selectedCategory ].maps.indexOf( currentMap ) + 1, categories[ selectedCategory ].maps.length );
 	} else {
 		$( ".page-button" ).hide();
 	}
+}
+
+function hideShowPageButton( current, total) {
+	$( '#prev-page' ).show();
+	$( '#next-page' ).show();
+	if ( current == 1 ) $( '#prev-page' ).hide();
+	if ( current == total ) $( '#next-page' ).hide();
 }
 
 function addBreadcrumb( title, level ){
