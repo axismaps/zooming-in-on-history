@@ -57,7 +57,6 @@ function selectMap( id ){
 	})
 	
 	$( "#zoom-out-button" ).click( function(){
-		console.log('zooming out?');
 		map.zoomOut();
 	});
 	
