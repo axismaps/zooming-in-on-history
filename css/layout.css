@@ -303,7 +303,7 @@ body{
 }
 
 .category-screen #next-page{
-	right: 12px;
+	right: 17px;
 }
 
 #prev-page:hover{
@@ -312,22 +312,4 @@ body{
 
 #next-page:hover{
 	background-color: #282b2e;
-}
-
-::-webkit-scrollbar {
-    width: 12px;
-	z-index: 1010;
-}
-::-webkit-scrollbar-track {
-    background-color: #eaeaea;
-    border-left: 1px solid #ccc;
-	z-index: 1010;
-}
-::-webkit-scrollbar-thumb {
-    background-color: #ccc;
-	z-index: 1010;
-}
-::-webkit-scrollbar-thumb:hover {
-    background-color: #aaa;
-	z-index: 1010;
 }
