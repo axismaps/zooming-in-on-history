@@ -10,6 +10,7 @@ function selectCategory( id ){
 	showMapsInCategory( id );
 	addBreadcrumb( $( "#category .title" ).text(), "category" );
 	$( '#top-section' ).show( [ 400 ] ).children( '#screen-top-border' ).css( "background-color", categories[id].color );
+	breadcrumbCSSUpdates();
 
 	// this should be done more generically for lots of UI elements
 	$( "#detail-back" ).css( "background-color", categories[id].color );
@@ -40,6 +41,7 @@ function showMapsInCategory( id ){
 			.css( "background-image", "url( data/img/thumbnails/" + m.number + ".jpg )" )
 			.click( function(){
 				showDetailsForMap( m.number );
+				breadcrumbCSSUpdates();
 			});
 		
 		//Sets bounce in transition only for the first page

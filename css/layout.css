@@ -135,7 +135,6 @@ body{
 	height: 60px;
 	line-height: 60px;
 	padding: 0 30px 0 60px;
-	cursor: pointer;
 	position: relative;
 }
 
@@ -177,6 +176,24 @@ body{
 	vertical-align: middle;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+#breadcrumbs div span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#breadcrumbs div i:hover{
+	cursor: pointer;
+}
+
+#breadcrumbs div span.last:hover{
+	text-decoration: none;
+	cursor: initial;
+}
+
+#breadcrumbs div i.last:hover{
+	cursor: initial;
 }
 
 #breadcrumbs #home-button{

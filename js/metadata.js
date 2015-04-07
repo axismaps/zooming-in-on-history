@@ -14,6 +14,7 @@ function showDetailsForMap( id, pageNav ){
     		  $( "#map" ).fadeIn( function() {
       		  showMap();
           selectMap( id );
+		  breadcrumbCSSUpdates();
         });
   		  });
 		})

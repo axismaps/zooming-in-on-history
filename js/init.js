@@ -136,6 +136,8 @@ function addBreadcrumb( title, level ){
 		if( id == '#home-button' ) {
 			$( '#top-section' ).hide( [ 400 ] );
 		}
+		
+		breadcrumbCSSUpdates();
 	});
 
 	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
@@ -156,4 +158,11 @@ function initTimer(){
 	
 	//starts the timer
 	$( 'body' ).trigger( 'mousemove' );
+}
+
+function breadcrumbCSSUpdates(){
+	console.log('breadcrumbs CSS update called' );
+	$( '#breadcrumbs > div span.last, #breadcrumbs > div i.last' ).removeClass( 'last' );
+	
+	$( '#breadcrumbs > div:visible').last().children( 'span, i' ).addClass( 'last' );
 }
