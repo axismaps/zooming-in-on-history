@@ -132,6 +132,10 @@ function addBreadcrumb( title, level ){
 			
 			pageButtonsForScreen( level );
 		}
+		
+		if( id == '#home-button' ) {
+			$( '#top-section' ).hide( [ 400 ] );
+		}
 	});
 
 	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );

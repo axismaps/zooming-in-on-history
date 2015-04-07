@@ -49,10 +49,6 @@ body{
 	width: 100%;
 }
 
-.home-screen #screen-top-border{
-	display: none !important;
-}
-
 .screen{
 	position: absolute;
 	top: 0;
@@ -61,7 +57,7 @@ body{
 	width: 100%;
 	height: 100%;
 	display: none;
-	padding-top: 60px;
+	padding-top: 70px;
 	box-sizing: border-box;
 }
 
@@ -122,10 +118,6 @@ body{
 	background-color: #454b51;
 	white-space: nowrap;
 	overflow: hidden;
-}
-
-.home-screen #breadcrumbs{
-	display: none;
 }
 
 .fa{

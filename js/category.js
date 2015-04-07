@@ -9,7 +9,7 @@ function selectCategory( id ){
 	$( "#category .title" ).html( categories[ id ].name );
 	showMapsInCategory( id );
 	addBreadcrumb( $( "#category .title" ).text(), "category" );
-	$( '#screen-top-border' ).show().css( "background-color", categories[id].color );
+	$( '#top-section' ).show( [ 400 ] ).children( '#screen-top-border' ).css( "background-color", categories[id].color );
 
 	// this should be done more generically for lots of UI elements
 	$( "#detail-back" ).css( "background-color", categories[id].color );
