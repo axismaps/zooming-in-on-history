@@ -42,6 +42,17 @@ function createEvents(){
 		.on( "swiperight", prevMap );
 
 function resize(){
+	if ( $( '#category' ).is( ':visible' ) ){
+		if ( $( 'body' ).width() > 1235 && $( '.page br' ).length == 0 ) {
+			var length = $( '.card' ).length;
+			$( '.card:nth-child(4)' ).after( '<br>' );
+		} else if ( $( 'body' ).width() <= 1235 ){
+			$( '.page br' ).remove();
+		}
+		$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
+	}
+	
+	
 	$( "#details-panel" )
 		.height( $(window).height() - $("#screen-top-border").height() - $("#breadcrumbs").height() )
 		.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
@@ -161,7 +172,6 @@ function initTimer(){
 }
 
 function breadcrumbCSSUpdates(){
-	console.log('breadcrumbs CSS update called' );
 	$( '#breadcrumbs > div span.last, #breadcrumbs > div i.last' ).removeClass( 'last' );
 	
 	$( '#breadcrumbs > div:visible').last().children( 'span, i' ).addClass( 'last' );
