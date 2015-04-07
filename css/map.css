@@ -37,7 +37,6 @@
 #geocode{
 	float: left;
 	display: inline-block;
-	width: 40%;
 }
 
 #geocode-input, #geocode-submit{
@@ -51,7 +50,7 @@
 #geocode-input{
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-	width: 80%;
+	width: 200px;
 	font-family: 'source_sans_prolight';
 }
 
