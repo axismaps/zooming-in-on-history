@@ -43,10 +43,18 @@ body{
 	overflow: hidden;
 }
 
+#top-section{
+	width: 100%;
+}
+
 #screen-top-border{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
 	background-color: #fff;
 	height: 10px;
-	width: 100%;
+	z-index: 9999;
 }
 
 .screen{
@@ -117,12 +125,14 @@ body{
 
 #breadcrumbs{
 	position: absolute;
-	z-index: 1001;
 	height: 60px;
+	width: 100%;
+	top: 10px;
 	margin-right:10px;
 	background-color: #454b51;
 	white-space: nowrap;
 	overflow: hidden;
+	z-index: 9999;
 }
 
 .fa{
