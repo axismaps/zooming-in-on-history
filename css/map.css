@@ -151,17 +151,22 @@
 #map-ui-buttons #zoom-out-button{
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 #map-ui-buttons #zoom-in-button{
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 	margin-left: -3px;
+	margin-right: 20px;
+	margin-top: 20px;
 	border-left: 1px solid #999;
 }
 
 #reset-map{
 	border-radius: 10px;
+	margin-top: 20px;
 }
 
 #details-panel.show ~ #map-ui-buttons{
