@@ -68,11 +68,13 @@ body{
 	white-space: nowrap;
 	overflow: hidden;
 	font-weight: normal;
+	text-shadow: 1px 1px #000;
 }
 .subtitle{
 	font-size: 30px;
 	margin: 10px 0;
 	font-weight: normal;
+	text-shadow: 1px 1px #000;
 }
 
 .card{
