@@ -5,6 +5,11 @@ var idleTimer = null,
 getURLParameters();
 loadData();
 
+//Prevent right-click context-menu
+$( document ).bind( "contextmenu", function( e ) {
+	e.preventDefault();
+});
+
 function initialize(){
 	createCategories();
 	createEvents();
