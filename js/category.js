@@ -60,7 +60,7 @@ function showMapsInCategory( id ){
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", categories[ id ].color )
 			.appendTo( $div )
-			.succinct({ size: 65 });
+			.succinct({ size: 45 });
 		$( ".map-card:last p" ).append( " <span>(" + m.date + ")</span>" );
 		index++;
 	});
