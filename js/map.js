@@ -16,7 +16,7 @@ function selectMap( id ){
 		[mapData.bottom, mapData.left],
 		[mapData.top, mapData.right]
 	]);
-	map.setMaxBounds( bounds.pad(.3) );
+	map.setMaxBounds( bounds.pad(.25) );
 	map.options.maxZoom = ( mapData.MaxZoom );
 	map.options.minZoom = ( mapData.MinZoom );
 	
