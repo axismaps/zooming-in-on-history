@@ -42,16 +42,7 @@ function createEvents(){
 		.on( "swiperight", prevMap );
 
 function resize(){
-	if ( $( '#category' ).is( ':visible' ) ){
-		if ( $( 'body' ).width() > 1235 && $( '.page br' ).length == 0 ) {
-			var length = $( '.card' ).length;
-			$( '.card:nth-child(4)' ).after( '<br>' );
-		} else if ( $( 'body' ).width() <= 1235 ){
-			$( '.page br' ).remove();
-		}
-		$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
-	}
-	
+	$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
 	$( '.page-button' ).css( 'top', ( $( window ).height() - 460 ) / 2 + 'px' );
 	
 	

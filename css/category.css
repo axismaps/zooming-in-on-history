@@ -26,3 +26,9 @@
 	left: 0;
 	width: 100%;
 }
+
+.map-cards-wrapper{
+	position: relative;
+	max-width: 1200px;
+	margin: 0 auto;
+}

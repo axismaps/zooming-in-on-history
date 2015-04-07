@@ -33,8 +33,11 @@ function showMapsInCategory( id ){
 				.attr( "id", "page" + pageCount )
 				.hide()
 				.appendTo( $mapsDiv );
+			$( "<div>" )
+				.attr( "class", "map-cards-wrapper")
+				.appendTo( $( '#page' + pageCount ) );
 		}
-		var $div = $( "<div>" ).appendTo( "#page" + pageCount )
+		var $div = $( "<div>" ).appendTo( "#page" + pageCount + " .map-cards-wrapper" )
 			.attr( "id", "map" + m.number )
 			.addClass( "map-card card page" + pageCount + " pre-animated" + ( index % 4 + 1 ) )
 			.css( "background-image", "url( data/img/thumbnails/" + m.number + ".jpg )" )
