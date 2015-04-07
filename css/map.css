@@ -107,6 +107,7 @@
 	margin: 0 15px;
 	background: transparent;
 	vertical-align: bottom;
+	border: none;
 }
 
 #transparency-slider .ui-slider-handle{
