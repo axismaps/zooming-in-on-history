@@ -18,6 +18,7 @@
 #geocoder-section{
 	display: inline-block;
 	width: 100%;
+	vertical-align: bottom;
 }
 
 #find-your-city-button{
@@ -92,7 +93,7 @@
 	display: inline-block;
 	margin: 0 50px;
 	float: right;
-	margin-top: -35px;
+	margin-top: -40px;
 }
 
 #transparency-div span{
