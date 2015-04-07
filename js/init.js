@@ -1,6 +1,6 @@
 var params = {};
 var idleTimer = null,
-	idleWait = 60000;
+	idleWait = 120000;
 
 getURLParameters();
 loadData();
