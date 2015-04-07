@@ -52,6 +52,8 @@ function resize(){
 		$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
 	}
 	
+	$( '.page-button' ).css( 'top', ( $( window ).height() - 460 ) / 2 + 'px' );
+	
 	
 	$( "#details-panel" )
 		.height( $(window).height() - $("#screen-top-border").height() - $("#breadcrumbs").height() )
