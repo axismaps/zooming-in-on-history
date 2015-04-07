@@ -67,6 +67,10 @@ body{
 	display: none;
 	padding-top: 70px;
 	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#category.screen {
 	overflow-x: hidden;
 	overflow-y: scroll;
 }
@@ -293,9 +297,13 @@ body{
 	border-bottom-right-radius: 5px;
 }
 #next-page{
-	right: 12px;
+	right: 0;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+}
+
+.category-screen #next-page{
+	right: 12px;
 }
 
 #prev-page:hover{
