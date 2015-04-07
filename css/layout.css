@@ -285,3 +285,11 @@ body{
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
 }
+
+#prev-page:hover{
+	background-color: #282b2e;
+}
+
+#next-page:hover{
+	background-color: #282b2e;
+}
