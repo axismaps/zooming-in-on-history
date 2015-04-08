@@ -57,6 +57,11 @@ body{
 	z-index: 9999;
 }
 
+.category-screen #screen-top-border {
+	right: 17px;
+	left: -17px;
+}
+
 .screen{
 	position: absolute;
 	top: 0;
@@ -132,11 +137,14 @@ body{
 	height: 60px;
 	width: 100%;
 	top: 10px;
-	margin-right:10px;
 	background-color: #454b51;
 	white-space: nowrap;
 	overflow: hidden;
 	z-index: 9999;
+}
+
+.category-screen #breadcrumbs {
+	right:17px;
 }
 
 .fa{
