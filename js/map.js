@@ -10,6 +10,7 @@ function createMap(){
 
 function selectMap( id ){
 	if ( historicTiles ) map.removeLayer( historicTiles );
+	map.setMaxBounds( null );
 	
 	var mapData = maps[ id ];
 	var bounds = L.latLngBounds([ 
