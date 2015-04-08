@@ -57,11 +57,6 @@ body{
 	z-index: 9999;
 }
 
-.category-screen #screen-top-border {
-	right: 17px;
-	left: -17px;
-}
-
 .screen{
 	position: absolute;
 	top: 0;
@@ -73,11 +68,6 @@ body{
 	padding-top: 70px;
 	box-sizing: border-box;
 	overflow: hidden;
-}
-
-#category.screen {
-	overflow-x: hidden;
-	overflow-y: scroll;
 }
 
 .title{
@@ -141,10 +131,6 @@ body{
 	white-space: nowrap;
 	overflow: hidden;
 	z-index: 9999;
-}
-
-.category-screen #breadcrumbs {
-	right:17px;
 }
 
 .fa{
