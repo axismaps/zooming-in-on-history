@@ -15,23 +15,22 @@
 	border-left: 1px solid #666;
 }
 
-#geocoder-section{
-	display: inline-block;
-	width: 100%;
-	vertical-align: bottom;
-}
-
 #find-your-city-button{
+	display: inline-block;
+	float: left;
 	border-radius: 5px;
 	padding: 10px 15px;
 	font-size: 18px;
 	border: none;
 	cursor: pointer;
-	float: left;
 }
 
 #find-your-city-button i{
 	margin: 0 10px;
+}
+
+#geocoder-section{
+	width: 100%;
 }
 
 #geocode{
@@ -62,8 +61,9 @@
 
 #no-location-found {
 	display: inline-block;
-	line-height: 2.5em;
 	float: left;
+	margin-left: 20px;
+	padding: 6px 0;
 }
 
 #no-location-found i{
@@ -92,7 +92,7 @@
 	display: inline-block;
 	margin: 0 50px;
 	float: right;
-	margin-top: -40px;
+	padding: 7px 0;
 }
 
 #transparency-div span{
