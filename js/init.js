@@ -32,14 +32,16 @@ function createEvents(){
 	var category_hammer = new Hammer( $("#category")[0] );
 	category_hammer.on( "swipeleft", function(){
 		showPage( page + 1 );
+		hideShowPageButton( page, pageCount);
 	}).on( "swiperight", function(){
 		showPage( page - 1 );
+		hideShowPageButton( page, pageCount);
 	});
 
 	var metadata_hammer = new Hammer( $("#metadata")[0] );
 	metadata_hammer
 	  .on( "swipeleft", nextMap )
-		.on( "swiperight", prevMap );
+	  .on( "swiperight", prevMap );
 
 function resize(){
 	var w = $(window).width(),
