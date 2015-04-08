@@ -32,11 +32,32 @@ function showDetailsList( map_id ){
 
 function showDetail( d ){
 	map.setView( [ d.lat, d.lon ], map.getMaxZoom() );
-	$( "#details-list" ).hide();
-	$( "#detail-single" ).show();
+	$( "#details-list" ).attr( "class", "animated fadeOutLeft" );
+	setTimeout( function(){
+		$( "#details-list" ).hide().removeClass('animated fadeOutLeft' );
+		$( "#detail-single" ).show().attr( "class", "animated fadeInRight" );
+		setTimeout( function(){
+			$( "#detail-single" ).removeClass('animated fadeInRight' );
+		}, 1000 );
+	}, 500 );
+	
 	$( "#detail-single h3" ).remove();
 	$( "#detail-single p" ).remove();
 	$( "<h3>" ).html( d.title ).appendTo( "#detail-single" );
 	$( "<p>" ).html( d.caption ).appendTo( "#detail-single" );
 	if ( d.image_num ) $( "#detail-single" ).append( "<p><img src='data/img/details/" + d.image_num + "'/></p>" );
+}
+
+function backButtonInit() {
+	$( "#detail-back" ).click( function(){
+		
+		$( "#detail-single" ).attr( "class", "animated fadeOutRight" );
+		setTimeout( function(){
+			$( "#detail-single" ).hide().removeClass('animated fadeOutRight' );
+			$( "#details-list" ).show().attr( "class", "animated fadeInLeft" );
+			setTimeout( function(){
+				$( "#details-list" ).removeClass('animated fadeInLeft' );
+			}, 1000 );
+		}, 500 );
+	})
 }

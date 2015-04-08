@@ -22,9 +22,9 @@ function createEvents(){
 	$( ".screen" ).on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
 		$(this).removeClass( "fadeIn" );
 	});
-	$( "#detail-back" ).click( function(){
-		showDetailsList( currentMap );
-	})
+	
+	backButtonInit();
+	
 	$(window).resize( resize );
 	resize();
 }

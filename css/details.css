@@ -9,6 +9,7 @@
 	display: none;
 	overflow: auto;
 	text-align: center;
+	overflow-x: hidden;
 }
 #details-panel.show{
 	display: block;
