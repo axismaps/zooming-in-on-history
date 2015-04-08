@@ -68,6 +68,11 @@ function resize(){
 		$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
 	}
 
+	if ( $( "#metadata .container" )[0] ){
+		$( "#metadata .container" ).width( w - $( ".page-button" ).width() - 20 )
+			.css( "max-height", h - $( "#metadata .container" ).offset().top - 50 + "px" );
+	}
+
 	$( "body" ).width( w );
 }
 

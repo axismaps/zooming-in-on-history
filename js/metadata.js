@@ -25,9 +25,19 @@ function showDetailsForMap( id, pageNav ){
 		})
 		.appendTo( $( "body" ) );
 
+	var $textContainer = $( "<div>" ).attr( "class", "meta-text" ).appendTo( $container );
+
 	var $text = $( "<p>" )
-		.html( maps[ id ].title + "<br><br><span class='author'>" + maps[ id ].author + ", " + maps[ id ].date + "</span><br><span class='dimensions'>" + maps[ id ].dimension + "</span>" )
-		.appendTo( $container );
+		.attr( "class", "caption-title" )
+		.html( maps[ id ].title + "<br><br><span class='author'>" + ( maps[ id ].author ?  ( maps[ id ].author + ", " ) : "" ) + maps[ id ].date + "</span><br><span class='dimensions'>" + maps[ id ].dimension + "</span>" )
+		.appendTo( $textContainer );
+
+	$textContainer.append( "<hr>" );
+
+	var $caption = $( "<p>" )
+		.attr( "class", "caption" )
+		.html( maps[ id ].caption )
+		.appendTo( $textContainer );
 
 	if ( !pageNav ){
 		$( "#metadata > div:not(.footer)" ).remove();
@@ -54,15 +64,19 @@ function showDetailsForMap( id, pageNav ){
 	} else {
 		var $old = $( "#metadata > div:not(.footer)" );
 		$card.removeClass( "map-card" );
+		$card.css({
+        		  top : "auto",
+        		  left : "auto"
+      		  });
 		$container
 			.append( $card )
-			.append( $text )
+			.append( $textContainer )
 			.appendTo( "#metadata" );
 		setTimeout( function(){
 			$old.remove();
 			$( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
 			if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
-      $card.children().fadeIn();
+     		$card.children().fadeIn();
 		},1000);
 		if ( pageNav == "next" ){
 			$old.addClass( "animated fadeOutLeft" );
@@ -72,6 +86,7 @@ function showDetailsForMap( id, pageNav ){
 			$container.addClass( "animated fadeInLeft" );
 		}
 	}
+	resize();
 	addBreadcrumb( maps[ id ].title, "metadata" );
 	$( "body" ).attr( "class", "metadata-screen" );		
 

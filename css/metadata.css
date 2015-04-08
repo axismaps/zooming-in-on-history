@@ -1,10 +1,20 @@
-#metadata > div.container > p{
+#metadata > div.container > .meta-text{
 	display: inline-block;
 	vertical-align: top;
-	margin: 15px 60px 15px 565px;
+	margin: 0 80px 15px 565px;
 	text-align: left;
-	font-family: "source_sans_prosemibold";
+	font-size: 18px;
 }
+
+.meta-text p{
+	margin: 15px 0;
+}
+
+.meta-text p.caption-title{
+	font-family: "source_sans_prosemibold";
+	margin-top: 0;
+}
+
 
 span.author{
 	text-transform: uppercase;
@@ -24,13 +34,14 @@ span.dimensions{
 
 #metadata > div.container {
 	position: absolute;
-	top: 150px;
+	top: 165px;
 	width: 100%;
 	text-align: left;
 }
 
 #metadata .card{
   margin-left: 100px;
+  margin-top: 0;
 }
 
 #metadata .card div p{
