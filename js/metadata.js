@@ -14,6 +14,7 @@ function showDetailsForMap( id, pageNav ){
     		  $( "#map" ).fadeIn( function() {
       		  showMap();
           selectMap( id );
+		  breadcrumbCSSUpdates();
         });
   		  });
 		})
@@ -77,7 +78,7 @@ function showDetailsForMap( id, pageNav ){
 	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 40 });
 	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
 	
-	$( "#footer-metadata" ).css( 'margin-top', $( ".card" ).height() + 'px' );
+	$( "#footer-metadata" ).css( 'margin-top', $( ".card" ).height() + 20 + 'px' );
 
 	pageButtonsForScreen( "metadata" );
 }

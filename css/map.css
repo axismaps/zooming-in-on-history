@@ -18,6 +18,7 @@
 #geocoder-section{
 	display: inline-block;
 	width: 100%;
+	vertical-align: bottom;
 }
 
 #find-your-city-button{
@@ -36,7 +37,6 @@
 #geocode{
 	float: left;
 	display: inline-block;
-	width: 40%;
 }
 
 #geocode-input, #geocode-submit{
@@ -50,7 +50,7 @@
 #geocode-input{
 	border-top-right-radius: 0;
 	border-bottom-right-radius: 0;
-	width: 80%;
+	width: 200px;
 	font-family: 'source_sans_prolight';
 }
 
@@ -92,7 +92,7 @@
 	display: inline-block;
 	margin: 0 50px;
 	float: right;
-	margin-top: -35px;
+	margin-top: -40px;
 }
 
 #transparency-div span{
@@ -107,6 +107,7 @@
 	margin: 0 15px;
 	background: transparent;
 	vertical-align: bottom;
+	border: none;
 }
 
 #transparency-slider .ui-slider-handle{
@@ -150,17 +151,22 @@
 #map-ui-buttons #zoom-out-button{
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
+	margin-left: 20px;
+	margin-top: 20px;
 }
 
 #map-ui-buttons #zoom-in-button{
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 	margin-left: -3px;
+	margin-right: 20px;
+	margin-top: 20px;
 	border-left: 1px solid #999;
 }
 
 #reset-map{
 	border-radius: 10px;
+	margin-top: 20px;
 }
 
 #details-panel.show ~ #map-ui-buttons{

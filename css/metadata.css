@@ -18,6 +18,8 @@ span.dimensions{
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	text-shadow: 1px 1px #000;
+	font-size: 30px;
 }
 
 #metadata > div.container {

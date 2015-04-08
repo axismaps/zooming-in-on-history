@@ -42,16 +42,31 @@ function createEvents(){
 		.on( "swiperight", prevMap );
 
 function resize(){
+	var w = $(window).width(),
+		h = $(window).height();
+	$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
+	$( '.page-button' ).css( 'top', ( h - 460 ) / 2 + 'px' );
+	
+	
 	$( "#details-panel" )
-		.height( $(window).height() - $("#screen-top-border").height() - $("#breadcrumbs").height() )
+		.height( h - $("#screen-top-border").height() - $("#breadcrumbs").height() )
 		.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
 	$( "#interaction-elements" )
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" )
 		.css( "left", $( "#details-panel" ).width() );
 
-	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
+	$( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
 
-	$( "body" ).width( $(window).width() );
+	if ( $( ".map-cards-wrapper" ).length ){
+		$( ".map-cards-wrapper" )
+			.css({
+				"max-width": w - $( ".page-button" ).width() * 2 - 20,
+				"max-height": h - $( "#map-cards" ).offset().top - $( "#footer-category" ).height() - 30 + "px"
+			});
+		$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
+	}
+
+	$( "body" ).width( w );
 }
 
 function getURLParameters(){
@@ -132,6 +147,12 @@ function addBreadcrumb( title, level ){
 			
 			pageButtonsForScreen( level );
 		}
+		
+		if( id == '#home-button' ) {
+			$( '#top-section' ).hide( [ 400 ] );
+		}
+		
+		breadcrumbCSSUpdates();
 	});
 
 	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
@@ -152,4 +173,10 @@ function initTimer(){
 	
 	//starts the timer
 	$( 'body' ).trigger( 'mousemove' );
+}
+
+function breadcrumbCSSUpdates(){
+	$( '#breadcrumbs > div span.last, #breadcrumbs > div i.last' ).removeClass( 'last' );
+	
+	$( '#breadcrumbs > div:visible').last().children( 'span, i' ).addClass( 'last' );
 }

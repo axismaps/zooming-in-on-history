@@ -43,14 +43,23 @@ body{
 	overflow: hidden;
 }
 
-#screen-top-border{
-	background-color: #fff;
-	height: 10px;
+#top-section{
 	width: 100%;
 }
 
-.home-screen #screen-top-border{
-	display: none !important;
+#screen-top-border{
+	position: absolute;
+	left: 0;
+	top: 0;
+	width: 100%;
+	background-color: #fff;
+	height: 10px;
+	z-index: 9999;
+}
+
+.category-screen #screen-top-border {
+	right: 17px;
+	left: -17px;
 }
 
 .screen{
@@ -61,8 +70,14 @@ body{
 	width: 100%;
 	height: 100%;
 	display: none;
-	padding-top: 60px;
+	padding-top: 70px;
 	box-sizing: border-box;
+	overflow: hidden;
+}
+
+#category.screen {
+	overflow-x: hidden;
+	overflow-y: scroll;
 }
 
 .title{
@@ -72,11 +87,13 @@ body{
 	white-space: nowrap;
 	overflow: hidden;
 	font-weight: normal;
+	text-shadow: 1px 1px #000;
 }
 .subtitle{
 	font-size: 30px;
 	margin: 10px 0;
 	font-weight: normal;
+	text-shadow: 1px 1px #000;
 }
 
 .card{
@@ -88,6 +105,7 @@ body{
 	box-shadow: 0px 0px 15px 2px rgba(0,0,0,0.25);
 	width: 425px;
 	height: 460px;
+	cursor: pointer;
 }
 
 .card div{
@@ -95,8 +113,8 @@ body{
 	bottom: 0;
 	text-align: center;
 	background-color: rgba(0,0,0,.8);
-	border-bottom-right-radius: 10px;
-	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 8px;
+	border-bottom-left-radius: 8px;
 	width: 100%;
 	border-top: 9px solid transparent;
 	overflow: hidden;
@@ -116,16 +134,17 @@ body{
 
 #breadcrumbs{
 	position: absolute;
-	z-index: 9999;
 	height: 60px;
 	width: 100%;
+	top: 10px;
 	background-color: #454b51;
 	white-space: nowrap;
 	overflow: hidden;
+	z-index: 9999;
 }
 
-.home-screen #breadcrumbs{
-	display: none;
+.category-screen #breadcrumbs {
+	right:17px;
 }
 
 .fa{
@@ -140,7 +159,6 @@ body{
 	height: 60px;
 	line-height: 60px;
 	padding: 0 30px 0 60px;
-	cursor: pointer;
 	position: relative;
 }
 
@@ -157,6 +175,7 @@ body{
 	margin-top: -30px;
 	left: 100%;
 	z-index: 2;
+	margin-left: -1px;
 }
 
 #breadcrumbs div::before{
@@ -182,6 +201,24 @@ body{
 	vertical-align: middle;
 	overflow: hidden;
 	text-overflow: ellipsis;
+}
+
+#breadcrumbs div span:hover{
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+#breadcrumbs div i:hover{
+	cursor: pointer;
+}
+
+#breadcrumbs div span.last:hover{
+	text-decoration: none;
+	cursor: initial;
+}
+
+#breadcrumbs div i.last:hover{
+	cursor: initial;
 }
 
 #breadcrumbs #home-button{
@@ -272,4 +309,12 @@ body{
 	right: 0;
 	border-top-left-radius: 5px;
 	border-bottom-left-radius: 5px;
+}
+
+#prev-page:hover{
+	background-color: #282b2e;
+}
+
+#next-page:hover{
+	background-color: #282b2e;
 }

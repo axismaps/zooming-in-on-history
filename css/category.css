@@ -1,3 +1,8 @@
+#category h1{
+	text-shadow: 1px 1px #000;
+	font-size: 40px;
+}
+
 .map-card{
 	width: 215px;
 	height: 235px;
@@ -13,10 +18,19 @@
 .map-card div p{
 	height: 70px;
 	width: 215px;
+	padding: 0 5px;
 }
 
 .page{
 	position: absolute;
 	left: 0;
 	width: 100%;
+}
+
+.map-cards-wrapper{
+	position: relative;
+	max-width: 1200px;
+	max-height: 545px;
+	margin: 0 auto;
+	overflow: auto;
 }

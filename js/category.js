@@ -9,7 +9,8 @@ function selectCategory( id ){
 	$( "#category .title" ).html( categories[ id ].name );
 	showMapsInCategory( id );
 	addBreadcrumb( $( "#category .title" ).text(), "category" );
-	$( '#screen-top-border' ).show().css( "background-color", categories[id].color );
+	$( '#top-section' ).show( [ 400 ] ).children( '#screen-top-border' ).css( "background-color", categories[id].color );
+	breadcrumbCSSUpdates();
 
 	// this should be done more generically for lots of UI elements
 	$( "#detail-back" ).css( "background-color", categories[id].color );
@@ -32,14 +33,17 @@ function showMapsInCategory( id ){
 				.attr( "id", "page" + pageCount )
 				.hide()
 				.appendTo( $mapsDiv );
+			$( "<div>" )
+				.attr( "class", "map-cards-wrapper")
+				.appendTo( $( '#page' + pageCount ) );
 		}
-		if ( index && index % 4 == 0 ) $( "#page" + pageCount ).append( "<br>" );
-		var $div = $( "<div>" ).appendTo( "#page" + pageCount )
+		var $div = $( "<div>" ).appendTo( "#page" + pageCount + " .map-cards-wrapper" )
 			.attr( "id", "map" + m.number )
 			.addClass( "map-card card page" + pageCount + " pre-animated" + ( index % 4 + 1 ) )
 			.css( "background-image", "url( data/img/thumbnails/" + m.number + ".jpg )" )
 			.click( function(){
 				showDetailsForMap( m.number );
+				breadcrumbCSSUpdates();
 			});
 		
 		//Sets bounce in transition only for the first page
@@ -58,16 +62,17 @@ function showMapsInCategory( id ){
 		$( "<div><p>" + m.title + "</p></div>" )
 			.css( "border-top-color", categories[ id ].color )
 			.appendTo( $div )
-			.succinct({ size: 65 });
+			.succinct({ size: 45 });
 		$( ".map-card:last p" ).append( " <span>(" + m.date + ")</span>" );
 		index++;
 	});
 	page = 1;
 	$( "#page1" ).show();
+	resize();
 	pageButtonsForScreen( "category" );
 	setMapTransitions();
-	
-	$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
+
+	resize();
 }
 
 function showPage( newPage ){
