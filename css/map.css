@@ -146,6 +146,7 @@
 	font-size: 30px;
 	margin: 0;
 	padding: 0;
+	border: 1px solid #999;
 }
 
 #map-ui-buttons #zoom-out-button{
@@ -161,7 +162,7 @@
 	margin-left: -3px;
 	margin-right: 20px;
 	margin-top: 20px;
-	border-left: 1px solid #999;
+	
 }
 
 #reset-map{
