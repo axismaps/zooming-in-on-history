@@ -3,9 +3,12 @@ var map,
 	geocodeResultLayer,
 	historicTiles;
 function createMap(){
-	map = L.map( "mapdiv", { zoomControl: false } ).setView( [40,-80], 5 );
+	map = L.map( "mapdiv", { zoomControl: false, attributionControl: false} ).setView( [40,-80], 5 );
 	modernTiles = L.tileLayer( "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png" , { maxNativeZoom : 18, maxZoom : 21 }).addTo(map);
 	geocodeResultLayer = L.layerGroup().addTo(map);
+	attribution = L.control.attribution().addTo( map );
+	attribution.setPrefix( 'Leaflet' );
+	attribution.addAttribution( 'Basemaps courtesy of OSM and Stamen' );
 }
 
 function selectMap( id ){
