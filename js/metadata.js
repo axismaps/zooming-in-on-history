@@ -20,8 +20,8 @@ function showDetailsForMap( id, pageNav ){
 		})
 		.css({
   		  position : "fixed",
-  		  top : $( "#map" + id ).offset().top,
-  		  left : $( "#map" + id ).offset().left
+  		  top : $( "#map" + id ).offset().top - 15,
+  		  left : $( "#map" + id ).offset().left - 15
 		})
 		.appendTo( $( "body" ) );
 
