@@ -37,6 +37,10 @@ html, body, button{
 	color: white;
 	margin: 0;
 	font-family: 'source_sans_prolight';
+	-moz-user-select: none;
+	-khtml-user-select: none;
+	-webkit-user-select: none;
+	user-select: none;
 }
 
 body{
