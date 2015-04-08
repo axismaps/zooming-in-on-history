@@ -96,7 +96,7 @@ function setMapTransitions(){
     $( this ).attr( "class", $( this ).attr( "class" ).replace( "map-animated", "pre-animated" ) );
   });
 
-  var $maps = $( "#page" + page ).children();
+  var $maps = $( "#page" + page + " .map-cards-wrapper").children();
   $maps.each( function( i, div ){
   		//Sets staggered start time for map panning animation
   		setTimeout( function() {
