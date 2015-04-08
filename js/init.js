@@ -60,7 +60,7 @@ function resize(){
 	if ( $( ".map-cards-wrapper" ).length ){
 		$( ".map-cards-wrapper" )
 			.css({
-				"max-width": w - $( ".page-button" ).width() * 2 - 20,
+				"max-width": Math.min( w - $( ".page-button" ).width() * 2 - 20, 1200 ) + "px",
 				"max-height": h - $( "#map-cards" ).offset().top - $( "#footer-category" ).height() - 30 + "px"
 			});
 		$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
