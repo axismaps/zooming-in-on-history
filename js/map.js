@@ -129,9 +129,7 @@ function geocoder(){
 						var latlng = result.latlng;
 						
 						L.marker( [ latlng.lat, latlng.lng ] )
-							.addTo( geocodeResultLayer )
-							.bindPopup( '<strong>' + geocodeValue + '</strong><br />is located here.' )
-							.togglePopup();
+							.addTo( geocodeResultLayer );
 							
 						map.panTo( [ latlng.lat, latlng.lng ], { animate: false } );
 					} else {
