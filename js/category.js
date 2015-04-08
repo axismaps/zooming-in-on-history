@@ -71,8 +71,8 @@ function showMapsInCategory( id ){
 	resize();
 	pageButtonsForScreen( "category" );
 	setMapTransitions();
-	
-	$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
+
+	resize();
 }
 
 function showPage( newPage ){

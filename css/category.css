@@ -30,5 +30,7 @@
 .map-cards-wrapper{
 	position: relative;
 	max-width: 1200px;
+	max-height: 545px;
 	margin: 0 auto;
+	overflow: auto;
 }

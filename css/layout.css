@@ -311,10 +311,6 @@ body{
 	border-bottom-left-radius: 5px;
 }
 
-.category-screen #next-page{
-	right: 17px;
-}
-
 #prev-page:hover{
 	background-color: #282b2e;
 }
