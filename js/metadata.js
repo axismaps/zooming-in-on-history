@@ -29,7 +29,7 @@ function showDetailsForMap( id, pageNav ){
 
 	var $text = $( "<p>" )
 		.attr( "class", "caption-title" )
-		.html( maps[ id ].title + "<br><br><span class='author'>" + ( maps[ id ].author ?  ( maps[ id ].author + ", " ) : "" ) + maps[ id ].date + "</span><br><span class='dimensions'>" + maps[ id ].dimension + "</span>" )
+		.html( maps[ id ].title + "<br><br><span class='author'>" + ( maps[ id ].author ?  ( $.trim(maps[ id ].author) + ", " ) : "" ) + maps[ id ].date + "</span><br><span class='dimensions'>" + maps[ id ].dimension + "</span>" )
 		.appendTo( $textContainer );
 
 	$textContainer.append( "<hr>" );
