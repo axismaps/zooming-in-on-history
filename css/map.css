@@ -8,6 +8,10 @@
 	background: transparent;
 }
 
+.leaflet-container .leaflet-control-attribution{
+	font-size: 10px;
+}
+
 #interaction-elements{
 	position: absolute;
 	z-index: 1000;

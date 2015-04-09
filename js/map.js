@@ -7,8 +7,8 @@ function createMap(){
 	modernTiles = L.tileLayer( "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png" , { maxNativeZoom : 18, maxZoom : 21 }).addTo(map);
 	geocodeResultLayer = L.layerGroup().addTo(map);
 	attribution = L.control.attribution().addTo( map );
-	attribution.setPrefix( 'Leaflet' );
-	attribution.addAttribution( 'Basemaps courtesy of OSM and Stamen' );
+	attribution.setPrefix( '' );
+	attribution.addAttribution( 'Basemap tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under ODbL' );
 }
 
 function selectMap( id ){
