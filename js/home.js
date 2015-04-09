@@ -35,10 +35,13 @@ function createCategories(){
 }
 
 function categorySlideshow(){
-  $( ".category.card" ).each( function() {
+  $( ".category.card" ).each( function( i ) {
     var $slide = $( this ).children( ".map-background" ).first();
     $slide.attr( "style", $slide.attr( "style" ).replace( "left: -425px; opacity: 1;", "" ) );
     $( this ).children( ".category-title" ).before( $slide );
-    $slide.animate( { left : -425, opacity : 1 }, 4000 );
+    
+    setTimeout( function() {
+      $slide.animate( { left : -425, opacity : 1 }, 4000 );
+    }, i * 2000 );
   })
 }
