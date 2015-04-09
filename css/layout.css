@@ -267,6 +267,10 @@ body{
 	bottom: 20px;
 }
 
+.map-screen .footer{
+	display: none;
+}
+
 .footer img{
 	display: inline-block;
 	vertical-align: middle;
