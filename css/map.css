@@ -4,6 +4,10 @@
 	color: #000;
 }
 
+.leaflet-container{
+	background: transparent;
+}
+
 #interaction-elements{
 	position: absolute;
 	z-index: 1000;
@@ -173,4 +177,13 @@
 #details-panel.show ~ #map-ui-buttons{
 	left: 320px;
 	top: 165px;
+}
+
+#map-loader{
+	position: absolute;
+	font-size: 100px;
+	top: 50%;
+	margin-top: -50px;
+	color: #999;
+	z-index: 0;
 }
