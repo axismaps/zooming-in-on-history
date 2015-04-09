@@ -41,7 +41,6 @@ function showDetailsForMap( id, pageNav ){
 
 	if ( !pageNav ){
 		$( "#metadata > div" ).remove();
-		$( "#metadata" ).append( $container );
 		$("#category").fadeOut( function(){
   		  $( "#metadata" ).fadeIn( function(){
     		  $card
@@ -52,22 +51,24 @@ function showDetailsForMap( id, pageNav ){
       		  $( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
       		  if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
       		  $card.children().fadeIn();
+      		  $( "#metadata" ).append( $container );
       		  $( "#metadata .container" ).prepend( $card );
       		  $card.css({
         		  top : "auto",
         		  left : "auto"
-      		  });
+      		  }).attr( "class", $card.attr( "class" ).replace( "pre-animated", "map-animated" ) );
       		}, 1000 );
     		});
   		});
 		
 	} else {
 		var $old = $( "#metadata > div" );
-		$card.removeClass( "map-card" );
-		$card.css({
+		$card.removeClass( "map-card" )
+			.css({
         		  top : "auto",
         		  left : "auto"
-      		  });
+      		})
+      		.attr( "class", $card.attr( "class" ).replace( "pre-animated", "map-animated" ) );
 		$container
 			.append( $card )
 			.append( $textContainer )
