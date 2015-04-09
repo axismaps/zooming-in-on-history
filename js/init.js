@@ -158,6 +158,8 @@ function addBreadcrumb( title, level ){
 		}
 		
 		breadcrumbCSSUpdates();
+
+		blockInteractions();
 	});
 
 	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
@@ -184,4 +186,11 @@ function breadcrumbCSSUpdates(){
 	$( '#breadcrumbs > div span.last, #breadcrumbs > div i.last' ).removeClass( 'last' );
 	
 	$( '#breadcrumbs > div:visible').last().children( 'span, i' ).addClass( 'last' );
+}
+
+function blockInteractions(){
+	$( "#mouse-block" ).show();
+	setTimeout( function(){
+		$( "#mouse-block" ).hide();
+	}, 1000);
 }

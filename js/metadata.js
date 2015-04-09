@@ -41,6 +41,7 @@ function showDetailsForMap( id, pageNav ){
 
 	if ( !pageNav ){
 		$( "#metadata > div" ).remove();
+		blockInteractions();
 		$("#category").fadeOut( function(){
   		  $( "#metadata" ).fadeIn( function(){
     		  $card
