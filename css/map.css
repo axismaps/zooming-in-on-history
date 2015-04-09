@@ -130,7 +130,7 @@
 	color: #fff;
 	position: absolute;
 	top: 5px;
-	left: 7px;
+	left: 8px;
 }
 
 #details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{
