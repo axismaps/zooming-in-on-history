@@ -1,3 +1,5 @@
+var categoryAnimation;
+
 function createCategories(){
 	var $categoriesDiv = $( "#categories" );
 	
@@ -7,6 +9,7 @@ function createCategories(){
 			.attr( "class", "category card " + cat.id  )
 			.attr( "id", cat.id )
 			.click( function(){
+  			  clearInterval( categoryAnimation );
   			  $( this )
   			    .addClass( "animated bounceOut" )
           .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -31,7 +34,7 @@ function createCategories(){
 			.appendTo( $div );
 	});	
 	
-	setInterval( categorySlideshow, 4000 );
+	categoryAnimation = setInterval( categorySlideshow, 5000 );
 }
 
 function categorySlideshow(){
@@ -41,7 +44,7 @@ function categorySlideshow(){
     $( this ).children( ".category-title" ).before( $slide );
     
     setTimeout( function() {
-      $slide.animate( { left : -425, opacity : 1 }, 4000 );
+      $slide.animate( { left : -425, opacity : 1 }, 5000 );
     }, i * 2000 );
   })
 }
