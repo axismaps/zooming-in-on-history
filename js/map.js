@@ -33,9 +33,6 @@ function selectMap( id ){
 	
 	setTimeout( function() {
 		map.fitBounds( bounds, {animate: true, paddingTopLeft: [ 300, 110 ]  } );
-		setTimeout( function() {
-			map.zoomIn();
-		}, 500 );
 	}, 1000 );
 	
 	map.setMaxBounds( bounds.pad(.25) );
