@@ -31,7 +31,7 @@ function showDetailsList( map_id ){
 }
 
 function showDetail( d ){
-	map.setView( [ d.lat, d.lon ], map.getMaxZoom() );
+	map.setView( [ d.lat, d.lon ], d.zoom );
 	$( "#details-list" ).attr( "class", "animated fadeOutLeft" );
 	setTimeout( function(){
 		$( "#details-list" ).hide().removeClass('animated fadeOutLeft' );
