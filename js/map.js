@@ -20,7 +20,7 @@ function selectMap( id ){
 		[mapData.bottom, mapData.left],
 		[mapData.top, mapData.right]
 	]);
-	map.setMaxBounds( bounds.pad(.25) );
+	
 	map.options.maxZoom = ( mapData.MaxZoom );
 	map.options.minZoom = ( mapData.MinZoom );
 	
@@ -32,8 +32,13 @@ function selectMap( id ){
 	} ).addTo(map);
 	
 	setTimeout( function() {
-		map.fitBounds( bounds, {paddingTopLeft: [ 300, 110 ] } );
+		map.fitBounds( bounds, {animate: true, paddingTopLeft: [ 300, 110 ]  } );
+		setTimeout( function() {
+			map.zoomIn();
+		}, 500 );
 	}, 1000 );
+	
+	map.setMaxBounds( bounds.pad(.25) );
 
 	$( "#reset-map" ).hide();
 
