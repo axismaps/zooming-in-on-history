@@ -19,14 +19,13 @@ function selectCategory( id ){
 function showMapsInCategory( id ){
 	var $mapsDiv = $( "#map-cards" ).empty();
 
-	var index = 0;
 	pageCount = 0;
-	
-	_.each( maps, function( m, i ){
-		if ( m.category != id ) return;
+
+	var mapsInCategory = _.sortBy ( _.filter( maps, function(m){ return m.category == id } ), "number" );
+	_.each( mapsInCategory, function( m, i ){
 		if ( !categories[ id ].maps ) categories[ id ].maps = [];
 		categories[ id ].maps.push( m.number );
-		if ( index % 8 == 0 ){
+		if ( i % 8 == 0 ){
 			pageCount ++;
 			$( "<div>" )
 				.attr( "class", "page" )
@@ -39,7 +38,7 @@ function showMapsInCategory( id ){
 		}
 		var $div = $( "<div>" ).appendTo( "#page" + pageCount + " .map-cards-wrapper" )
 			.attr( "id", "map" + m.number )
-			.addClass( "map-card card page" + pageCount + " pre-animated" + ( index % 4 + 1 ) )
+			.addClass( "map-card card page" + pageCount + " pre-animated" + ( i % 4 + 1 ) )
 			.css( "background-image", "url( data/img/thumbnails/" + m.number + ".jpg )" )
 			.click( function(){
 				showDetailsForMap( m.number );
@@ -56,7 +55,7 @@ function showMapsInCategory( id ){
     		  setTimeout( function(){
       		  $div.removeClass( "animated bounceIn" );
       		}, 1000 );
-    		}, index * 100 );
+    		}, i * 100 );
 		}
 		
 		$( "<div><p>" + m.title + "</p></div>" )
@@ -64,7 +63,6 @@ function showMapsInCategory( id ){
 			.appendTo( $div )
 			.succinct({ size: 45 });
 		$( ".map-card:last p" ).append( " <span>(" + m.date + ")</span>" );
-		index++;
 
 		var card_hammer = new Hammer( $div[0],{
 			domEvents: true
