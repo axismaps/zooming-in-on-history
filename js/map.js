@@ -92,6 +92,7 @@ function geocoder(){
 		$( '#transparency-div' ).hide();
 		$( '#geocode' ).show();
 		$( '#geocoder-close-button' ).show();
+		$( '#geocode input' ).focus();
 	});
 	
 	$( '#geocoder-close-button' ).on( 'click', function( e ) {
