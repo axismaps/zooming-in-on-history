@@ -26,24 +26,19 @@ function createCategories(){
     });
 
 		$( "<div><p>" + cat.name + "</p></div>" )
+		  .addClass( "category-title" )
 			.css( "border-top-color", cat.color )
 			.appendTo( $div );
 	});	
 	
-	setInterval( categorySlideshow, 1000 );
+	setInterval( categorySlideshow, 4000 );
 }
 
 function categorySlideshow(){
   $( ".category.card" ).each( function() {
-    console.log( "THUS" );
-    if( $( this ).children( ".map-background.slideLeft" ).length == 0 ) {
-      $( this ).children( ".map-background" ).last().addClass( "slideLeft" );
-    }
-    else if( $( this ).children( ".map-background.slideLeft" ).length < $( this ).children( ".map-background" ).length ) {
-      $( this ).children( ".map-background.slideLeft" ).prev().addClass( "slideLeft" );
-    }
-    else {
-      $( this ).children( ".map-background.slideLeft" ).removeClass( "slideLeft" );
-    }
+    var $slide = $( this ).children( ".map-background" ).first();
+    $slide.attr( "style", $slide.attr( "style" ).replace( "left: -425px; opacity: 1;", "" ) );
+    $( this ).children( ".category-title" ).before( $slide );
+    $slide.animate( { left : -425, opacity : 1 }, 4000 );
   })
 }
