@@ -31,7 +31,9 @@ function selectMap( id ){
 		maxNativeZoom : mapData.MaxZoom
 	} ).addTo(map);
 	
-	map.fitBounds( bounds, {animate: false, paddingTopLeft: [ 300, 110 ] } );
+	setTimeout( function() {
+		map.fitBounds( bounds, {paddingTopLeft: [ 300, 110 ] } );
+	}, 1000 );
 
 	$( "#reset-map" ).hide();
 
