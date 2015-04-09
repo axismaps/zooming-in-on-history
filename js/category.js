@@ -21,7 +21,7 @@ function showMapsInCategory( id ){
 
 	pageCount = 0;
 
-	var mapsInCategory = _.sortBy ( _.filter( maps, function(m){ return m.category == id } ), "number" );
+	var mapsInCategory = _.sortBy ( _.filter( maps, function(m){ return m.category == id } ), function(m){ return parseInt(m.number) } );
 	_.each( mapsInCategory, function( m, i ){
 		if ( !categories[ id ].maps ) categories[ id ].maps = [];
 		categories[ id ].maps.push( m.number );
