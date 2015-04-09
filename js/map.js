@@ -31,7 +31,9 @@ function selectMap( id ){
 		maxNativeZoom : mapData.MaxZoom
 	} ).addTo(map);
 	
-	map.fitBounds( bounds, {animate: false, paddingTopLeft: [ 300, 110 ] } );
+	setTimeout( function() {
+		map.fitBounds( bounds, {paddingTopLeft: [ 300, 110 ] } );
+	}, 1000 );
 
 	$( "#reset-map" ).hide();
 
@@ -92,6 +94,7 @@ function geocoder(){
 		$( '#transparency-div' ).hide();
 		$( '#geocode' ).show();
 		$( '#geocoder-close-button' ).show();
+		$( '#geocode input' ).focus();
 	});
 	
 	$( '#geocoder-close-button' ).on( 'click', function( e ) {
@@ -130,8 +133,14 @@ function geocoder(){
 					if( result ) {
 						geocodeResultLayer.clearLayers();
 						var latlng = result.latlng;
+
+						var geocodeIcon = L.icon({
+							iconUrl: 'img/' + selectedCategory + '-marker.png',
+							iconSize: [62, 82],
+							iconAnchor: [31, 82]
+						});
 						
-						L.marker( [ latlng.lat, latlng.lng ] )
+						L.marker( [ latlng.lat, latlng.lng ], {icon: geocodeIcon } )
 							.addTo( geocodeResultLayer );
 							
 						map.panTo( [ latlng.lat, latlng.lng ], { animate: false } );
