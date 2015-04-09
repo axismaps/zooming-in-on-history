@@ -29,11 +29,15 @@ function createEvents(){
 	resize();
 }
 
-	var category_hammer = new Hammer( $("#category")[0] );
-	category_hammer.on( "swipeleft", function(){
+	var category_hammer = new Hammer( $("#category")[0],{
+		domEvents: true
+	});
+	category_hammer.on( "swipeleft", function(e){
+		if ( $(e.target).hasClass("card") ) return;
 		showPage( page + 1 );
 		hideShowPageButton( page, pageCount);
-	}).on( "swiperight", function(){
+	}).on( "swiperight", function(e){
+		if ( $(e.target).hasClass("card") ) return;
 		showPage( page - 1 );
 		hideShowPageButton( page, pageCount);
 	});

@@ -65,6 +65,17 @@ function showMapsInCategory( id ){
 			.succinct({ size: 45 });
 		$( ".map-card:last p" ).append( " <span>(" + m.date + ")</span>" );
 		index++;
+
+		var card_hammer = new Hammer( $div[0],{
+			domEvents: true
+		});
+		card_hammer.on( "swipeleft", function(e){
+			showPage( page + 1 );
+			hideShowPageButton( page, pageCount);
+		}).on( "swiperight", function(){
+			showPage( page - 1 );
+			hideShowPageButton( page, pageCount);
+		});
 	});
 	page = 1;
 	$( "#page1" ).show();
