@@ -46,7 +46,6 @@ function createEvents(){
 function resize(){
 	var w = $(window).width(),
 		h = $(window).height();
-	$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
 	$( '.page-button' ).css( 'top', ( h - 460 ) / 2 + 'px' );
 	
 	
@@ -63,9 +62,8 @@ function resize(){
 		$( ".map-cards-wrapper" )
 			.css({
 				"max-width": Math.min( w - $( ".page-button" ).width() * 2 - 20, 1200 ) + "px",
-				"max-height": h - $( "#map-cards" ).offset().top - $( "#footer-category" ).height() - 30 + "px"
+				"max-height": h - $( "#map-cards" ).offset().top - $( ".footer" ).height() - 30 + "px"
 			});
-		$( "#footer-category" ).css( 'margin-top', $( "#page1" ).height() + 'px' );
 	}
 
 	if ( $( "#metadata .container" )[0] ){
