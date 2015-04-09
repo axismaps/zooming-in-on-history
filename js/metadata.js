@@ -15,6 +15,7 @@ function showDetailsForMap( id, pageNav ){
       		  showMap();
           selectMap( id );
 		  breadcrumbCSSUpdates();
+		  blockInteractions();
         });
   		  });
 		})
