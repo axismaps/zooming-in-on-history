@@ -10,4 +10,19 @@
 
 #home .card{
 	margin: 20px;
+	overflow: hidden;
+}
+
+.category .map-background{
+  width: 850px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  border: none;
+  opacity: 0;
+}
+
+.category .map-background:first-child{
+  opacity: 1
 }

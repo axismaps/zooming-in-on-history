@@ -159,6 +159,7 @@ function addBreadcrumb( title, level ){
 		
 		if( id == '#home-button' ) {
 			$( '#top-section' ).hide( [ 400 ] );
+			categoryAnimation = setInterval( categorySlideshow, 5000 );
 		}
 		
 		breadcrumbCSSUpdates();

@@ -1,3 +1,5 @@
+var categoryAnimation;
+
 function createCategories(){
 	var $categoriesDiv = $( "#categories" );
 	
@@ -7,6 +9,7 @@ function createCategories(){
 			.attr( "class", "category card " + cat.id  )
 			.attr( "id", cat.id )
 			.click( function(){
+  			  clearInterval( categoryAnimation );
   			  $( this )
   			    .addClass( "animated bounceOut" )
           .on('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
@@ -15,9 +18,33 @@ function createCategories(){
             selectCategory( cat.id );
           })
 			});
+			
+		var categoryMaps = _.pluck( _.filter( maps, function( map ) { return map.category == cat.id } ), 'number' );
+		
+    _.each( categoryMaps, function( mapId, i ){
+      $mapBack = $( "<div>" )
+          .css( "background-image", "url(data/img/thumbnails/" + mapId + ".jpg)" )
+          .addClass( "map-background" )
+          .appendTo( $div );
+    });
 
 		$( "<div><p>" + cat.name + "</p></div>" )
+		  .addClass( "category-title" )
 			.css( "border-top-color", cat.color )
 			.appendTo( $div );
 	});	
+	
+	categoryAnimation = setInterval( categorySlideshow, 5000 );
+}
+
+function categorySlideshow(){
+  $( ".category.card" ).each( function( i ) {
+    var $slide = $( this ).children( ".map-background" ).first();
+    $slide.attr( "style", $slide.attr( "style" ).replace( "left: -425px; opacity: 1;", "" ) );
+    $( this ).children( ".category-title" ).before( $slide );
+    
+    setTimeout( function() {
+      $slide.animate( { left : -425, opacity : 1 }, 5000 );
+    }, i * 2000 );
+  })
 }
