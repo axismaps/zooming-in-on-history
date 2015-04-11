@@ -30,7 +30,7 @@ function createCategories(){
 
 		$( "<div><p>" + cat.name + "</p></div>" )
 		  .addClass( "category-title" )
-			.css( "border-top-color", cat.color )
+			.css( "border-color", cat.color )
 			.appendTo( $div );
 	});	
 	

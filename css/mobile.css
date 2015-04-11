@@ -1,0 +1,62 @@
+@media only screen and (max-width: 767px) {
+  h1{
+    margin: 0 !important;
+    font-size: 20px !important;
+    line-height: 60px;
+  }
+  
+  h2, .footer{
+    display: none;
+  }
+  
+  #categories{
+    height: -moz-calc(100% - 60px);
+    height: -webkit-calc(100% - 60px);
+    height: -o-calc(100% - 60px);
+    height: calc(100% - 60px);
+    margin-top: 0;
+  }
+  
+  .category.card{
+    height: 25%;
+    width: 100%;
+    display: block;
+    margin: 0 !important;
+    border-bottom: solid 1px black;
+    border-radius: 0;
+    box-shadow: none;
+  }
+  
+  .category.card .category-title{
+    border-top: none;
+    border-left-style: solid;
+    border-left-width: 9px;
+    height: 100%;
+    width: -moz-calc(100% - 9px);
+    width: -webkit-calc(100% - 9px);
+    width: -o-calc(100% - 9px);
+    width: calc(100% - 9px);
+    border-radius: 0;
+    background-color: transparent;
+  }
+  
+  .category.card .category-title p{
+    height: 100%;
+    width: auto;
+    margin-left: 80px;
+    color: black;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: left;
+    background-color: white;
+    display: block;
+    padding: 15% 20px;
+  }
+  
+  .category.card .category-title p:before{
+    content: ">";
+    height: 100%;
+    float: right;
+    margin-left: 30px;
+  }
+}
