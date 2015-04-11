@@ -29,7 +29,7 @@ function createCategories(){
     });
 
 		$( "<div><p>" + cat.name + "</p></div>" )
-		  .addClass( "category-title" )
+		  .addClass( "category-title card-title" )
 			.css( "border-color", cat.color )
 			.appendTo( $div );
 	});	

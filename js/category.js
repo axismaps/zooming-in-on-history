@@ -59,6 +59,7 @@ function showMapsInCategory( id ){
 		}
 		
 		$( "<div><p>" + m.title + "</p></div>" )
+		  .addClass( "map-title card-title" )
 			.css( "border-top-color", categories[ id ].color )
 			.appendTo( $div )
 			.succinct({ size: 45 });

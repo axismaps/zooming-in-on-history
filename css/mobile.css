@@ -5,9 +5,15 @@
     line-height: 60px;
   }
   
-  h2, .footer{
-    display: none;
+  h2, #top-section, .footer, .page-button{
+    display: none !important;
   }
+  
+  .screen{
+    padding-top: 0;
+  }
+  
+  /* HOME SCREEN */
   
   #home h1{
     text-indent: 20px;
@@ -15,7 +21,7 @@
     background-size: 40px;
   }
   
-  #categories{
+  #categories, #map-cards{
     height: -moz-calc(100% - 60px);
     height: -webkit-calc(100% - 60px);
     height: -o-calc(100% - 60px);
@@ -23,7 +29,7 @@
     margin-top: 0;
   }
   
-  .category.card{
+  .card{
     height: 25%;
     width: 100%;
     display: block;
@@ -31,24 +37,31 @@
     border-bottom: solid 1px black;
     border-radius: 0;
     box-shadow: none;
-    -webkit-animation-duration: 1ms;
-    animation-duration: 1ms;
   }
   
-  .category.card .category-title{
+  .card.category{
+    -webkit-animation-duration: 1ms !important;
+    animation-duration: 1ms !important;
+  }
+  
+  .card .card-title{
     border-top: none;
-    border-left-style: solid;
-    border-left-width: 9px;
     height: 100%;
-    width: -moz-calc(100% - 9px);
-    width: -webkit-calc(100% - 9px);
-    width: -o-calc(100% - 9px);
-    width: calc(100% - 9px);
+    width: 100%;
     border-radius: 0;
     background-color: transparent;
   }
   
-  .category.card .category-title p{
+  .card .category-title{
+    width: -moz-calc(100% - 9px);
+    width: -webkit-calc(100% - 9px);
+    width: -o-calc(100% - 9px);
+    width: calc(100% - 9px);
+    border-left-style: solid;
+    border-left-width: 9px;
+  }
+  
+  .card .card-title p{
     height: 100%;
     width: auto;
     margin-left: 80px;
@@ -58,13 +71,39 @@
     text-align: left;
     background-color: white;
     display: block;
+    padding: 20px;
+  }
+  
+  .card .category-title p{
     padding: 15% 20px;
   }
   
-  .category.card .category-title p:before{
+  .card .card-title p:before{
     content: ">";
     height: 100%;
     float: right;
     margin-left: 30px;
+  }
+  
+  /* CATEGORY SCREEN */
+  
+  #map-cards{
+    overflow-y: scroll;
+  }
+  
+  .page{
+    display: block !important;
+    position: static;
+  }
+  
+  .map-cards-wrapper{
+    width: 100%;
+    max-height: none !important;
+    max-width: none !important;
+    margin: 0;
+  }
+  
+  .map-card.card{
+    height: 100px;
   }
 }
