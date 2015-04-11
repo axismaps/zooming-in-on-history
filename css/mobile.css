@@ -9,6 +9,12 @@
     display: none;
   }
   
+  #home h1{
+    text-indent: 20px;
+    background: url(../img/compass.png) no-repeat 10px center;
+    background-size: 40px;
+  }
+  
   #categories{
     height: -moz-calc(100% - 60px);
     height: -webkit-calc(100% - 60px);
@@ -25,6 +31,8 @@
     border-bottom: solid 1px black;
     border-radius: 0;
     box-shadow: none;
+    -webkit-animation-duration: 1ms;
+    animation-duration: 1ms;
   }
   
   .category.card .category-title{
