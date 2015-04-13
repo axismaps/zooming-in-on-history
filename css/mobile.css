@@ -3,9 +3,10 @@
     margin: 0 !important;
     font-size: 20px !important;
     line-height: 60px;
+    text-indent: 20px;
   }
   
-  h2, #top-section, .footer, .page-button{
+  h2, .footer, .page-button{
     display: none !important;
   }
   
@@ -13,10 +14,41 @@
     padding-top: 0;
   }
   
+  /* BREADCRUMPS */
+  
+  #breadcrumbs, #breadcrumbs .breadcrumb-back{
+    background-color: transparent !important;
+  }
+  
+  #breadcrumbs > div{
+    display: none !important;
+  }
+  
+  #breadcrumbs .breadcrumb-back{
+    display: block !important;
+    height: auto;
+    width: 80px;
+    padding: 0;
+    text-align: center;
+  }
+  
+  #breadcrumbs .breadcrumb-back:before, #breadcrumbs .breadcrumb-back:after, #breadcrumbs .breadcrumb-back i{
+    display: none;
+  }
+  
+  .breadcrumb-back span{
+    display: block;
+    float: left;
+    width: 100%;
+  }
+  
+  .breadcrumb-back span:before{
+    content: '<  ';
+  }
+  
   /* HOME SCREEN */
   
   #home h1{
-    text-indent: 20px;
     background: url(../img/compass.png) no-repeat 10px center;
     background-size: 40px;
   }
@@ -86,6 +118,11 @@
   }
   
   /* CATEGORY SCREEN */
+  
+  #category h1{
+    margin-top: 10px !important;
+    margin-left: 60px !important;
+  }
   
   #map-cards{
     overflow-y: scroll;
