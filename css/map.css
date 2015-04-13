@@ -133,7 +133,7 @@
 	left: 8px;
 }
 
-#map #share-button{
+#map-share-button{
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -145,11 +145,11 @@
 	background-color: rgba(0, 0, 0, 0.75);
 }
 
-#map #share-button:hover{
+#map-share-button:hover{
 	background-color: rgba(0, 0, 0, 0.95);
 }
 
-#map #share-button i{
+#map-share-button i{
 	margin-right: 10px;
 }
 

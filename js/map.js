@@ -44,7 +44,7 @@ function selectMap( id ){
 	showDetailsList( id );
 
 	pageButtonsForScreen( "map" );
-	$( "#interaction-elements" ).css( "right", $( "#map #share-button" ).width() + 41 );
+	$( "#interaction-elements" ).css( "right", $( "#map-share-button" ).width() + 41 );
 
 	map.on( "movestart", onMapMove );
 	map.on( "zoomstart", function() {

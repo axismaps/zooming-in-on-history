@@ -70,8 +70,8 @@ function resize(){
 	$( "#interaction-elements" )
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" )
 		.css( "left", $( "#details-panel" ).width() )
-		.css( "right", $( "#map #share-button" ).width() + 41 );
-	$( "#map #share-button" )
+		.css( "right", $( "#map-share-button" ).width() + 41 );
+	$( "#map-share-button" )
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" );
 
 	$( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
