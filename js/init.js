@@ -22,6 +22,16 @@ function createEvents(){
 	
 	$(window).resize( resize );
 	resize();
+	
+	$( '.share' ).on( 'click', function() {
+		$button = $( this );
+		if( $( '.share-menu' ).is( ":visible" ) ) $( '.share-menu' ).hide();
+		else {
+			$( '.share-menu' ).show()
+				.css( "top", $button.offset().top + $button.outerHeight() )
+				.css( "left", $button.offset().left );
+		}
+	});
 }
 
 	var category_hammer = new Hammer( $("#category")[0],{

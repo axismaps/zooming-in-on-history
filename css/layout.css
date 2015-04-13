@@ -337,3 +337,23 @@ body{
 ::-webkit-scrollbar-thumb:hover {
     background-color: #999;
 }
+
+.share-menu{
+	background-color: #fff;
+	color: #000;
+	padding: 20px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	z-index: 9999;
+	border: 1px solid #666;
+}
+
+.share-menu p {
+	
+}
+
+.share-menu p:hover {
+	background-color: rgba(0, 0, 0, .5);
+	cursor: pointer;
+}
