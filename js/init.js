@@ -23,6 +23,7 @@ function createEvents(){
 	$(window).resize( resize );
 	resize();
 	
+	//Share button clicking anywhere on the site
 	$( '.share' ).on( 'click', function() {
 		$button = $( this );
 		if( $( '.share-menu' ).is( ":visible" ) ) $( '.share-menu' ).hide();
@@ -30,10 +31,10 @@ function createEvents(){
 			$( '.share-menu' ).show()
 				.css( "top", $button.offset().top + $button.outerHeight() );
 				
-			if( $button.css( 'right' ) ) {
-				$( '.share-menu' ).css( 'right', 0 );
+			if( $button.css( 'right' ) != 'auto' ) {
+				$( '.share-menu' ).css( 'right', 0 ).css( 'left', 'auto');
 			} else {
-				$( '.share-menu' ).css( "left", $button.offset().left );
+				$( '.share-menu' ).css( "left", $button.offset().left ).css( 'right', 'auto' );
 			}
 		}
 	});
