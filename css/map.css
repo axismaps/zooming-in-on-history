@@ -133,6 +133,15 @@
 	left: 8px;
 }
 
+#interaction-elements #share-button{
+	float: right;
+	font-size: 18px;
+}
+
+#interaction-elements #share-button i{
+	margin-right: 10px;
+}
+
 #details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{
 	left: 315px;
 	top: 100px;
