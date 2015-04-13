@@ -35,7 +35,8 @@ function createCategories(){
 	});	
 	
 	$( "#categories" ).css( 'height', $( window ).height() - 132 );
-	categoryAnimation = setInterval( categorySlideshow, 5000 );
+	categorySlideshow();
+	categoryAnimation = setInterval( categorySlideshow, 6000 );
 }
 
 function categorySlideshow(){
@@ -45,7 +46,7 @@ function categorySlideshow(){
     $( this ).children( ".category-title" ).before( $slide );
     
     setTimeout( function() {
-      $slide.animate( { left : -425, opacity : 1 }, 5000 );
+      $slide.animate( { left: -425, opacity: 1 }, 5000 );
     }, i * 2000 );
   })
 }
