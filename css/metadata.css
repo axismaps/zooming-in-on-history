@@ -41,7 +41,8 @@ span.dimensions{
 }
 
 #metadata .cardContainer{
-	overflow-y: overlay;
+	overflow-y: auto;
+	overflow-x: hidden;
 	position: fixed;
 }
 
