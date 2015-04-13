@@ -56,6 +56,7 @@ function resize(){
 		.css( "left", $( "#details-panel" ).width() );
 
 	$( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
+	$( ".meta-text" ).css( "max-width", w - 715 + "px" );
 
 	if ( $( "#home #categories" ).length ){
 		$( "#home #categories" )

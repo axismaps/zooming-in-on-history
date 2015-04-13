@@ -1,7 +1,7 @@
 #metadata > div.container > .meta-text{
 	display: inline-block;
 	vertical-align: top;
-	margin: 0 80px 15px 565px;
+	margin: 0 60px 15px 15px;
 	text-align: left;
 	font-size: 18px;
 }
@@ -41,9 +41,7 @@ span.dimensions{
 }
 
 #metadata .cardContainer{
-	overflow-y: auto;
-	overflow-x: hidden;
-	position: fixed;
+	display: inline-block;
 }
 
 #metadata .card{
