@@ -53,6 +53,7 @@ function createEvents(){
 	  .on( "swiperight", prevMap );
 
 function resize(){
+	$( '.share-menu' ).hide();
 	var w = $(window).width(),
 		h = $(window).height();
 	$( '.page-button' ).css( 'top', Math.max( ( h - 460 ) / 2, 160 ) + 'px' );
@@ -169,7 +170,7 @@ function addBreadcrumb( title, level ){
 		}
 		
 		breadcrumbCSSUpdates();
-
+		$( '.share-menu' ).hide();
 		blockInteractions();
 	});
 
