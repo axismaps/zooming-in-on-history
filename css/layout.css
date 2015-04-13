@@ -341,16 +341,17 @@ body{
 .share-menu{
 	background-color: #fff;
 	color: #000;
-	padding: 20px;
 	position: absolute;
 	top: 0;
 	right: 0;
 	z-index: 9999;
 	border: 1px solid #666;
+	border-top: 0;
 }
 
 .share-menu p {
-	
+	padding: 20px;
+	margin: 0;
 }
 
 .share-menu p:hover {
