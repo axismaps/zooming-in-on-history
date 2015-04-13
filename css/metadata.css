@@ -37,6 +37,12 @@ span.dimensions{
 	top: 165px;
 	width: 100%;
 	text-align: left;
+	overflow-y: scroll;
+}
+
+#metadata .cardContainer{
+	overflow-y: scroll;
+	position: fixed;
 }
 
 #metadata .card{

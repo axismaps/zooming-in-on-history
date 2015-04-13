@@ -3,6 +3,7 @@ var currentMap;
 function showDetailsForMap( id, pageNav ){
 	currentMap = id;
 	var $container = $( "<div>" ).attr( "class", "container" );
+	var $cardContainer = $( "<div>").attr( "class", "cardContainer" ).appendTo( $container );
 	
 	$( "body > .card" ).remove();
 	var $card = $( "#map" + id ).clone();
@@ -54,11 +55,13 @@ function showDetailsForMap( id, pageNav ){
       		  if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
       		  $card.children().fadeIn();
       		  $( "#metadata" ).append( $container );
-      		  $( "#metadata .container" ).prepend( $card );
+      		  $( "#metadata .cardContainer" ).prepend( $card );
       		  $card.css({
         		  top : "auto",
-        		  left : "auto"
+        		  left : "auto",
+				  position: "relative"
       		  }).attr( "class", $card.attr( "class" ).replace( "pre-animated", "map-animated" ) );
+			  resize();
       		}, 1000 );
     		});
   		});
@@ -68,18 +71,21 @@ function showDetailsForMap( id, pageNav ){
 		$card.removeClass( "map-card" )
 			.css({
         		  top : "auto",
-        		  left : "auto"
+        		  left : "auto",
+				  position: "relative"
       		})
       		.attr( "class", $card.attr( "class" ).replace( "pre-animated", "map-animated" ) );
 		$container
-			.append( $card )
 			.append( $textContainer )
 			.appendTo( "#metadata" );
+		$cardContainer
+			.append( $card );
 		setTimeout( function(){
 			$old.remove();
 			$( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
 			if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
      		$card.children().fadeIn();
+			resize();
 		},1000);
 		if ( pageNav == "next" ){
 			$old.addClass( "animated fadeOutLeft" );
@@ -89,13 +95,13 @@ function showDetailsForMap( id, pageNav ){
 			$container.addClass( "animated fadeInLeft" );
 		}
 	}
-	resize();
 	addBreadcrumb( maps[ id ].title, "metadata" );
 	$( "body" ).attr( "class", "metadata-screen" );		
 
 	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 70 });
 	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
 	
+	resize();
 	pageButtonsForScreen( "metadata" );
 }
 
