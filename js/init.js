@@ -140,7 +140,8 @@ function addBreadcrumb( title, level ){
   bc.children( id ).prev().addClass( "breadcrumb-back" );
 	
 	$( id ).on( 'click', function() {
-		if( id != '#map-button' && $( this ).next( ':hidden' ).length == 0 ) {
+		if( id != '#map-button' &&
+			$( this ).attr( "id" ).replace("-button","") != $( "body" ).attr( "class" ).replace("-screen","") ) {
 			
 			$( this ).nextAll().hide();
 			$( '#geocoder-close-button' ).click();
