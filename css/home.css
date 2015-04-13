@@ -3,6 +3,29 @@
 	padding-top: 0;
 }
 
+#home h1.title {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+#home #home-share-button {
+	display: inline-block;
+	font-size: 26px;
+	background-color: rgba(0, 0, 0, .3);
+	border-radius: 10px;
+	padding: 5px 20px;
+	vertical-align: middle;
+}
+
+#home #home-share-button:hover {
+	background-color: rgba(0, 0, 0, .5);
+	cursor: pointer;
+}
+
+#home #home-share-button i{
+	margin-right: 10px;
+}
+
 #categories{
 	text-align: center;
 	margin-top: 20px;
