@@ -57,6 +57,13 @@ function resize(){
 
 	$( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
 
+	if ( $( "#home #categories" ).length ){
+		$( "#home #categories" )
+			.css({
+				"max-height": h - $( "#home #categories" ).offset().top - $( ".footer" ).height() - 30 + "px"
+			});
+	}
+	
 	if ( $( ".map-cards-wrapper" ).length ){
 		$( ".map-cards-wrapper" )
 			.css({
@@ -152,6 +159,9 @@ function addBreadcrumb( title, level ){
 		
 		if( id == '#home-button' ) {
 			$( '#top-section' ).hide( [ 400 ] );
+			setTimeout( function() {
+				resize();
+			}, 1000 );
 			categoryAnimation = setInterval( categorySlideshow, 5000 );
 		}
 		

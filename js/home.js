@@ -34,7 +34,6 @@ function createCategories(){
 			.appendTo( $div );
 	});	
 	
-	$( "#categories" ).css( 'height', $( window ).height() - 132 );
 	categoryAnimation = setInterval( categorySlideshow, 5000 );
 }
 
