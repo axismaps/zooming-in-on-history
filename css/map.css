@@ -133,12 +133,23 @@
 	left: 8px;
 }
 
-#interaction-elements #share-button{
-	float: right;
+#map #share-button{
+	position: absolute;
+	top: 0;
+	right: 0;
 	font-size: 18px;
+	cursor: pointer;
+	padding: 30px 20px;
+	border-left: 1px solid #666;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.75);
 }
 
-#interaction-elements #share-button i{
+#map #share-button:hover{
+	background-color: rgba(0, 0, 0, 0.95);
+}
+
+#map #share-button i{
 	margin-right: 10px;
 }
 
