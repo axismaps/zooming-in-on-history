@@ -362,3 +362,15 @@ body{
 .share-menu i {
 	margin-right: 10px;
 }
+
+.fa-facebook-square {
+	color: #3b5998;
+}
+
+.fa-twitter-square {
+	color: #4099ff;
+}
+
+.fa-envelope-square {
+	color: #666;
+}
