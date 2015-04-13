@@ -28,8 +28,13 @@ function createEvents(){
 		if( $( '.share-menu' ).is( ":visible" ) ) $( '.share-menu' ).hide();
 		else {
 			$( '.share-menu' ).show()
-				.css( "top", $button.offset().top + $button.outerHeight() )
-				.css( "left", $button.offset().left );
+				.css( "top", $button.offset().top + $button.outerHeight() );
+				
+			if( $button.css( 'right' ) ) {
+				$( '.share-menu' ).css( 'right', 0 );
+			} else {
+				$( '.share-menu' ).css( "left", $button.offset().left );
+			}
 		}
 	});
 }
