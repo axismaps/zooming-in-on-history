@@ -45,7 +45,7 @@ function createEvents(){
 function resize(){
 	var w = $(window).width(),
 		h = $(window).height();
-	$( '.page-button' ).css( 'top', ( h - 460 ) / 2 + 'px' );
+	$( '.page-button' ).css( 'top', Math.max( ( h - 460 ) / 2, 160 ) + 'px' );
 	
 	
 	$( "#details-panel" )
