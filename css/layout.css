@@ -339,8 +339,8 @@ body{
 }
 
 .share-menu{
-	background-color: #fff;
-	color: #000;
+	background-color: rgba(0, 0, 0, .75);
+	color: #fff;
 	position: absolute;
 	z-index: 9999;
 	border: 1px solid #666;
