@@ -72,6 +72,11 @@ function selectMap( id ){
 	$( "#zoom-in-button" ).click( function(){
 		map.zoomIn();
 	});
+	
+	//set up sharing buttons for this particular map
+	$( '#facebook-share' ).attr( 'href', 'https://www.facebook.com/sharer/sharer.php?u=' + url + '?mapId=' + id );
+	$( '#twitter-share' ).attr( 'href', 'https://twitter.com/home?status=' + url + '?mapId=' + id );
+	$( '#email-share' ).attr( 'href', 'mailto:?&body=' + url + '?mapId=' + id );
 }
 
 function onMapMove(){

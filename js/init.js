@@ -4,6 +4,7 @@ var idleTimer = null,
 var selectedCategory;
 var page,
 	pageCount;
+var url = '';
 
 getURLParameters();
 loadData();
@@ -100,6 +101,7 @@ function resize(){
 }
 
 function getURLParameters(){
+	url = location.origin + location.pathname;
 	var search = location.search.substring(1);
 	if ( search ) params = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
 	if ( params.categories ) params.categories = params.categories.split(",");
