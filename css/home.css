@@ -6,6 +6,7 @@
 #categories{
 	text-align: center;
 	margin-top: 20px;
+	overflow-y: auto;
 }
 
 #home .card{

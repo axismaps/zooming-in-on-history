@@ -1,6 +1,4 @@
 var params = {};
-var idleTimer = null,
-	idleWait = 120000;
 
 getURLParameters();
 loadData();
@@ -10,7 +8,6 @@ function initialize(){
 	createEvents();
 	createMap();
 	addBreadcrumb( 'Home', "home" );
-	initTimer();
 }
 
 function createEvents(){
@@ -45,7 +42,7 @@ function createEvents(){
 function resize(){
 	var w = $(window).width(),
 		h = $(window).height();
-	$( '.page-button' ).css( 'top', ( h - 460 ) / 2 + 'px' );
+	$( '.page-button' ).css( 'top', Math.max( ( h - 460 ) / 2, 160 ) + 'px' );
 	
 	
 	$( "#details-panel" )
@@ -56,7 +53,15 @@ function resize(){
 		.css( "left", $( "#details-panel" ).width() );
 
 	$( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
+	$( ".meta-text" ).css( "max-width", w - 715 + "px" );
 
+	if ( $( "#home #categories" ).length ){
+		$( "#home #categories" )
+			.css({
+				"max-height": h - $( "#home #categories" ).offset().top - $( ".footer" ).height() - 30 + "px"
+			});
+	}
+	
 	if ( $( ".map-cards-wrapper" ).length ){
 		$( ".map-cards-wrapper" )
 			.css({
@@ -65,9 +70,10 @@ function resize(){
 			});
 	}
 
-	if ( $( "#metadata .container" )[0] ){
+	if ( $( "#metadata .container" ).length ){
 		$( "#metadata .container" ).width( w - $( ".page-button" ).width() - 20 )
-			.css( "max-height", h - $( "#metadata .container" ).offset().top - 50 + "px" );
+			.css( "max-height", h - $( "#metadata .container" ).offset().top - $( ".footer" ).height() - 30 + "px" );
+		$( "#metadata .cardContainer" ).css( "max-height", $( "#metadata .container").css( "max-height" ) );
 	}
 
 	$( "body" ).width( w );
@@ -155,6 +161,9 @@ function addBreadcrumb( title, level ){
 		
 		if( id == '#home-button' ) {
 			$( '#top-section' ).hide( [ 400 ] );
+			setTimeout( function() {
+				resize();
+			}, 1000 );
 			categoryAnimation = setInterval( categorySlideshow, 5000 );
 		}
 		
@@ -167,19 +176,6 @@ function addBreadcrumb( title, level ){
 
 function sanitize( word ){
 	return word.replace(/\s+/g, '-').replace(/[^a-zA-Z-]/g, '').toLowerCase();
-}
-
-function initTimer(){
-	$( '*' ).bind( 'mousemove keydown scroll', function() {
-		clearTimeout( idleTimer );
-		
-		idleTimer = setTimeout( function() {
-			$( '#home-button' ).click();
-		}, idleWait );
-	});
-	
-	//starts the timer
-	$( 'body' ).trigger( 'mousemove' );
 }
 
 function breadcrumbCSSUpdates(){
