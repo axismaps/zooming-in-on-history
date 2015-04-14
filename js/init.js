@@ -133,8 +133,6 @@ function goToMap( id ) {
 		breadcrumbCSSUpdates();
 		blockInteractions();
 	});
-	
-	history.pushState({}, '', 'index.html' );
 }
 
 function changeScreens( $from, $to, transitionOut, transitionIn ){
