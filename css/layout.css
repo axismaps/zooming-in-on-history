@@ -344,6 +344,7 @@ body{
 	position: absolute;
 	z-index: 9999;
 	max-width: 200px;
+	border: 1px solid #666;
 }
 
 .share-menu a{
@@ -364,6 +365,7 @@ body{
 .share-menu p.social-media:hover {
 	background-color: rgba(0, 0, 0, .5);
 	cursor: pointer;
+	border: 1px solid #666;
 }
 
 .share-menu i {
