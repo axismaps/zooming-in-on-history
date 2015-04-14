@@ -148,6 +148,11 @@
   #metadata h1{
 	margin-top: 10px !important;
 	margin-left: 60px !important;
+	text-overflow: ellipsis;
+	width: -moz-calc(100% - 60px);
+    width: -webkit-calc(100% - 60px);
+    width: -o-calc(100% - 60px);
+    width: calc(100% - 60px);
   }
   
   #metadata .container {
@@ -174,6 +179,7 @@
   #metadata .meta-text{
 	display: block !important;
 	margin: 0 !important;
+	padding: 10px;
   }
   
   #metadata .meta-text .caption-title{
