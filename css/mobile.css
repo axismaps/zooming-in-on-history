@@ -204,6 +204,30 @@
   
   #details-panel {
 	display: none;
+	position: absolute;
+	height: 100%;
+	width: 100%;
+  }
+  
+  #details-close{
+	display: block;
+	position: fixed;
+	right: 20px;
+	color: #fff;
+	cursor: pointer;
+  }
+  
+  #details-close:active,
+  #details-close:visited{
+	color: #fff;
+  }
+  
+  #details-close:hover{
+	color: #666;
+  }
+  
+  #details-panel .detail{
+	
   }
   
   #mobile-icons {

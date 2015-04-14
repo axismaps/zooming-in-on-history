@@ -338,6 +338,9 @@ body{
     background-color: #999;
 }
 
-#mobile-icons{
+/* MOBILE SPECIFIC STUFF WE DON'T SHOW */
+
+#mobile-icons,
+#details-close{
 	display: none;
 }

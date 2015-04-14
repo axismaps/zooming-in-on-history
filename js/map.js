@@ -81,6 +81,10 @@ function selectMap( id ){
 	$( '#mobile-icons #geolocate' ).on( 'click', function() {
 		console.log( 'Geolocate the user please' );
 	});
+	
+	$( '#details-close' ).on( 'click', function() {
+		$( '#details-panel' ).hide();
+	});
 }
 
 function onMapMove(){
