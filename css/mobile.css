@@ -190,5 +190,21 @@
   
   }
   
+  /* MAP SCREEN */
+  
+  #transparency-div,
+  #map-ui-buttons,
+  #details-panel,
+  #interaction-elements{
+	display: none !important;
+  }
+  
+  .map-screen #breadcrumbs{
+    background-color: rgba(0, 0, 0, 0.75) !important;
+  }
+  
+  #details-panel {
+	
+  }
   
 }
