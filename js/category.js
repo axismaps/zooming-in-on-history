@@ -1,5 +1,4 @@
-var selectedCategory,
-	page,
+var page,
 	pageCount;
 
 function selectCategory( id ){

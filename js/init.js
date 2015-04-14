@@ -1,11 +1,12 @@
 var params = {};
 var idleTimer = null,
 	idleWait = 120000;
+var selectedCategory;
 
-getURLParameters();
 loadData();
 
 function initialize(){
+	getURLParameters();
 	createCategories();
 	createEvents();
 	createMap();
@@ -97,6 +98,24 @@ function getURLParameters(){
 	var search = location.search.substring(1);
 	if ( search ) params = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
 	if ( params.categories ) params.categories = params.categories.split(",");
+	if ( params.mapId ) {
+		var id = params.mapId;
+		selectedCategory = _.pluck( _.filter( maps, function( map ) { return map.number == id } ), 'category' );
+		
+		//home screen transitions
+		clearInterval( categoryAnimation );
+		$( "#home" ).hide();
+		
+		//map screen transitions
+		$( '#top-section' ).show().children( '#screen-top-border' ).css( "background-color", categories[ selectedCategory ].color );
+    	$( "#map" ).fadeIn( function() {
+      		showMap();
+			selectMap( id );
+			showDetailsList( id );
+			breadcrumbCSSUpdates();
+			blockInteractions();
+		});
+	}
 }
 
 function changeScreens( $from, $to, transitionOut, transitionIn ){
