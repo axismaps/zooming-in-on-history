@@ -1,6 +1,3 @@
-var page,
-	pageCount;
-
 function selectCategory( id ){
 	$( "body" ).attr( "class", "category-screen" );
 	$( "#category" ).show();

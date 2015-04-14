@@ -2,11 +2,16 @@ var params = {};
 var idleTimer = null,
 	idleWait = 120000;
 var selectedCategory;
+var page,
+	pageCount;
 
+getURLParameters();
 loadData();
 
 function initialize(){
-	getURLParameters();
+	if( params.mapId ) {
+		goToMap( params.mapId )
+	}
 	createCategories();
 	createEvents();
 	createMap();
@@ -98,26 +103,41 @@ function getURLParameters(){
 	var search = location.search.substring(1);
 	if ( search ) params = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
 	if ( params.categories ) params.categories = params.categories.split(",");
-	if ( params.mapId ) {
-		var id = params.mapId;
+}
+
+function goToMap( id ) {
+	var id = params.mapId;
 		selectedCategory = maps[ id ].category;
 		
-		//home screen transitions
-		clearInterval( categoryAnimation );
-		$( "#home" ).hide();
-		
-		//map screen transitions
-		$( '#top-section' ).show().children( '#screen-top-border' ).css( "background-color", categories[ selectedCategory ].color );
-    	$( "#map" ).fadeIn( function() {
-      		showMap();
-			selectMap( id );
-			showDetailsList( id );
-			addBreadcrumb( categories[ selectedCategory ].name, "category" );
-			addBreadcrumb(  maps[ id ].title, "metadata" );
-			breadcrumbCSSUpdates();
-			blockInteractions();
-		});
-	}
+	//home screen transitions
+	clearInterval( categoryAnimation );
+	$( "#home" ).hide();
+	
+	//set various variables
+	var mapsInCategory = _.sortBy ( _.filter( maps, function(m){ return m.category == selectedCategory } ), function(m){ return parseInt(m.number) } );
+	console.log( mapsInCategory );
+	page = 1; //TODO - set page correctly based on map
+	pageCount = 0;
+	categories[ selectedCategory ].maps = [];
+	
+	_.each( mapsInCategory, function( m, i ){
+		categories[ selectedCategory ].maps.push( m.number );
+		if ( i % 8 == 0 ){
+			pageCount ++;
+		}
+	});
+	
+	//map screen transitions
+	$( '#top-section' ).show().children( '#screen-top-border' ).css( "background-color", categories[ selectedCategory ].color );
+	$( "#map" ).fadeIn( function() {
+		showMap();
+		selectMap( id );
+		showDetailsList( id );
+		addBreadcrumb( categories[ selectedCategory ].name, "category" );
+		addBreadcrumb(  maps[ id ].title, "metadata" );
+		breadcrumbCSSUpdates();
+		blockInteractions();
+	});
 }
 
 function changeScreens( $from, $to, transitionOut, transitionIn ){
@@ -137,6 +157,7 @@ function changeScreens( $from, $to, transitionOut, transitionIn ){
 }
 
 function pageButtonsForScreen( s ){
+	console.log( 'pageButtonsForScreen function called with: ' + s );
 	if ( s == "category" ){
 		if ( pageCount > 1 ){
 			$( ".page-button" ).show();
@@ -158,14 +179,15 @@ function pageButtonsForScreen( s ){
 		$( ".page-button" ).off( "click" );
 		$( "#prev-page" ).on( "click", prevMap );
 		$( "#next-page" ).on( "click", nextMap );
-		
+				
 		hideShowPageButton( categories[ selectedCategory ].maps.indexOf( currentMap ) + 1, categories[ selectedCategory ].maps.length );
 	} else {
 		$( ".page-button" ).hide();
 	}
 }
 
-function hideShowPageButton( current, total) {
+function hideShowPageButton( current, total ) {
+	console.log( current, total );
 	$( '#prev-page' ).show();
 	$( '#next-page' ).show();
 	if ( current == 1 ) $( '#prev-page' ).hide();
