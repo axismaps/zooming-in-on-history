@@ -346,6 +346,16 @@ body{
 	max-width: 200px;
 }
 
+.share-menu a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.share-menu a:hover{
+	text-decoraction: none;
+	color: #fff;
+}
+
 .share-menu p {
 	padding: 20px;
 	margin: 0;
