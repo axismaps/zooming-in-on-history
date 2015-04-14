@@ -100,7 +100,7 @@ function getURLParameters(){
 	if ( params.categories ) params.categories = params.categories.split(",");
 	if ( params.mapId ) {
 		var id = params.mapId;
-		selectedCategory = _.pluck( _.filter( maps, function( map ) { return map.number == id } ), 'category' );
+		selectedCategory = maps[ id ].category;
 		
 		//home screen transitions
 		clearInterval( categoryAnimation );
@@ -112,6 +112,8 @@ function getURLParameters(){
       		showMap();
 			selectMap( id );
 			showDetailsList( id );
+			addBreadcrumb( categories[ selectedCategory ].name, "category" );
+			addBreadcrumb(  maps[ id ].title, "metadata" );
 			breadcrumbCSSUpdates();
 			blockInteractions();
 		});
