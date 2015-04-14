@@ -37,7 +37,7 @@ function showMapsInCategory( id ){
 			.addClass( "map-card card page" + pageCount + " pre-animated" + ( i % 4 + 1 ) )
 			.css( "background-image", "url( data/img/thumbnails/" + m.number + ".jpg )" )
 			.click( function(){
-				showDetailsForMap( m.number );
+				showDetailsForMap( m.number, false, false );
 				breadcrumbCSSUpdates();
 			});
 		

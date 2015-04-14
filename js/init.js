@@ -113,19 +113,11 @@ function goToMap( id ) {
 	clearInterval( categoryAnimation );
 	$( "#home" ).hide();
 	
-	//set various variables
-	var mapsInCategory = _.sortBy ( _.filter( maps, function(m){ return m.category == selectedCategory } ), function(m){ return parseInt(m.number) } );
-	console.log( mapsInCategory );
-	page = 1; //TODO - set page correctly based on map
-	pageCount = 0;
-	categories[ selectedCategory ].maps = [];
-	
-	_.each( mapsInCategory, function( m, i ){
-		categories[ selectedCategory ].maps.push( m.number );
-		if ( i % 8 == 0 ){
-			pageCount ++;
-		}
-	});
+	showMapsInCategory( selectedCategory );
+	showDetailsForMap( id, false, true );
+	$( '#page1' ).hide();
+	page = 2;
+	showPage( page );
 	
 	//map screen transitions
 	$( '#top-section' ).show().children( '#screen-top-border' ).css( "background-color", categories[ selectedCategory ].color );
@@ -187,7 +179,6 @@ function pageButtonsForScreen( s ){
 }
 
 function hideShowPageButton( current, total ) {
-	console.log( current, total );
 	$( '#prev-page' ).show();
 	$( '#next-page' ).show();
 	if ( current == 1 ) $( '#prev-page' ).hide();

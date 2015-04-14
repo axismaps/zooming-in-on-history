@@ -1,6 +1,6 @@
 var currentMap;
 
-function showDetailsForMap( id, pageNav ){
+function showDetailsForMap( id, pageNav, hide ){
 	currentMap = id;
 	var $container = $( "<div>" ).attr( "class", "container" );
 	
@@ -18,13 +18,16 @@ function showDetailsForMap( id, pageNav ){
 		  blockInteractions();
         });
   		  });
-		})
-		.css({
-  		  position : "fixed",
-  		  top : $( "#map" + id ).offset().top - 15,
-  		  left : $( "#map" + id ).offset().left - 15
-		})
-		.appendTo( $( "body" ) );
+		});
+	if( hide == false ) {
+		$card
+			.css({
+			  position : "fixed",
+			  top : $( "#map" + id ).offset().top - 15,
+			  left : $( "#map" + id ).offset().left - 15
+			})
+			.appendTo( $( "body" ) );
+	}
 
 	var $textContainer = $( "<div>" ).attr( "class", "meta-text" ).appendTo( $container );
 
@@ -97,18 +100,21 @@ function showDetailsForMap( id, pageNav ){
 	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
 	
 	pageButtonsForScreen( "metadata" );
+	if( hide == true ) {
+		$( "#metadata" ).hide();
+	}
 }
 
 function nextMap(){
 	var cat = categories[ selectedCategory ],
 		index = cat.maps.indexOf( currentMap );
 	if ( index == cat.maps.length - 1 ) return;
-	showDetailsForMap( cat.maps[ index + 1 ], "next" );
+	showDetailsForMap( cat.maps[ index + 1 ], "next", false );
 }
 
 function prevMap(){
 	var cat = categories[ selectedCategory ],
 		index = cat.maps.indexOf( currentMap );
 	if ( index == 0 ) return;
-	showDetailsForMap( cat.maps[ index - 1 ], "prev" );
+	showDetailsForMap( cat.maps[ index - 1 ], "prev", false );
 }
