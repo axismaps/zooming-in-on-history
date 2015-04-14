@@ -46,9 +46,6 @@ function selectMap( id ){
 	pageButtonsForScreen( "map" );
 
 	map.on( "movestart", onMapMove );
-	map.on( "zoomstart", function() {
-		clearTimeout( idleTimer );
-	});
 
 	$( "#reset-map" ).click( function(){
 		if( $( '#detail-single' ).is( ':visible' ) ) $( '#detail-back' ).click();
