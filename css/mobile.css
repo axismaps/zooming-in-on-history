@@ -210,15 +210,19 @@
   #mobile-icons {
 	display: inline-block;
 	position: absolute;
-	bottom: 10px;
+	bottom: 15px;
 	left: 0;
 	width: 100%;
   }
   
   #mobile-icons i{
-	width: 42px;
-	height: 42px;
 	cursor: pointer;
+	background-color: rgba(0, 0, 0, .75);
+	padding: 8px;
+  }
+  
+  #mobile-icons div:hover{
+	color: #666;
   }
   
   #mobile-icons #info{
