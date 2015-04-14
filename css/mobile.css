@@ -53,7 +53,7 @@
     background-size: 40px;
   }
   
-  #categories, #map-cards{
+  #categories, #map-cards, #metadata .container{
     height: -moz-calc(100% - 60px);
     height: -webkit-calc(100% - 60px);
     height: -o-calc(100% - 60px);
@@ -143,4 +143,46 @@
   .map-card.card{
     height: 100px;
   }
+  
+  /* METADATA SCREEN */
+  #metadata h1{
+	margin-top: 10px !important;
+	margin-left: 60px !important;
+  }
+  
+  #metadata .container {
+    position: relative !important;
+	top: initial !important;
+	overflow-y: auto;
+  }
+  
+  #metadata .card{
+    height: 460px;
+	position: relative !important;
+  }
+  
+  #metadata .card  .map-title.card-title{
+    height: initial;
+	width: initial;
+	position: relative;
+  }
+  
+  #metadata .card  .map-title.card-title p{
+    margin-left: 0;
+  }
+  
+  #metadata .meta-text{
+	display: block !important;
+	margin: 0 !important;
+  }
+  
+  #metadata .meta-text .caption-title{
+  
+  }
+  
+  #metadata .meta-text .caption{
+  
+  }
+  
+  
 }
