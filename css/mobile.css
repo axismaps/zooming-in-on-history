@@ -159,6 +159,12 @@
     position: relative !important;
 	top: initial !important;
 	overflow-y: auto;
+	width: 100% !important;
+	max-height: initial !important
+  }
+  
+  #metadata .cardContainer{
+	display: block;
   }
   
   #metadata .card{
