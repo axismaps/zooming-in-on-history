@@ -1,6 +1,6 @@
 var currentMap;
 
-function showDetailsForMap( id, pageNav, hide ){
+function showDetailsForMap( id, pageNav, noAnimation ){
 	currentMap = id;
 	var $container = $( "<div>" ).attr( "class", "container" );
 	
@@ -19,7 +19,7 @@ function showDetailsForMap( id, pageNav, hide ){
         });
   		  });
 		});
-	if( hide == false ) {
+	if( noAnimation == false ) {
 		$card
 			.css({
 			  position : "fixed",
@@ -59,6 +59,7 @@ function showDetailsForMap( id, pageNav, hide ){
       		  $( "#metadata" ).append( $container );
       		  $( "#metadata .container" ).prepend( $card );
       		  $card.css({
+				  position : "fixed",
         		  top : "auto",
         		  left : "auto"
       		  }).attr( "class", $card.attr( "class" ).replace( "pre-animated", "map-animated" ) );
@@ -100,9 +101,6 @@ function showDetailsForMap( id, pageNav, hide ){
 	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
 	
 	pageButtonsForScreen( "metadata" );
-	if( hide == true ) {
-		$( "#metadata" ).hide();
-	}
 }
 
 function nextMap(){

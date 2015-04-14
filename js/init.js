@@ -115,6 +115,7 @@ function goToMap( id ) {
 	
 	showMapsInCategory( selectedCategory );
 	showDetailsForMap( id, false, true );
+	$( "#metadata" ).hide();
 	$( '#page1' ).hide();
 	page = 2;
 	showPage( page );
@@ -149,7 +150,6 @@ function changeScreens( $from, $to, transitionOut, transitionIn ){
 }
 
 function pageButtonsForScreen( s ){
-	console.log( 'pageButtonsForScreen function called with: ' + s );
 	if ( s == "category" ){
 		if ( pageCount > 1 ){
 			$( ".page-button" ).show();
