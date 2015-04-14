@@ -337,3 +337,7 @@ body{
 ::-webkit-scrollbar-thumb:hover {
     background-color: #999;
 }
+
+#mobile-icons{
+	display: none;
+}

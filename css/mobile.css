@@ -207,4 +207,26 @@
 	
   }
   
+  #mobile-icons {
+	display: inline-block;
+	position: absolute;
+	bottom: 10px;
+	left: 0;
+	width: 100%;
+  }
+  
+  #mobile-icons i{
+	width: 42px;
+	height: 42px;
+	cursor: pointer;
+  }
+  
+  #mobile-icons #info{
+	float: left;
+  }
+  
+  #mobile-icons #geolocate{
+	float: right;
+  }
+  
 }
