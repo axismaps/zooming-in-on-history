@@ -343,8 +343,6 @@ body{
 	color: #fff;
 	position: absolute;
 	z-index: 9999;
-	border: 1px solid #666;
-	border-top: 0;
 	max-width: 200px;
 }
 
