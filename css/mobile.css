@@ -194,7 +194,6 @@
   
   #transparency-div,
   #map-ui-buttons,
-  #details-panel,
   #interaction-elements{
 	display: none !important;
   }
@@ -204,7 +203,7 @@
   }
   
   #details-panel {
-	
+	display: none;
   }
   
   #mobile-icons {

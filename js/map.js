@@ -71,6 +71,16 @@ function selectMap( id ){
 	$( "#zoom-in-button" ).click( function(){
 		map.zoomIn();
 	});
+	
+	//----Mobile specific buttons----//
+	$( '#mobile-icons #info').on( 'click', function() {
+		console.log( 'Show the details panel please' );
+		$( '#details-panel' ).show();
+	});
+	
+	$( '#mobile-icons #geolocate' ).on( 'click', function() {
+		console.log( 'Geolocate the user please' );
+	});
 }
 
 function onMapMove(){
