@@ -125,7 +125,7 @@
   }
   
   #map-cards{
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   
   .page{
