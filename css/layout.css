@@ -343,4 +343,50 @@ body{
 #mobile-icons,
 #details-close{
 	display: none;
+	
+}
+.share-menu{
+	background-color: rgba(0, 0, 0, .75);
+	color: #fff;
+	position: absolute;
+	z-index: 9999;
+	max-width: 200px;
+	border: 1px solid #666;
+}
+
+.share-menu a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.share-menu a:hover{
+	text-decoraction: none;
+	color: #fff;
+}
+
+.share-menu p {
+	padding: 20px;
+	margin: 0;
+}
+
+.share-menu p.social-media:hover {
+	background-color: rgba(0, 0, 0, .5);
+	cursor: pointer;
+	border: 1px solid #666;
+}
+
+.share-menu i {
+	margin-right: 10px;
+}
+
+.fa-facebook-square {
+	color: #3b5998;
+}
+
+.fa-twitter-square {
+	color: #4099ff;
+}
+
+.fa-envelope-square {
+	color: #666;
 }
