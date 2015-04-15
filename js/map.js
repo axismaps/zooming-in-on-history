@@ -68,12 +68,15 @@ function selectMap( id ){
 	
 	//----Mobile specific buttons----//
 	$( '#mobile-icons #info').on( 'click', function() {
-		console.log( 'Show the details panel please' );
 		$( '#details-panel' ).show();
 	});
 	
 	$( '#mobile-icons #geolocate' ).on( 'click', function() {
-		console.log( 'Geolocate the user please' );
+		if( navigator.geolocation ) {
+			navigator.geolocation.getCurrentPosition( geolocateSuccess, geolocateError );
+		} else {
+			error( 'Sorry, I couldn\' find your location.' );
+		}
 	});
 	
 	$( '#details-close' ).on( 'click', function() {
@@ -189,4 +192,27 @@ function slider_init(){
 
 function changeHistoricMapOpacity(){
 	historicTiles.setOpacity( ( 100 - $( '#transparency-slider' ).slider( "value" ) ) / 100 );
+}
+
+function geolocateSuccess( position ){
+	var latlng = L.latLng( position.coords.latitude, position.coords.longitude );
+	
+	if(  map.getBounds().contains( latlng ) ){
+		var geocodeIcon = L.icon({
+			iconUrl: 'img/' + selectedCategory + '-marker.png',
+			iconSize: [62, 82],
+			iconAnchor: [31, 82]
+		});
+		
+		L.marker( [ latlng.lat, latlng.lng ], {icon: geocodeIcon } )
+			.addTo( geocodeResultLayer );
+			
+		map.setView({ center: latlng, zoom: map.options.maxZoom });
+	} else {
+		geolocateError( 'Your location is not inside the map bounds' );
+	}
+}
+
+function geolocateError( msg ){
+	console.log( msg );
 }
