@@ -116,10 +116,15 @@
     background-color: white;
     display: block;
     padding: 20px;
+	box-sizing: border-box;
   }
   
   .card .category-title p{
-    padding: 15% 20px;
+    padding-top: 50px;
+  }
+  
+  #category .card .map-title p{
+	padding-top: 40px;
   }
   
   .card .card-title p:first-child:before{
