@@ -37,6 +37,11 @@
 	margin: 0 10px;
 }
 
+#find-your-city-button i::after{
+	content: 'Find your city...';
+	margin-left: 10px;
+}
+
 #geocoder-section{
 	width: 100%;
 }
@@ -98,7 +103,7 @@
 
 #transparency-div{
 	display: inline-block;
-	margin: 0 50px;
+	margin: 0 25px;
 	float: right;
 	padding: 7px 0;
 }

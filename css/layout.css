@@ -363,7 +363,7 @@ body{
 }
 
 .share-menu p.social-media:hover {
-	background-color: rgba(0, 0, 0, .5);
+	background-color: rgba(0, 0, 0, .75);
 	cursor: pointer;
 	border: 1px solid #666;
 }
@@ -382,4 +382,36 @@ body{
 
 .fa-envelope-square {
 	color: #666;
+}
+@media only screen and (max-width: 1250px) {
+	#transparency-div{
+		margin: 0 !important;
+	}
+	#interaction-elements{
+		padding: 20px 10px !important;
+	}
+}
+@media only screen and (max-width: 1200px) {
+	#map-share-button > span{
+		display: none;
+	}
+	#find-your-city-button i::after{
+		content: 'Find...' !important;
+	}
+}
+@media only screen and (max-width: 1070px) {
+	#transparency-div > span{
+		display: none;
+	}
+	#interaction-elements{
+		padding: 20px 5px !important;
+	}
+}
+@media only screen and (max-width: 930px) {
+	#transparency-div{
+		display: none !important;
+	}
+	#interaction-elements{
+		padding: 20px !important;
+	}
 }
