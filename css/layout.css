@@ -353,7 +353,7 @@ body{
 }
 
 .share-menu a:hover{
-	text-decoraction: none;
+	text-decoration: underline;
 	color: #fff;
 }
 
@@ -365,7 +365,6 @@ body{
 .share-menu p.social-media:hover {
 	background-color: rgba(0, 0, 0, .75);
 	cursor: pointer;
-	border: 1px solid #666;
 }
 
 .share-menu i {
