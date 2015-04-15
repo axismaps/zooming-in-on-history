@@ -204,10 +204,14 @@ function geolocateSuccess( position ){
 			iconAnchor: [31, 82]
 		});
 		
-		L.marker( [ latlng.lat, latlng.lng ], {icon: geocodeIcon } )
+		L.marker( latlng, {icon: geocodeIcon } )
 			.addTo( geocodeResultLayer );
 			
-		map.setView({ center: latlng, zoom: map.options.maxZoom });
+		// map.setView({ center: latlng, zoom: map.options.maxZoom }); // won't work for some reason
+		map.setZoom( map.options.maxZoom );
+		setTimeout(function(){
+			map.panTo( latlng );
+		}, 1000);
 	} else {
 		geolocateError( 'Your location is not inside the map bounds' );
 	}
