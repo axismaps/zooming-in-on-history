@@ -157,6 +157,8 @@ function addBreadcrumb( title, level ){
 			$( "body" ).attr( "class", level + "-screen" );
 			
 			pageButtonsForScreen( level );
+			
+			$( ".breadcrumb-back" ).prev().addClass( "breadcrumb-back" ).next().removeClass( "breadcrumb-back" );
 		}
 		
 		if( id == '#home-button' ) {
