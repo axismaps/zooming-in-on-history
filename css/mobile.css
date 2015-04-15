@@ -119,14 +119,6 @@
 	box-sizing: border-box;
   }
   
-  .card .category-title p{
-    padding-top: 50px;
-  }
-  
-  #category .card .map-title p{
-	padding-top: 40px;
-  }
-  
   .card .card-title p:first-child:before{
     content: ">";
     height: 100%;
