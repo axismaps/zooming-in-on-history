@@ -118,8 +118,9 @@ function goToMap( id ) {
 	showMapsInCategory( selectedCategory );
 	showDetailsForMap( id, false, true );
 	$( "#metadata" ).hide();
+	var indexInCategory = categories[ selectedCategory ].maps.indexOf( id );
+	page = parseInt( indexInCategory / 8 ) + 1;
 	$( '#page1' ).hide();
-	page = 2;
 	showPage( page );
 	
 	//map screen transitions
