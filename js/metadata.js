@@ -8,17 +8,18 @@ function showDetailsForMap( id, pageNav, noAnimation ){
 	var $card = $( "#map" + id ).clone();
 	$card.children().hide();
 	$card
-	  .removeClass( "animated bounceIn" )
+		.removeClass( "animated bounceIn" )
 		.click( function(){
-  		  $( "#metadata" ).fadeOut( function() {
-    		  $( "#map" ).fadeIn( function() {
-      		  showMap();
-          selectMap( id );
-		  breadcrumbCSSUpdates();
-		  blockInteractions();
-        });
-  		  });
-		});
+			  $( "#metadata" ).fadeOut( function() {
+		  	$( "#map" ).fadeIn( function() {
+			  		showMap();
+	          selectMap( id );
+			  breadcrumbCSSUpdates();
+			  blockInteractions();
+	        });
+			  });
+		})
+		.css( "opacity", 1 );
 	if( noAnimation == false ) {
 		$card
 			.css({
