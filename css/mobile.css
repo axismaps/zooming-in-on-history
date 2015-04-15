@@ -18,6 +18,7 @@
   
   #breadcrumbs, #breadcrumbs .breadcrumb-back{
     background-color: transparent !important;
+	
   }
   
   #breadcrumbs > div{
@@ -27,9 +28,14 @@
   #breadcrumbs .breadcrumb-back{
     display: block !important;
     height: auto;
-    width: 80px;
+    max-width: 80px;
     padding: 0 10px;
-    text-align: left;
+	border-right: 1px solid #666;
+	text-align: center;
+  }
+  
+  #breadcrumbs .breadcrumb-back:hover{
+	background-color: rgba(0, 0, 0, 0.5) !important;
   }
   
   #breadcrumbs .breadcrumb-back:before, #breadcrumbs .breadcrumb-back:after, #breadcrumbs .breadcrumb-back i{
@@ -40,10 +46,15 @@
     display: block;
     float: left;
     width: 100%;
+	max-width: 80px;
   }
   
   .breadcrumb-back span:before{
     content: '<  ';
+  }
+  
+  .breadcrumb-back span:hover{
+	cursor: pointer !important;
   }
   
   /* HOME SCREEN */
@@ -149,10 +160,11 @@
 	margin-top: 10px !important;
 	margin-left: 80px !important;
 	text-overflow: ellipsis;
-	width: -moz-calc(100% - 80px);
-    width: -webkit-calc(100% - 80px);
-    width: -o-calc(100% - 80px);
-    width: calc(100% - 80px);
+	padding: 0 10px;
+	width: -moz-calc(100% - 100px);
+    width: -webkit-calc(100% - 100px);
+    width: -o-calc(100% - 100px);
+    width: calc(100% - 100px);
 	text-align: center;
   }
   
