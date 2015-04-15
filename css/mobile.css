@@ -153,6 +153,7 @@
     width: -webkit-calc(100% - 80px);
     width: -o-calc(100% - 80px);
     width: calc(100% - 80px);
+	text-align: center;
   }
   
   #metadata .container {
@@ -174,12 +175,17 @@
   
   #metadata .card  .map-title.card-title{
     height: initial;
-	width: initial;
-	position: relative;
+	width: 100%;
+	position: absolute;
+	bottom: 0;
+	border: none;
+	background-color: rgba(0, 0, 0, 0.75);
   }
   
   #metadata .card  .map-title.card-title p{
     margin-left: 0;
+	background-color: initial;
+	color: #fff;
   }
   
   #metadata .meta-text{
