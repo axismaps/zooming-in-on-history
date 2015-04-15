@@ -1,9 +1,17 @@
 var params = {};
+var selectedCategory;
+var page,
+	pageCount;
+var url = '';
+
 
 getURLParameters();
 loadData();
 
 function initialize(){
+	if( params.mapId ) {
+		goToMap( params.mapId )
+	}
 	createCategories();
 	createEvents();
 	createMap();
@@ -19,6 +27,30 @@ function createEvents(){
 	
 	$(window).resize( resize );
 	resize();
+	
+	//Share button clicking anywhere on the site
+	$( '.share' ).on( 'click', function(e) {
+		e.stopPropagation();
+		$button = $( this );
+		if( $( '.share-menu' ).is( ":visible" ) ) hideShare();
+		else {
+			$( '.share-menu' ).show()
+				.css( "top", $button.offset().top + $button.outerHeight() );
+				
+			if( $button.css( 'right' ) != 'auto' ) {
+				$( '.share-menu' ).css( 'right', 0 ).css( 'left', 'auto');
+			} else {
+				$( '.share-menu' ).css( "left", $button.offset().left ).css( 'right', 'auto' );
+			}
+
+			$( 'body' ).on( 'click', hideShare );
+		}
+	});
+
+	function hideShare(){
+		$( '.share-menu' ).hide();
+		$( 'body' ).off( 'click', hideShare );
+	}
 }
 
 	var category_hammer = new Hammer( $("#category")[0],{
@@ -40,6 +72,7 @@ function createEvents(){
 	  .on( "swiperight", prevMap );
 
 function resize(){
+	$( '.share-menu' ).hide();
 	var w = $(window).width(),
 		h = $(window).height();
 	$( '.page-button' ).css( 'top', Math.max( ( h - 460 ) / 2, 160 ) + 'px' );
@@ -50,7 +83,10 @@ function resize(){
 		.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
 	$( "#interaction-elements" )
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" )
-		.css( "left", $( "#details-panel" ).width() );
+		.css( "left", $( "#details-panel" ).width() )
+		.css( "right", $( "#map-share-button" ).width() + 41 );
+	$( "#map-share-button" )
+		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" );
 
 	$( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
 	$( ".meta-text" ).css( "max-width", w - 715 + "px" );
@@ -80,9 +116,39 @@ function resize(){
 }
 
 function getURLParameters(){
+	url = location.origin + location.pathname;
 	var search = location.search.substring(1);
 	if ( search ) params = JSON.parse('{"' + decodeURI(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g,'":"') + '"}');
 	if ( params.categories ) params.categories = params.categories.split(",");
+}
+
+function goToMap( id ) {
+	var id = params.mapId;
+		selectedCategory = maps[ id ].category;
+		
+	//home screen transitions
+	clearInterval( categoryAnimation );
+	$( "#home" ).hide();
+	
+	showMapsInCategory( selectedCategory );
+	showDetailsForMap( id, false, true );
+	$( "#metadata" ).hide();
+	var indexInCategory = categories[ selectedCategory ].maps.indexOf( id );
+	page = parseInt( indexInCategory / 8 ) + 1;
+	$( '#page1' ).hide();
+	showPage( page );
+	
+	//map screen transitions
+	$( '#top-section' ).show().children( '#screen-top-border' ).css( "background-color", categories[ selectedCategory ].color );
+	$( "#map" ).fadeIn( function() {
+		showMap();
+		selectMap( id );
+		showDetailsList( id );
+		addBreadcrumb( categories[ selectedCategory ].name, "category" );
+		addBreadcrumb(  maps[ id ].title, "metadata" );
+		breadcrumbCSSUpdates();
+		blockInteractions();
+	});
 }
 
 function changeScreens( $from, $to, transitionOut, transitionIn ){
@@ -123,14 +189,14 @@ function pageButtonsForScreen( s ){
 		$( ".page-button" ).off( "click" );
 		$( "#prev-page" ).on( "click", prevMap );
 		$( "#next-page" ).on( "click", nextMap );
-		
+				
 		hideShowPageButton( categories[ selectedCategory ].maps.indexOf( currentMap ) + 1, categories[ selectedCategory ].maps.length );
 	} else {
 		$( ".page-button" ).hide();
 	}
 }
 
-function hideShowPageButton( current, total) {
+function hideShowPageButton( current, total ) {
 	$( '#prev-page' ).show();
 	$( '#next-page' ).show();
 	if ( current == 1 ) $( '#prev-page' ).hide();
@@ -165,7 +231,7 @@ function addBreadcrumb( title, level ){
 		}
 		
 		breadcrumbCSSUpdates();
-
+		$( '.share-menu' ).hide();
 		blockInteractions();
 	});
 

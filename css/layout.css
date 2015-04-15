@@ -337,3 +337,80 @@ body{
 ::-webkit-scrollbar-thumb:hover {
     background-color: #999;
 }
+
+.share-menu{
+	background-color: rgba(0, 0, 0, .75);
+	color: #fff;
+	position: absolute;
+	z-index: 9999;
+	max-width: 200px;
+	border: 1px solid #666;
+}
+
+.share-menu a{
+	text-decoration: none;
+	color: #fff;
+}
+
+.share-menu a:hover{
+	text-decoration: underline;
+	color: #fff;
+}
+
+.share-menu p {
+	padding: 20px;
+	margin: 0;
+}
+
+.share-menu p.social-media:hover {
+	background-color: rgba(0, 0, 0, .75);
+	cursor: pointer;
+}
+
+.share-menu i {
+	margin-right: 10px;
+}
+
+.fa-facebook-square {
+	color: #3b5998;
+}
+
+.fa-twitter-square {
+	color: #4099ff;
+}
+
+.fa-envelope-square {
+	color: #666;
+}
+@media only screen and (max-width: 1250px) {
+	#transparency-div{
+		margin: 0 !important;
+	}
+	#interaction-elements{
+		padding: 20px 10px !important;
+	}
+}
+@media only screen and (max-width: 1200px) {
+	#map-share-button > span{
+		display: none;
+	}
+	#find-your-city-button i::after{
+		content: 'Find...' !important;
+	}
+}
+@media only screen and (max-width: 1070px) {
+	#transparency-div > span{
+		display: none;
+	}
+	#interaction-elements{
+		padding: 20px 5px !important;
+	}
+}
+@media only screen and (max-width: 930px) {
+	#transparency-div{
+		display: none !important;
+	}
+	#interaction-elements{
+		padding: 20px !important;
+	}
+}

@@ -37,6 +37,11 @@
 	margin: 0 10px;
 }
 
+#find-your-city-button i::after{
+	content: 'Find your city...';
+	margin-left: 10px;
+}
+
 #geocoder-section{
 	width: 100%;
 }
@@ -98,7 +103,7 @@
 
 #transparency-div{
 	display: inline-block;
-	margin: 0 50px;
+	margin: 0 25px;
 	float: right;
 	padding: 7px 0;
 }
@@ -131,6 +136,26 @@
 	position: absolute;
 	top: 5px;
 	left: 8px;
+}
+
+#map-share-button{
+	position: absolute;
+	top: 0;
+	right: 0;
+	font-size: 18px;
+	cursor: pointer;
+	padding: 30px 20px;
+	border-left: 1px solid #666;
+	z-index: 1000;
+	background-color: rgba(0, 0, 0, 0.75);
+}
+
+#map-share-button:hover{
+	background-color: rgba(0, 0, 0, 0.95);
+}
+
+#map-share-button i{
+	margin-right: 10px;
 }
 
 #details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{

@@ -1,6 +1,6 @@
 var currentMap;
 
-function showDetailsForMap( id, pageNav ){
+function showDetailsForMap( id, pageNav, noAnimation ){
 	currentMap = id;
 	var $container = $( "<div>" ).attr( "class", "container" );
 	var $cardContainer = $( "<div>").attr( "class", "cardContainer" ).appendTo( $container );
@@ -9,23 +9,27 @@ function showDetailsForMap( id, pageNav ){
 	var $card = $( "#map" + id ).clone();
 	$card.children().hide();
 	$card
-	  .removeClass( "animated bounceIn" )
+		.removeClass( "animated bounceIn" )
 		.click( function(){
-  		  $( "#metadata" ).fadeOut( function() {
-    		  $( "#map" ).fadeIn( function() {
-      		  showMap();
-          selectMap( id );
-		  breadcrumbCSSUpdates();
-		  blockInteractions();
-        });
-  		  });
+			  $( "#metadata" ).fadeOut( function() {
+		  	$( "#map" ).fadeIn( function() {
+			  		showMap();
+	          selectMap( id );
+			  breadcrumbCSSUpdates();
+			  blockInteractions();
+	        });
+			  });
 		})
-		.css({
-  		  position : "fixed",
-  		  top : $( "#map" + id ).offset().top - 15,
-  		  left : $( "#map" + id ).offset().left - 15
-		})
-		.appendTo( $( "body" ) );
+		.css( "opacity", 1 );
+	if( noAnimation == false ) {
+		$card
+			.css({
+			  position : "fixed",
+			  top : $( "#map" + id ).offset().top - 15,
+			  left : $( "#map" + id ).offset().left - 15
+			})
+			.appendTo( $( "body" ) );
+	}
 
 	var $textContainer = $( "<div>" ).attr( "class", "meta-text" ).appendTo( $container );
 
@@ -57,6 +61,7 @@ function showDetailsForMap( id, pageNav ){
       		  $( "#metadata" ).append( $container );
       		  $( "#metadata .cardContainer" ).prepend( $card );
       		  $card.css({
+				  position : "fixed",
         		  top : "auto",
         		  left : "auto",
 				  position: "relative"
@@ -109,12 +114,12 @@ function nextMap(){
 	var cat = categories[ selectedCategory ],
 		index = cat.maps.indexOf( currentMap );
 	if ( index == cat.maps.length - 1 ) return;
-	showDetailsForMap( cat.maps[ index + 1 ], "next" );
+	showDetailsForMap( cat.maps[ index + 1 ], "next", false );
 }
 
 function prevMap(){
 	var cat = categories[ selectedCategory ],
 		index = cat.maps.indexOf( currentMap );
 	if ( index == 0 ) return;
-	showDetailsForMap( cat.maps[ index - 1 ], "prev" );
+	showDetailsForMap( cat.maps[ index - 1 ], "prev", false );
 }
