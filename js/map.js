@@ -218,5 +218,5 @@ function geolocateSuccess( position ){
 }
 
 function geolocateError( msg ){
-	console.log( msg );
+	alert( msg );
 }
