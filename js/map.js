@@ -47,13 +47,6 @@ function selectMap( id ){
 	$( "#interaction-elements" ).css( "right", $( "#map-share-button" ).width() + 41 );
 
 	map.on( "movestart", onMapMove );
-	map.on( "zoomstart", function() {
-		clearTimeout( idleTimer );
-		
-		idleTimer = setTimeout( function() {
-			$( '#home-button' ).click();
-		}, idleWait );
-	});
 
 	$( "#reset-map" ).click( function(){
 		if( $( '#detail-single' ).is( ':visible' ) ) $( '#detail-back' ).click();

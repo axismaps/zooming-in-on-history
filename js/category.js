@@ -73,7 +73,6 @@ function showMapsInCategory( id ){
 	});
 	page = 1;
 	$( "#page1" ).show();
-	resize();
 	pageButtonsForScreen( "category" );
 	setMapTransitions();
 
