@@ -68,6 +68,7 @@ function selectMap( id ){
 	
 	//----Mobile specific buttons----//
 	$( '#mobile-icons #info').on( 'click', function() {
+		showDetailsList( id, true );
 		$( '#details-panel' ).show();
 	});
 	

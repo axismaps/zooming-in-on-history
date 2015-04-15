@@ -252,6 +252,8 @@
 	right: 20px;
 	color: #fff;
 	cursor: pointer;
+  z-index: 999;
+  text-shadow: 0 0 3px #000;
   }
   
   #details-close:active,
@@ -263,8 +265,29 @@
 	color: #666;
   }
   
-  #details-panel .detail{
-	
+  #details-list h3{
+    margin: 15px 0 0 0;
+  }
+
+  .detail-thumb{
+    width: 100%;
+    max-width: 440px;
+    height: 210px;
+    background-size: auto auto;
+    border-radius: 0;
+  }
+
+  .detail-thumb div{
+    display: none;
+  }
+
+  .detail p{
+    text-align: left;
+    margin: 10px;
+  }
+
+  .detail p.detail-title{
+    font-weight: bold;
   }
   
   #mobile-icons {

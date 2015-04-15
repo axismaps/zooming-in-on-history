@@ -1,15 +1,16 @@
-function showDetailsList( map_id ){
+function showDetailsList( map_id, fulltext ){
 	var $panel = $( "#details-list" ).empty().show();
 	$( "#detail-single" ).hide();
 	var detailList = _.filter( details, function(d){ return d.map == map_id } );
 	if ( detailList.length ){
 		$( "#details-panel" ).attr( "class", "show" );
-		$panel.append( "<h3>SELECT A MAP DETAIL:</h3>" );
+		if ( !fulltext ) $panel.append( "<h3>SELECT A MAP DETAIL:</h3>" );
+		else $panel.append( "<h3>MAP DETAILS</h3>" );
 		_.each( detailList, function(d){
 			var container = $( "<div>" )
 				.attr( "class", "detail" )
 				.click( function(){
-					showDetail( d );
+					if ( !fulltext ) showDetail( d );
 				});
 			$( "<div>" )
 				.attr( "class", "detail-thumb" )
@@ -19,9 +20,18 @@ function showDetailsList( map_id ){
 						.css( "background-color", categories[ selectedCategory ].color )
 				)
 				.appendTo( container );
-			$( "<p>" )
+			var title = $( "<p>" )
 				.html( d.title )
-				.appendTo( container );
+				.attr( "class", "detail-title" )
+
+			if ( fulltext ){
+				title.prependTo( container );
+				$( "<p>" )
+					.html( d.caption )
+					.appendTo( container );
+			} else {
+				title.appendTo( container );
+			}
 
 			$panel.append( container );
 		});
