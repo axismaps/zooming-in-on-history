@@ -31,9 +31,10 @@ function createEvents(){
 	resize();
 	
 	//Share button clicking anywhere on the site
-	$( '.share' ).on( 'click', function() {
+	$( '.share' ).on( 'click', function(e) {
+		e.stopPropagation();
 		$button = $( this );
-		if( $( '.share-menu' ).is( ":visible" ) ) $( '.share-menu' ).hide();
+		if( $( '.share-menu' ).is( ":visible" ) ) hideShare();
 		else {
 			$( '.share-menu' ).show()
 				.css( "top", $button.offset().top + $button.outerHeight() );
@@ -43,8 +44,15 @@ function createEvents(){
 			} else {
 				$( '.share-menu' ).css( "left", $button.offset().left ).css( 'right', 'auto' );
 			}
+
+			$( 'body' ).on( 'click', hideShare );
 		}
 	});
+
+	function hideShare(){
+		$( '.share-menu' ).hide();
+		$( 'body' ).off( 'click', hideShare );
+	}
 }
 
 	var category_hammer = new Hammer( $("#category")[0],{
