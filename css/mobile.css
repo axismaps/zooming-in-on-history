@@ -62,6 +62,7 @@
   #home h1{
     background: url(../img/compass.png) no-repeat 10px center;
     background-size: 40px;
+	width: 100%;
   }
   
   #categories, #map-cards, #metadata .container{
