@@ -81,7 +81,7 @@ function resize(){
 	$( "#map-share-button" )
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" );
 
-	$( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
+	if( $( window ).width() > 767 ) $( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
 	$( ".meta-text" ).css( "max-width", w - 715 + "px" );
 
 	if ( $( "#home #categories" ).length ){
@@ -232,7 +232,7 @@ function addBreadcrumb( title, level ){
 		blockInteractions();
 	});
 
-	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
+	if( $( window ).width() > 767 ) $( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
 }
 
 function sanitize( word ){

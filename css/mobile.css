@@ -28,7 +28,7 @@
   #breadcrumbs .breadcrumb-back{
     display: block !important;
     height: auto;
-    max-width: 80px;
+    width: 80px;
     padding: 0 10px;
 	border-right: 1px solid #666;
 	text-align: center;
