@@ -261,16 +261,19 @@
 	height: 100%;
 	width: 100%;
 	border-top: 1px solid #666;
+  background-color: white;
+  color: black;
+  z-index: 9999;
   }
   
   #details-close{
 	display: block;
 	position: fixed;
 	right: 20px;
-	color: #fff;
+	color: #black;
 	cursor: pointer;
   z-index: 999;
-  text-shadow: 0 0 3px #000;
+  text-shadow: 0 0 3px #fff;
   }
   
   #details-close:active,
@@ -283,7 +286,9 @@
   }
   
   #details-list h3{
-    margin: 15px 0 0 0;
+    margin: 0;
+    padding: 25px 15px 15px 15px;
+    border-bottom: 1px solid #ccc;
   }
 
   .detail-thumb{

@@ -1,7 +1,8 @@
 var map,
 	modernTiles,
 	geocodeResultLayer,
-	historicTiles;
+	historicTiles,
+	attribution;
 function createMap(){
 	map = L.map( "mapdiv", { zoomControl: false, attributionControl: false} ).setView( [40,-80], 5 );
 	modernTiles = L.tileLayer( "http://{s}.tile.stamen.com/toner/{z}/{x}/{y}.png" , { maxNativeZoom : 18, maxZoom : 21 }).addTo(map);
@@ -70,7 +71,6 @@ function selectMap( id ){
 	$( '#mobile-icons #info').on( 'click', function() {
 		showDetailsList( id, true );
 		$( '#details-panel' ).show();
-		attribution.removeFrom( map );
 	});
 	
 	$( '#mobile-icons #geolocate' ).on( 'click', function() {
@@ -83,7 +83,6 @@ function selectMap( id ){
 	
 	$( '#details-close' ).on( 'click', function() {
 		$( '#details-panel' ).hide();
-		attribution.addTo( map );
 	});
 	
 	//set up sharing buttons for this particular map

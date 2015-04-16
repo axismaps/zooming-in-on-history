@@ -5,7 +5,7 @@ function showDetailsList( map_id, fulltext ){
 	if ( detailList.length ){
 		$( "#details-panel" ).attr( "class", "show" );
 		if ( !fulltext ) $panel.append( "<h3>SELECT A MAP DETAIL:</h3>" );
-		else $panel.append( "<h3>MAP DETAILS</h3>" );
+		else $panel.append( "<h3>" + maps[ map_id ].title + "</h3>" );
 		_.each( detailList, function(d){
 			var container = $( "<div>" )
 				.attr( "class", "detail" )
