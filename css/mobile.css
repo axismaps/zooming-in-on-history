@@ -111,13 +111,17 @@
     width: auto;
     margin-left: 80px;
     color: black;
-    font-size: 16px;
+    font-size: 20px;
     font-weight: bold;
     text-align: left;
     background-color: white;
     display: block;
     padding: 20px;
 	box-sizing: border-box;
+  }
+
+  .card .card-title p i{
+    margin-right: 10px;
   }
   
   .card .card-title p:first-child:before{
@@ -207,9 +211,10 @@
   }
   
   #metadata .courtesy{
-	padding: 5px 20px;
+	padding: 0 20px 5px 20px;
 	position: relative !important;
 	height: initial !important;
+  margin-top: -10px;
   }
   
   #metadata .meta-text{
