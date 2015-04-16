@@ -235,9 +235,26 @@
   }
   
   .map-screen #breadcrumbs{
-    background-color: rgba(0, 0, 0, 0.75) !important;
+    background-color: #454b51 !important;
   }
-  
+
+  .map-screen #breadcrumbs > div#map-button{
+    display: block !important;
+    padding: 0;
+    font-family: 'Prensa-Regular';
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    width: -moz-calc(100% - 210px);
+    width: -webkit-calc(100% - 210px);
+    width: -o-calc(100% - 210px);
+    width: calc(100% - 210px);
+
+  }
+  #map-button i{
+    display: none;
+  }
+
   #details-panel {
 	display: none;
 	position: absolute;
