@@ -220,5 +220,6 @@ function geolocateSuccess( position ){
 }
 
 function geolocateError( msg ){
+	if ( typeof msg != "string" ) msg = "Sorry, your location is not available";
 	alert( msg );
 }
