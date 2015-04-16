@@ -70,9 +70,11 @@ function showMapsInCategory( id ){
 			domEvents: true
 		});
 		card_hammer.on( "swipeleft", function(e){
+			if ( $( window ).width() <= 767 ) return;
 			showPage( page + 1 );
 			hideShowPageButton( page, pageCount);
 		}).on( "swiperight", function(){
+			if ( $( window ).width() <= 767 ) return;
 			showPage( page - 1 );
 			hideShowPageButton( page, pageCount);
 		});

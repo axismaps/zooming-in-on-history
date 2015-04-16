@@ -50,11 +50,11 @@ function createEvents(){
 		domEvents: true
 	});
 	category_hammer.on( "swipeleft", function(e){
-		if ( $(e.target).hasClass("card") ) return;
+		if ( $(e.target).hasClass("card") || $( window ).width() <= 767 ) return;
 		showPage( page + 1 );
 		hideShowPageButton( page, pageCount);
 	}).on( "swiperight", function(e){
-		if ( $(e.target).hasClass("card") ) return;
+		if ( $(e.target).hasClass("card")  || $( window ).width() <= 767 ) return;
 		showPage( page - 1 );
 		hideShowPageButton( page, pageCount);
 	});
