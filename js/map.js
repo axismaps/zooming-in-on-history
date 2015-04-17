@@ -97,6 +97,7 @@ function onMapMove(){
 
 function showMap(){
 	addBreadcrumb( 'Map Viewer', 'map' );
+	if( $( window ).width() < 767 ) $( '#breadcrumbs #map-button .mobile' ).show();
 	map.invalidateSize();
 	$( "body" ).attr( "class", "map-screen" );
 	$( "#page-buttons" ).hide();

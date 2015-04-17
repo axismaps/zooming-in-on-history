@@ -347,8 +347,12 @@ body{
 #mobile-icons,
 #details-close{
 	display: none;
-	
 }
+
+#breadcrumbs .mobile {
+	display: none;
+}
+
 .share-menu{
 	background-color: rgba(0, 0, 0, .75);
 	color: #fff;

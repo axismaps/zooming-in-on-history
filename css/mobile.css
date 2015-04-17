@@ -43,18 +43,22 @@
     display: none;
   }
   
-  .breadcrumb-back span{
-    display: block;
+  #breadcrumbs > div span{
+	display: none;
+  }
+  
+  .breadcrumb-back span.mobile{
+    display: block !important;
     float: left;
     width: 100%;
 	max-width: 80px;
   }
   
-  .breadcrumb-back span:before{
+  .breadcrumb-back span.mobile:before{
     content: '<  ';
   }
   
-  .breadcrumb-back span:hover{
+  .breadcrumb-back span.mobile:hover{
 	cursor: pointer !important;
   }
   

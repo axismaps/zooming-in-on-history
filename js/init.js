@@ -199,9 +199,10 @@ function addBreadcrumb( title, level ){
 	var bc = $( '#breadcrumbs' ),
 		id = '#' + level + '-button';
   
-  $( ".breadcrumb-back" ).removeClass( "breadcrumb-back" );
-	bc.children( id ).css( 'display', 'inline-block' ).children( 'span' ).text( title );
-  bc.children( id ).prev().addClass( "breadcrumb-back" );
+    $( ".breadcrumb-back" ).removeClass( "breadcrumb-back" );
+	bc.children( id ).css( 'display', 'inline-block' );
+	bc.children( id ).children( 'span:not(.mobile)' ).text( title );
+    bc.children( id ).prev().addClass( "breadcrumb-back" );
 	
 	$( id ).on( 'click', function() {
 		if( id != '#map-button' &&
