@@ -325,6 +325,8 @@ body{
 	display: none;
 }
 
+@media only screen and (min-width: 767px) {
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -336,6 +338,8 @@ body{
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: #999;
+}
+
 }
 
 /* MOBILE SPECIFIC STUFF WE DON'T SHOW */
