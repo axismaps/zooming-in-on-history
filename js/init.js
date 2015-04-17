@@ -124,6 +124,7 @@ function goToMap( id ) {
 	$( "#home" ).hide();
 	
 	showMapsInCategory( selectedCategory );
+	$( "#category .title" ).html( categories[ selectedCategory ].name );
 	showDetailsForMap( id, false, true );
 	$( "#metadata" ).hide();
 	$( '#page1' ).hide();
@@ -133,11 +134,11 @@ function goToMap( id ) {
 	//map screen transitions
 	$( '#top-section' ).show().children( '#screen-top-border' ).css( "background-color", categories[ selectedCategory ].color );
 	$( "#map" ).fadeIn( function() {
+		addBreadcrumb( categories[ selectedCategory ].name, "category" );
+		addBreadcrumb(  maps[ id ].title, "metadata" );
 		showMap();
 		selectMap( id );
 		showDetailsList( id );
-		addBreadcrumb( categories[ selectedCategory ].name, "category" );
-		addBreadcrumb(  maps[ id ].title, "metadata" );
 		breadcrumbCSSUpdates();
 		blockInteractions();
 	});
