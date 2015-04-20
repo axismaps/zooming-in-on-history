@@ -13,10 +13,19 @@ gulp.task( 'default', [ 'clean' ], function(){
 		}))
 		.pipe( gulp.dest( 'public/' ) )
 
-	gulp.src( 'data/*' )
+  gulp.src( 'css/fonts/*' )
+    .pipe( gulp.dest( 'public/css/fonts' ) );
+
+	gulp.src( 'data/**/*' )
 		.pipe( gulp.dest( 'public/data' ) );
+	
+	gulp.src( 'img/*' )
+		.pipe( gulp.dest( 'public/img' ) );
+    	
+	gulp.src( 'bower_components/fontawesome/fonts/*' )
+		.pipe( gulp.dest( 'public/fonts' ) );
 });
 
 gulp.task( 'clean', function( callback ){
-    del( [ 'public/css', 'public/data', 'public/js', 'public/index.html' ], callback );
+    del( [ 'public/css', 'public/fonts', 'public/img', 'public/data', 'public/js', 'public/index.html' ], callback );
 });
