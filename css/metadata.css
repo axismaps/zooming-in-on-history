@@ -48,6 +48,7 @@ span.dimensions{
 #metadata .card{
   margin-left: 100px;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 #metadata .card div p{
@@ -71,4 +72,21 @@ body > .card{
 body > .card.fixed{
   top: 150px !important;
   left: 85px !important;
+}
+
+/* Special formatting for text that is one or two lines too long */
+
+@media only screen and (max-width: 860px)  and (min-width: 800px){
+	.cardContainer{
+		display: inline-block !important;
+		float: none !important;
+	}
+	
+	.meta-text{
+		display: inline-block !important;
+	}
+	
+	.meta-text p{
+		margin: 15px 5px 15px 0px;
+	}
 }
