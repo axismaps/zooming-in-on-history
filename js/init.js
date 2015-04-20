@@ -218,6 +218,7 @@ function addBreadcrumb( title, level ){
 			
 			$( this ).nextAll().hide();
 			$( '#geocoder-close-button' ).click();
+			$( '#details-close' ).click();
 			
 			var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
 			changeScreens( $( "#" + current ), $( "#" + level ) );
