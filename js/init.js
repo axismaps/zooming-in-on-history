@@ -77,9 +77,12 @@ function resize(){
 	$( '.page-button' ).css( 'top', Math.max( ( h - 460 ) / 2, 160 ) + 'px' );
 	
 	
-	$( "#details-panel" )
-		.height( h - $("#screen-top-border").height() - $("#breadcrumbs").height() )
-		.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
+	if( $( window ).width() > 767 ) {
+		$( "#details-panel" )
+			.height( h - $("#screen-top-border").height() - $("#breadcrumbs").height() )
+			.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
+	}
+		
 	$( "#interaction-elements" )
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" )
 		.css( "left", $( "#details-panel" ).width() )

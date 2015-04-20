@@ -58,7 +58,7 @@ body{
 	width: 100%;
 	background-color: #fff;
 	height: 10px;
-	z-index: 9999;
+	z-index: 9997;
 }
 
 .screen{
@@ -135,7 +135,7 @@ body{
 	background-color: #454b51;
 	white-space: nowrap;
 	overflow: hidden;
-	z-index: 9999;
+	z-index: 9997;
 }
 
 .fa{
