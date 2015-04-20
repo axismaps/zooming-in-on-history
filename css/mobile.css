@@ -30,13 +30,13 @@
     display: block !important;
     height: auto;
     width: 80px;
-    padding: 0 10px;
-	border-right: 1px solid #666;
-	text-align: center;
+    padding: 0;
+    border-right: 1px solid #666;
+    text-align: center;
   }
   
   #breadcrumbs .breadcrumb-back:hover{
-	background-color: rgba(0, 0, 0, 0.5) !important;
+    	background-color: rgba(0, 0, 0, 0.5) !important;
   }
   
   #breadcrumbs .breadcrumb-back:before, #breadcrumbs .breadcrumb-back:after, #breadcrumbs .breadcrumb-back i{
@@ -44,14 +44,14 @@
   }
   
   #breadcrumbs > div span{
-	display: none;
+	  display: none;
   }
   
   .breadcrumb-back span.mobile{
     display: block !important;
     float: left;
     width: 100%;
-	max-width: 80px;
+    max-width: 80px;
   }
   
   .breadcrumb-back span.mobile:before{
@@ -59,7 +59,7 @@
   }
   
   .breadcrumb-back span.mobile:hover{
-	cursor: pointer !important;
+	  cursor: pointer !important;
   }
   
   /* HOME SCREEN */
@@ -67,7 +67,7 @@
   #home h1{
     background: url(../img/compass.png) no-repeat 10px center;
     background-size: 40px;
-	width: 100%;
+    width: 100%;
   }
   
   #categories, #map-cards, #metadata .container{
@@ -86,7 +86,7 @@
     border-bottom: solid 1px black;
     border-radius: 0;
     box-shadow: none;
-	box-sizing: border-box;
+    box-sizing: border-box;
   }
   
   .card.category{
