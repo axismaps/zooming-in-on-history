@@ -83,7 +83,7 @@
     width: 100%;
     display: block;
     margin: 0 !important;
-    border-bottom: solid 1px black;
+    border-bottom: solid 1px #525b62;
     border-radius: 0;
     box-shadow: none;
     box-sizing: border-box;
@@ -115,11 +115,12 @@
     height: 100%;
     width: auto;
     margin-left: 80px;
-    color: black;
+    color: #fff;
+	line-height: 1.2;
     font-size: 20px;
     font-weight: bold;
     text-align: left;
-    background-color: white;
+    background-color: #747d84;
     display: block;
     padding: 20px;
     box-sizing: border-box;
