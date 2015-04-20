@@ -56,7 +56,7 @@ function showDetailsForMap( id, pageNav, noAnimation ){
     		  
     		  setTimeout( function() {
       		  $( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
-      		  if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
+      		  if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "</p>" );
       		  $card.children().fadeIn();
       		  $( "#metadata" ).append( $container );
       		  $( "#metadata .cardContainer" ).prepend( $card );
@@ -88,7 +88,7 @@ function showDetailsForMap( id, pageNav, noAnimation ){
 		setTimeout( function(){
 			$old.remove();
 			$( "p", $card ).html( "<i class='fa fa-search-plus'></i> View the Map" );
-			if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "<p>" );
+			if ( maps[ id ].courtesy ) $( "div", $card ).append( "<p class='courtesy'>Courtesy of " + maps[ id ].courtesy + "</p>" );
      		$card.children().fadeIn();
 			resize();
 		},1000);

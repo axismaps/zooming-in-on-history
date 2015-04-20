@@ -11,7 +11,8 @@
 }
 
 .meta-text p.caption-title{
-	font-family: "source_sans_prosemibold";
+	font-family: "SourceSans";
+	font-weight: bold;
 	margin-top: 0;
 }
 

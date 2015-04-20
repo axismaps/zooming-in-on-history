@@ -7,7 +7,7 @@
 }
 
 @font-face {
-    font-family: 'source_sans_prolight';
+    font-family: 'SourceSans';
     src: url('fonts/SourceSansPro-Light-webfont.eot');
     src: url('fonts/SourceSansPro-Light-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/SourceSansPro-Light-webfont.woff2') format('woff2'),
@@ -20,14 +20,14 @@
 } 
 
 @font-face {
-    font-family: 'source_sans_prosemibold';
+    font-family: 'SourceSans';
     src: url('fonts/SourceSansPro-Semibold-webfont.eot');
     src: url('fonts/SourceSansPro-Semibold-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/SourceSansPro-Semibold-webfont.woff2') format('woff2'),
          url('fonts/SourceSansPro-Semibold-webfont.woff') format('woff'),
          url('fonts/SourceSansPro-Semibold-webfont.ttf') format('truetype'),
          url('fonts/SourceSansPro-Semibold-webfont.svg#source_sans_prosemibold') format('svg');
-    font-weight: normal;
+    font-weight: bold;
     font-style: normal;
 
 }
@@ -36,7 +36,7 @@ html, body, button{
 	background-color: #454b51;
 	color: white;
 	margin: 0;
-	font-family: 'source_sans_prolight';
+	font-family: 'SourceSans';
 	-moz-user-select: none;
 	-khtml-user-select: none;
 	-webkit-user-select: none;
@@ -325,6 +325,8 @@ body{
 	display: none;
 }
 
+@media only screen and (min-width: 767px) {
+
 ::-webkit-scrollbar {
     width: 12px;
 }
@@ -336,6 +338,19 @@ body{
 }
 ::-webkit-scrollbar-thumb:hover {
     background-color: #999;
+}
+
+}
+
+/* MOBILE SPECIFIC STUFF WE DON'T SHOW */
+
+#mobile-icons,
+#details-close{
+	display: none;
+}
+
+#breadcrumbs .mobile {
+	display: none;
 }
 
 .share-menu{

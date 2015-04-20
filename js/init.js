@@ -4,7 +4,6 @@ var page,
 	pageCount;
 var url = '';
 
-
 getURLParameters();
 loadData();
 
@@ -57,11 +56,11 @@ function createEvents(){
 		domEvents: true
 	});
 	category_hammer.on( "swipeleft", function(e){
-		if ( $(e.target).hasClass("card") ) return;
+		if ( $(e.target).hasClass("card") || $( window ).width() <= 767 ) return;
 		showPage( page + 1 );
 		hideShowPageButton( page, pageCount);
 	}).on( "swiperight", function(e){
-		if ( $(e.target).hasClass("card") ) return;
+		if ( $(e.target).hasClass("card")  || $( window ).width() <= 767 ) return;
 		showPage( page - 1 );
 		hideShowPageButton( page, pageCount);
 	});
@@ -88,7 +87,7 @@ function resize(){
 	$( "#map-share-button" )
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" );
 
-	$( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
+	if( $( window ).width() > 767 ) $( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
 	$( ".meta-text" ).css( "max-width", w - 715 + "px" );
 
 	if ( $( "#home #categories" ).length ){
@@ -131,6 +130,7 @@ function goToMap( id ) {
 	$( "#home" ).hide();
 	
 	showMapsInCategory( selectedCategory );
+	$( "#category .title" ).html( categories[ selectedCategory ].name );
 	showDetailsForMap( id, false, true );
 	$( "#metadata" ).hide();
 	var indexInCategory = categories[ selectedCategory ].maps.indexOf( id );
@@ -141,11 +141,11 @@ function goToMap( id ) {
 	//map screen transitions
 	$( '#top-section' ).show().children( '#screen-top-border' ).css( "background-color", categories[ selectedCategory ].color );
 	$( "#map" ).fadeIn( function() {
+		addBreadcrumb( categories[ selectedCategory ].name, "category" );
+		addBreadcrumb(  maps[ id ].title, "metadata" );
 		showMap();
 		selectMap( id );
 		showDetailsList( id );
-		addBreadcrumb( categories[ selectedCategory ].name, "category" );
-		addBreadcrumb(  maps[ id ].title, "metadata" );
 		breadcrumbCSSUpdates();
 		blockInteractions();
 	});
@@ -206,11 +206,15 @@ function hideShowPageButton( current, total ) {
 function addBreadcrumb( title, level ){
 	var bc = $( '#breadcrumbs' ),
 		id = '#' + level + '-button';
-		
-	bc.children( id ).css( 'display', 'inline-block' ).children( 'span' ).text( title );
+  
+    $( ".breadcrumb-back" ).removeClass( "breadcrumb-back" );
+	bc.children( id ).css( 'display', 'inline-block' );
+	bc.children( id ).children( 'span:not(.mobile)' ).text( title );
+    bc.children( id ).prev().addClass( "breadcrumb-back" );
 	
 	$( id ).on( 'click', function() {
-		if( id != '#map-button' && $( this ).next( ':hidden' ).length == 0 ) {
+		if( id != '#map-button' &&
+			$( this ).attr( "id" ).replace("-button","") != $( "body" ).attr( "class" ).replace("-screen","") ) {
 			
 			$( this ).nextAll().hide();
 			$( '#geocoder-close-button' ).click();
@@ -220,6 +224,8 @@ function addBreadcrumb( title, level ){
 			$( "body" ).attr( "class", level + "-screen" );
 			
 			pageButtonsForScreen( level );
+			
+			$( ".breadcrumb-back" ).prev().addClass( "breadcrumb-back" ).next().removeClass( "breadcrumb-back" );
 		}
 		
 		if( id == '#home-button' ) {
@@ -235,7 +241,7 @@ function addBreadcrumb( title, level ){
 		blockInteractions();
 	});
 
-	$( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
+	if( $( window ).width() > 767 ) $( "#metadata-button span" ).width( $(window).width() - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
 }
 
 function sanitize( word ){

@@ -6,13 +6,10 @@
 	top: 0;
 	left: 0;
 	z-index: 1000;
-	display: none;
+	display: block;
 	overflow: auto;
 	text-align: center;
 	overflow-x: hidden;
-}
-#details-panel.show{
-	display: block;
 }
 
 #details-list h3{

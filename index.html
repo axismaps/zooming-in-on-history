@@ -2,6 +2,7 @@
 <html>
 	<head>
 		<meta charset="utf-8">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1">
 		<title>Zooming In On History</title>
 		
 		<!-- build:css css/site.css -->
@@ -16,6 +17,7 @@
 		<link rel="stylesheet" href="css/metadata.css" />
 		<link rel="stylesheet" href="css/map.css" />
 		<link rel="stylesheet" href="css/details.css" />
+		<link rel="stylesheet" href="css/mobile.css" />
 		<!-- endbuild -->
 	</head>
 	<body class="home-screen">
@@ -23,7 +25,10 @@
 		<div id="top-section" style="display:none">
 			<div id="screen-top-border"></div>
 			<div id="breadcrumbs">
-				<div id="home-button"><i class="fa fa-home fa-2x"></i><span></span></div><div id="category-button"><i class="fa fa-th-large fa-2x"></i><span></span></div><div id="metadata-button"><i class="fa fa-info-circle fa-2x"></i><span></span></div><div id="map-button"><i class="fa fa-map-marker fa-2x"></i><span></span></div>
+				<div id="home-button"><i class="fa fa-home fa-2x"></i><span></span><span class="mobile">Home</span></div>
+				<div id="category-button"><i class="fa fa-th-large fa-2x"></i><span></span><span class="mobile">Back</span></div>
+				<div id="metadata-button"><i class="fa fa-info-circle fa-2x"></i><span></span><span class="mobile">Back</span></div>
+				<div id="map-button"><i class="fa fa-map-marker fa-2x"></i><span></span><span class="mobile">Map Viewer</span></div>
 			</div>
 		</div>
 
@@ -50,6 +55,7 @@
 		<div id="map" class="screen">
 			<i id="map-loader" class="fa fa-spinner fa-pulse"></i>
 			<div id="details-panel">
+				<div id="details-close"><i class='fa fa-times fa-2x'></i></div>
 				<div id="details-list"></div>
 				<div id="detail-single">
 					<div id="detail-back"><i class="fa fa-chevron-left"></i> Back</div>
@@ -115,6 +121,10 @@
 				<div id="zoom-out-button" class="button"><i class="fa fa-minus"></i></div>
 				<div id="zoom-in-button" class="button"><i class="fa fa-plus"></i></div>
 				<div id="reset-map" class="button"><i class="fa fa-undo"></i></div>
+			</div>
+			<div id="mobile-icons">
+				<div id="info"><i class="fa fa-info-circle fa-2x"></i></div>
+				<div id="geolocate"><i class="fa fa-location-arrow fa-2x"></i></div>
 			</div>
 		</div>
 		
