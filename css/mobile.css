@@ -275,8 +275,10 @@
   #details-close{
     display: block;
     position: fixed;
-    right: 20px;
-    color: #black;
+    right: 0;
+    margin-top: -5px;
+    padding: 10px;
+    color: black;
     cursor: pointer;
     z-index: 999;
     text-shadow: 0 0 3px #fff;
