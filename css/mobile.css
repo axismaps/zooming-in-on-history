@@ -277,7 +277,7 @@
   #details-close{
     display: block;
     position: fixed;
-    right: 0;
+    right: 12px;
     margin-top: -5px;
     padding: 10px;
     color: black;
@@ -298,6 +298,8 @@
     margin: 0;
     padding: 25px 15px 15px 15px;
     border-bottom: 1px solid #ccc;
+	background-color: #747d84;
+	color: #fff;
   }
 
   .detail-thumb{
