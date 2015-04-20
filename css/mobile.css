@@ -195,6 +195,7 @@
   
   #metadata .cardContainer{
 	display: block;
+	float: none;
   }
   
   #metadata .card{
@@ -230,12 +231,8 @@
 	padding: 10px;
   }
   
-  #metadata .meta-text .caption-title{
-  
-  }
-  
-  #metadata .meta-text .caption{
-  
+  #metadata .meta-text p{
+	margin: 0;
   }
   
   /* MAP SCREEN */
