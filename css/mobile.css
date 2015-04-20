@@ -332,22 +332,22 @@
   }
   
   #mobile-icons div:hover{
-	color: #666;
+    	color: #666;
   }
   
   #mobile-icons #info{
-	float: left;
+    	float: left;
   }
   
   #mobile-icons #geolocate{
-	float: right;
+	  float: right;
   }
   
   #map-share-button{
-    	top: 10px !important;
-	  z-index: 9999;
-	  background-color: initial;
-    	padding: 18px 20px;
+    top: 10px !important;
+    z-index: 9999;
+    background-color: initial;
+    padding: 18px;
   }
 
   .share-menu{
