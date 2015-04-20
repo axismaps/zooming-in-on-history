@@ -108,7 +108,6 @@ function resize(){
 	if ( $( "#metadata .container" ).length ){
 		$( "#metadata .container" ).width( w - $( ".page-button" ).width() - 20 )
 			.css( "max-height", h - $( "#metadata .container" ).offset().top - $( ".footer" ).height() - 30 + "px" );
-		$( "#metadata .cardContainer" ).css( "max-height", $( "#metadata .container").css( "max-height" ) );
 	}
 
 	$( "body" ).width( w );

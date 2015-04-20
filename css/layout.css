@@ -264,7 +264,7 @@ body{
 	text-align: center;
 	width: 100%;
 	padding-top: 30px;
-	position: absolute;
+	position: fixed;
 	bottom: 20px;
 }
 
