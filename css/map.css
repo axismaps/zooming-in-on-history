@@ -28,7 +28,7 @@
 	float: left;
 	border-radius: 5px;
 	padding: 10px 15px;
-	font-size: 18px;
+	font-size: 14px;
 	border: none;
 	cursor: pointer;
 }
@@ -55,7 +55,8 @@
 	border-radius: 5px;
 	border: none;
 	padding: 10px 15px;
-	font-size: 18px;
+	font-size: 14px;
+	line-height: 1.4;
 	float: left;
 }
 
@@ -97,7 +98,7 @@
 	height: 40px;
 	width: 40px;
 	box-sizing: border-box;
-	font-size: 18px;
+	font-size: 14px;
 	vertical-align: middle;
 }
 
@@ -109,8 +110,8 @@
 }
 
 #transparency-div span{
-	font-size: 20px;
-	vertical-align: baseline;
+	font-size: 14px;
+	line-height: 2;
 }
 
 #transparency-slider{
@@ -136,15 +137,19 @@
 	position: absolute;
 	top: 5px;
 	left: 8px;
+	font-size: 20px;
+	line-height: initial;
 }
 
 #map-share-button{
 	position: absolute;
+	height: 30px;
 	top: 0;
 	right: 0;
-	font-size: 18px;
+	font-size: 14px;
+	line-height: 2;
 	cursor: pointer;
-	padding: 30px 20px;
+	padding: 27px 20px;
 	border-left: 1px solid #666;
 	z-index: 1000;
 	background-color: rgba(0, 0, 0, 0.75);
@@ -170,16 +175,19 @@
 }
 
 #map-ui-buttons .button{
-	width: 60px;
-	height: 60px;
+	width: 40px;
+	height: 40px;
 	display: inline-block;
 	background-color: rgba(0,0,0,.75);
 	cursor: pointer;
-	line-height: 60px;
-	font-size: 30px;
+	line-height: 40px;
 	margin: 0;
 	padding: 0;
 	border: 1px solid #999;
+}
+
+#map-ui-buttons .button:hover{
+	background-color: rgba(0,0,0,0.5);
 }
 
 #map-ui-buttons #zoom-out-button{
@@ -193,8 +201,6 @@
 	border-top-right-radius: 10px;
 	border-bottom-right-radius: 10px;
 	margin-left: -3px;
-	margin-right: 20px;
-	margin-top: 20px;
 	
 }
 
@@ -204,8 +210,8 @@
 }
 
 #details-panel.show ~ #map-ui-buttons{
-	left: 320px;
-	top: 165px;
+	left: 300px;
+	top: 140px;
 }
 
 #map-loader{

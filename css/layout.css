@@ -75,7 +75,7 @@ body{
 }
 
 .title{
-	font-size: 60px;
+	font-size: 46px;
 	margin: 20px;
 	font-family: 'Prensa-Regular';
 	white-space: nowrap;
@@ -84,7 +84,7 @@ body{
 	text-shadow: 1px 1px #000;
 }
 .subtitle{
-	font-size: 30px;
+	font-size: 24px;
 	margin: 10px 0;
 	font-weight: normal;
 	text-shadow: 1px 1px #000;
@@ -114,7 +114,7 @@ body{
 	border-top: 9px solid transparent;
 	overflow: hidden;
 	height: 110px;
-	font-size: 30px;
+	font-size: 24px;
 }
 
 .card div p{
@@ -145,7 +145,7 @@ body{
 #breadcrumbs div {
 	display: block;
 	float: left;
-	font-size: 16px;
+	font-size: 14px;
 	background-color: #373b40;
 	height: 60px;
 	line-height: 60px;
@@ -376,6 +376,7 @@ body{
 .share-menu p {
 	padding: 20px;
 	margin: 0;
+	font-size: 14px;
 }
 
 .share-menu p.social-media:hover {

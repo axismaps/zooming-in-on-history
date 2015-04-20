@@ -14,6 +14,7 @@
 
 #details-list h3{
 	margin-top: 30px;
+	font-size: 16px;
 }
 
 .detail{
@@ -23,7 +24,7 @@
 
 .detail p{
 	margin: 10px 0 0 0;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .detail-thumb{
@@ -58,6 +59,7 @@
 #detail-single p{
 	margin: 15px 30px 15px 40px;
 	text-align: left;
+	font-size: 14px;
 }
 #detail-single img{
 	max-width: 235px;
