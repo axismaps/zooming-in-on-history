@@ -326,9 +326,11 @@
   }
   
   #mobile-icons i{
-	  cursor: pointer;
+    cursor: pointer;
     background-color: rgba(0, 0, 0, .75);
-  	  padding: 8px;
+    padding: 12px;
+    font-size: 22px;
+    margin-bottom: 15px;
   }
   
   #mobile-icons div:hover{
