@@ -1,6 +1,6 @@
 #category h1{
 	text-shadow: 1px 1px #000;
-	font-size: 40px;
+	font-size: 30px;
 }
 
 .map-card{
@@ -11,7 +11,7 @@
 
 .map-card div{
 	height: 70px;
-	font-size: 18px;
+	font-size: 14px;
 	border: none;
 }
 

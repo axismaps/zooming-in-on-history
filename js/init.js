@@ -46,7 +46,16 @@ function createEvents(){
 		}
 	});
 
-	function hideShare(){
+	function hideShare(e){
+		if ( e && e.target ){
+			var share = $( '.share-menu' )[0],
+				$target = $( e.target );
+			// do not hide if target is the menu
+			if ( e.target == share || $.contains( share, e.target ) ){
+				if ( !$target.hasClass( "social-media" ) && !$target.parent().hasClass( "social-media" ) )
+					return;
+			}
+		}
 		$( '.share-menu' ).hide();
 		$( 'body' ).off( 'click', hideShare );
 	}
@@ -71,15 +80,17 @@ function createEvents(){
 	  .on( "swiperight", prevMap );
 
 function resize(){
-	$( '.share-menu' ).hide();
 	var w = $(window).width(),
 		h = $(window).height();
 	$( '.page-button' ).css( 'top', Math.max( ( h - 460 ) / 2, 160 ) + 'px' );
 	
 	
-	$( "#details-panel" )
-		.height( h - $("#screen-top-border").height() - $("#breadcrumbs").height() )
-		.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
+	if( $( window ).width() > 767 ) {
+		$( "#details-panel" )
+			.height( h - $("#screen-top-border").height() - $("#breadcrumbs").height() )
+			.css( "top", $("#screen-top-border").height() + $("#breadcrumbs").height() + "px" );
+	}
+		
 	$( "#interaction-elements" )
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" )
 		.css( "left", $( "#details-panel" ).width() )
@@ -88,7 +99,7 @@ function resize(){
 		.css( "top", $( "#screen-top-border" ).height() + $( "#breadcrumbs" ).height() + "px" );
 
 	if( $( window ).width() > 767 ) $( "#metadata-button span" ).width( w - $("#home-button").outerWidth() - $("#category-button").outerWidth() - $("#map-button").outerWidth() - 150 );
-	$( ".meta-text" ).css( "max-width", w - 715 + "px" );
+	$( ".meta-text" ).css( "max-width", w - 645 + "px" );
 
 	if ( $( "#home #categories" ).length ){
 		$( "#home #categories" )
@@ -108,7 +119,6 @@ function resize(){
 	if ( $( "#metadata .container" ).length ){
 		$( "#metadata .container" ).width( w - $( ".page-button" ).width() - 20 )
 			.css( "max-height", h - $( "#metadata .container" ).offset().top - $( ".footer" ).height() - 30 + "px" );
-		$( "#metadata .cardContainer" ).css( "max-height", $( "#metadata .container").css( "max-height" ) );
 	}
 
 	$( "body" ).width( w );
@@ -218,6 +228,7 @@ function addBreadcrumb( title, level ){
 			
 			$( this ).nextAll().hide();
 			$( '#geocoder-close-button' ).click();
+			$( '#details-close' ).click();
 			
 			var current = $( "body" ).attr( "class" ).replace( "-screen", "" );
 			changeScreens( $( "#" + current ), $( "#" + level ) );

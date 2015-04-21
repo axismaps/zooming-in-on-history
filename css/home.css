@@ -5,7 +5,7 @@
 
 #home h1.title {
 	display: inline-block;
-	vertical-align: middle;
+	margin-bottom: 0;
 }
 
 #categories{

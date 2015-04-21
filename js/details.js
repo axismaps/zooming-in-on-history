@@ -25,7 +25,7 @@ function showDetailsList( map_id, fulltext ){
 				.attr( "class", "detail-title" )
 
 			if ( fulltext ){
-				title.prependTo( container );
+				title.appendTo( container );
 				$( "<p>" )
 					.html( d.caption )
 					.appendTo( container );

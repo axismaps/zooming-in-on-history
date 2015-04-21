@@ -1,13 +1,12 @@
 #metadata > div.container > .meta-text{
-	display: inline-block;
+	display: inline;
 	vertical-align: top;
-	margin: 0 60px 15px 15px;
 	text-align: left;
-	font-size: 18px;
+	font-size: 14px;
 }
 
 .meta-text p{
-	margin: 15px 0;
+	margin: 15px 5px 15px 100px;
 }
 
 .meta-text p.caption-title{
@@ -30,7 +29,7 @@ span.dimensions{
 	overflow: hidden;
 	text-overflow: ellipsis;
 	text-shadow: 1px 1px #000;
-	font-size: 30px;
+	font-size: 24px;
 }
 
 #metadata > div.container {
@@ -42,12 +41,14 @@ span.dimensions{
 }
 
 #metadata .cardContainer{
-	display: inline-block;
+	display: inline;
+	float: left;
 }
 
 #metadata .card{
   margin-left: 100px;
   margin-top: 0;
+  margin-bottom: 0;
 }
 
 #metadata .card div p{
@@ -71,4 +72,21 @@ body > .card{
 body > .card.fixed{
   top: 150px !important;
   left: 85px !important;
+}
+
+/* Special formatting for text that is one or two lines too long */
+
+@media only screen and (max-width: 860px)  and (min-width: 800px){
+	.cardContainer{
+		display: inline-block !important;
+		float: none !important;
+	}
+	
+	.meta-text{
+		display: inline-block !important;
+	}
+	
+	.meta-text p{
+		margin: 15px 5px 15px 0px;
+	}
 }

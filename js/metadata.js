@@ -102,8 +102,9 @@ function showDetailsForMap( id, pageNav, noAnimation ){
 	}
 	addBreadcrumb( maps[ id ].title, "metadata" );
 	$( "body" ).attr( "class", "metadata-screen" );		
-
-	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: 70 });
+	
+	var titleLength = Math.round( $( window ).width() / 20 ); 
+	$( "#metadata h1" ).html( maps[ id ].title ).succinct({ size: titleLength });
 	$( "#metadata h1" ).append( ' (' + maps[ id ].date + ')' );
 	
 	resize();
