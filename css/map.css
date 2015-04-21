@@ -163,6 +163,10 @@
 	margin-right: 10px;
 }
 
+#share-close {
+	display: none;
+}
+
 #details-panel.show ~ #mapdiv .leaflet-top.leaflet-left{
 	left: 315px;
 	top: 100px;

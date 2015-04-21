@@ -33,17 +33,25 @@ function createEvents(){
 		$button = $( this );
 		if( $( '.share-menu' ).is( ":visible" ) ) hideShare();
 		else {
-			$( '.share-menu' ).show()
-				.css( "top", $button.offset().top + $button.outerHeight() );
-				
-			if( $button.css( 'right' ) != 'auto' ) {
-				$( '.share-menu' ).css( 'right', 0 ).css( 'left', 'auto');
-			} else {
-				$( '.share-menu' ).css( "left", $button.offset().left ).css( 'right', 'auto' );
-			}
+			$( '.share-menu' ).show();
+			
+			if( $( window ).width() > 767 ) {
+				$( '.share-menu' )
+					.css( "top", $button.offset().top + $button.outerHeight() );
+					
+				if( $button.css( 'right' ) != 'auto' ) {
+					$( '.share-menu' ).css( 'right', 0 ).css( 'left', 'auto');
+				} else {
+					$( '.share-menu' ).css( "left", $button.offset().left ).css( 'right', 'auto' );
+				}
 
-			$( 'body' ).on( 'click', hideShare );
+				$( 'body' ).on( 'click', hideShare );
+			}
 		}
+	});
+	
+	$( '#share-close' ).on( 'click', function() {
+		hideShare();
 	});
 
 	function hideShare(e){
