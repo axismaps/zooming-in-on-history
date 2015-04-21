@@ -46,7 +46,16 @@ function createEvents(){
 		}
 	});
 
-	function hideShare(){
+	function hideShare(e){
+		if ( e && e.target ){
+			var share = $( '.share-menu' )[0],
+				$target = $( e.target );
+			// do not hide if target is the menu
+			if ( e.target == share || $.contains( share, e.target ) ){
+				if ( !$target.hasClass( "social-media" ) && !$target.parent().hasClass( "social-media" ) )
+					return;
+			}
+		}
 		$( '.share-menu' ).hide();
 		$( 'body' ).off( 'click', hideShare );
 	}
@@ -71,7 +80,6 @@ function createEvents(){
 	  .on( "swiperight", prevMap );
 
 function resize(){
-	$( '.share-menu' ).hide();
 	var w = $(window).width(),
 		h = $(window).height();
 	$( '.page-button' ).css( 'top', Math.max( ( h - 460 ) / 2, 160 ) + 'px' );
