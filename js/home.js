@@ -34,7 +34,8 @@ function createCategories(){
 			.appendTo( $div );
 	});	
 	
-	categoryAnimation = setInterval( categorySlideshow, 5000 );
+	categorySlideshow();
+	categoryAnimation = setInterval( categorySlideshow, 6000 );
 }
 
 function categorySlideshow(){
