@@ -70,7 +70,7 @@ function selectMap( id ){
 	//----Mobile specific buttons----//
 	$( '#mobile-icons #info').on( 'click', function() {
 		showDetailsList( id, true );
-		$( '#details-panel' ).show();
+		$( '#details-panel' ).attr( 'class', 'show' );
 	});
 	
 	$( '#mobile-icons #geolocate' ).on( 'click', function() {
@@ -82,7 +82,7 @@ function selectMap( id ){
 	});
 	
 	$( '#details-close' ).on( 'click', function() {
-		$( '#details-panel' ).hide();
+		$( '#details-panel' ).attr( 'class', 'hide' );
 	});
 	
 	//set up sharing buttons for this particular map
