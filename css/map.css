@@ -122,9 +122,9 @@
 	background: none;
 	border: none;
 	height: 40px;
-	width: 25px;
+	width: 26px;
 	cursor: pointer;
-	line-height: 28px;
+	line-height: 27px;
 }
 
 #transparency-slider .bar{
