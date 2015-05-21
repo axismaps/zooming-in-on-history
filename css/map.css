@@ -124,6 +124,7 @@
 	height: 40px;
 	width: 25px;
 	cursor: pointer;
+	line-height: 28px;
 }
 
 #transparency-slider .bar{
