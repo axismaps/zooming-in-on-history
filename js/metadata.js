@@ -11,14 +11,15 @@ function showDetailsForMap( id, pageNav, noAnimation ){
 	$card
 		.removeClass( "animated bounceIn" )
 		.click( function(){
-			  $( "#metadata" ).fadeOut( function() {
-		  	$( "#map" ).fadeIn( function() {
+			blockInteractions();
+			 $( "#metadata" ).fadeOut( function() {
+			  	$( "#map" ).fadeIn( function() {
 			  		showMap();
-	          selectMap( id );
-			  breadcrumbCSSUpdates();
-			  blockInteractions();
-	        });
-			  });
+			        selectMap( id );
+					breadcrumbCSSUpdates();
+					blockInteractions();
+		        });
+			});
 		})
 		.css( "opacity", 1 );
 	if( noAnimation == false ) {
