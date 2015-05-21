@@ -10,13 +10,14 @@ function showDetailsForMap( id, pageNav ){
 	$card
 	  .removeClass( "animated bounceIn" )
 		.click( function(){
+			 blockInteractions();
   		  $( "#metadata" ).fadeOut( function() {
     		  $( "#map" ).fadeIn( function() {
-      		  showMap();
-          selectMap( id );
-		  breadcrumbCSSUpdates();
-		  blockInteractions();
-        });
+	      		  showMap();
+		          selectMap( id );
+				  breadcrumbCSSUpdates();
+				  blockInteractions();
+	        });
   		  });
 		})
 		.css({

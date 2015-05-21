@@ -323,6 +323,7 @@ body{
 	height: 100%;
 	background: rgba(0,0,0,0);
 	display: none;
+	z-index: 9999;
 }
 
 ::-webkit-scrollbar {
