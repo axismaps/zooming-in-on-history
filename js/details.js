@@ -3,7 +3,7 @@ function showDetailsList( map_id, fulltext ){
 	$( "#detail-single" ).hide();
 	var detailList = _.filter( details, function(d){ return d.map == map_id } );
 	if ( detailList.length ){
-		$( "#details-panel" ).attr( "class", "show" );
+		if( $( window ).width() > 767 ) $( "#details-panel" ).show();
 		if ( !fulltext ) $panel.append( "<h3>SELECT A MAP DETAIL:</h3>" );
 		else $panel.append( "<h3>" + maps[ map_id ].title + "</h3>" );
 		_.each( detailList, function(d){
@@ -36,7 +36,7 @@ function showDetailsList( map_id, fulltext ){
 			$panel.append( container );
 		});
 	} else {
-		$( "#details-panel" ).attr( "class", "hide" );
+		$( "#details-panel" ).hide();
 	}
 }
 
