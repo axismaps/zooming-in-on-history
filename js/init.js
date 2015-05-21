@@ -175,10 +175,13 @@ function sanitize( word ){
 }
 
 function initTimer(){
+	var startTime = new Date().getTime();
 	$( '*' ).bind( 'mousemove keydown scroll', function() {
 		clearTimeout( idleTimer );
 		
 		idleTimer = setTimeout( function() {
+			var time = new Date().getTime();
+			if ( time-startTime > 1800000 ) document.location.reload();
 			$( '#home-button' ).click();
 		}, idleWait );
 	});
