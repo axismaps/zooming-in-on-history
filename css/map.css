@@ -178,6 +178,11 @@
 	top: 145px;
 }
 
+#details-panel.show ~ #map-ui-buttons {
+  left: 320px;
+  top: 165px;
+}
+
 #map-ui-buttons .button{
 	width: 40px;
 	height: 40px;
