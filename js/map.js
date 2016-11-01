@@ -133,44 +133,44 @@ function geocoder(){
 	$( '#geocode-submit' ).on( 'click', function( e ) {
 		e.preventDefault();
 		var geocodeValue = $( '#geocode-input' ).val();
-		
-		MQ.geocode().search( geocodeValue )
-			.on( 'success', function( e ){
-				$( '#no-location-found' ).hide();
-				
-				if( e.result.matches.length === 0 ){
-					$( '#no-location-found span' ).html( 'Sorry, no results found' );
-					$( '#no-location-found' ).show();
-				} else {
-					var result;
-					
-					$.map( e.result.matches.reverse(), function( v, i ){
-						if( historicTiles.options.bounds.contains( v.latlng ) ) {
-							result = v;
-							return;
-						}
-					});
-					
-					if( result ) {
-						geocodeResultLayer.clearLayers();
-						var latlng = result.latlng;
 
-						var geocodeIcon = L.icon({
-							iconUrl: 'img/' + selectedCategory + '-marker.png',
-							iconSize: [62, 82],
-							iconAnchor: [31, 82]
-						});
-						
-						L.marker( [ latlng.lat, latlng.lng ], {icon: geocodeIcon } )
-							.addTo( geocodeResultLayer );
-							
-						map.panTo( [ latlng.lat, latlng.lng ], { animate: false } );
-					} else {
-						$( '#no-location-found span' ).html( 'Sorry, this location is off the map' );
-						$( '#no-location-found' ).show();
+		var url = 'https://search.mapzen.com/v1/search?text=' + geocodeValue + '&api_key=mapzen-LEEN1KD';
+		$.getJSON(url, function (results) {
+			$( '#no-location-found' ).hide();
+
+			if( results.features.length === 0 ){
+				$( '#no-location-found span' ).html( 'Sorry, no results found' );
+				$( '#no-location-found' ).show();
+			} else {
+				var result;
+
+				results.features.some(function( v, i ){
+					if( historicTiles.options.bounds.contains( v.geometry.coordinates.reverse() ) ) {
+						result = v.geometry.coordinates;
+						return true;
 					}
+				});
+
+				if( result ) {
+					geocodeResultLayer.clearLayers();
+					var latlng = result;
+
+					var geocodeIcon = L.icon({
+						iconUrl: 'img/' + selectedCategory + '-marker.png',
+						iconSize: [62, 82],
+						iconAnchor: [31, 82]
+					});
+
+					L.marker( result, {icon: geocodeIcon } )
+						.addTo( geocodeResultLayer );
+
+					map.panTo( result, { animate: false } );
+				} else {
+					$( '#no-location-found span' ).html( 'Sorry, this location is off the map' );
+					$( '#no-location-found' ).show();
 				}
-			});
+			}
+		});
 	});
 	
 	$( '#geocode-input' ).keyup( function( e ) {
